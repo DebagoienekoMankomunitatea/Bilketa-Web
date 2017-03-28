@@ -1,0 +1,58 @@
+production: 
+  class: \Atezate\Model\KlearUsers
+  fields: 
+    login: 
+      title: _('Login')
+      type: text
+      required: true
+      default: true
+    email: 
+      title: ngettext('Email', 'Emails', 1)
+      type: text
+      required: true
+    pass: 
+      title: _('Pass')
+      type: password
+      required: true
+      adapter: Blowfish
+    active: 
+      title: _('Active')
+      type: select
+      defaultValue: 1
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+          '1': 
+            title: _("Yes")
+    createdOn: 
+      title: _('Created on')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+    updateOn: 
+      title: _('Update on')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+    KlearUsersRoles:
+      type: multiselect
+      title: ngettext('Rol', 'Roles', 0)
+      source:
+        data: mapper
+        config:
+          relationMapper: \Atezate\Mapper\Sql\KlearUsersRoles
+          relatedMapperName: \Atezate\Mapper\Sql\KlearRoles
+          relatedFieldName: name
+          relationProperty: KlearRole
+testing: 
+  _extends: production
+development: 
+  _extends: production

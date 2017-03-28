@@ -1,0 +1,94 @@
+production: 
+  class: \Atezate\Model\Compostadores
+  fields: 
+    puntosRecogidaId: 
+      title: _('Puntos recogida')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosRecogida
+          fieldName: 
+            fields: 
+              - nombreDescriptivo
+            template: '%nombreDescriptivo%'
+          order: nombreDescriptivo
+
+    altaFecha: 
+      title: _('Alta fecha')
+      type: picker
+      required: true
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+
+    marcaCompostadorId: 
+      title: _('Marca compostador')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\MarcasCompostador
+          fieldName: 
+            fields: 
+              - marca
+            template: '%marca%'
+          order: marca
+      options:
+        screens:
+          compostadorMarcasNew_screen: true
+
+    emplazamiento: 
+      title: _('Emplazamiento')
+      type: text
+      defaultValue: 
+
+    ventajasComunidad: 
+      title: _('Ventajas comunidad')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+          '1': 
+            title: _("Yes")
+
+    privado: 
+      title: _('Privado')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+          '1': 
+            title: _("Yes")
+
+    compostadoresIden: 
+      title: _('Identificación')
+      type: text
+      default: true
+      required: true
+      
+    posicionLat:
+      title: _('Latitud')
+      type: text
+    
+    posicionLng:
+      title: _('Longitud')
+      type: text
+    
+    posicionAddr:
+      title: _('Posición')
+      type: map
+        
+testing: 
+  _extends: production
+development: 
+  _extends: production

@@ -1,0 +1,15 @@
+production: 
+  class: \Atezate\Model\RevisionTipos
+  fields: 
+    tipo: 
+      title: _('Tipo')
+      type: text
+      required: true
+      default: true
+    descripcion: 
+      title: _('Descripcion')
+      type: textarea
+testing: 
+  _extends: production
+development: 
+  _extends: production

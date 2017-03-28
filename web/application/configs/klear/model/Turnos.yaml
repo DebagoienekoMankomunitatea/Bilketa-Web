@@ -1,0 +1,48 @@
+production: 
+  class: \Atezate\Model\Turnos
+  fields: 
+    rutaId: 
+      title: _('Ruta')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Rutas
+          fieldName: 
+            fields: 
+              - identificacion
+            template: '%identificacion%'
+          order: identificacion
+      default: true
+    fecha: 
+      title: _('Fecha')
+      type: picker
+      required: true
+      source: 
+        control: date
+        settings: 
+          disabled: 'false'
+    horaInicio: 
+      title: _('Hora inicio')
+      type: picker
+      required: true
+      source: 
+        control: time
+        settings: 
+          disabled: 'false'
+      default: true
+    horaFinal: 
+      title: _('Hora final')
+      type: picker
+      source: 
+        control: time
+        settings: 
+          disabled: 'false'
+    coste: 
+      title: _('Coste')
+      type: text
+testing: 
+  _extends: production
+development: 
+  _extends: production

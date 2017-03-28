@@ -1,0 +1,23 @@
+production: 
+  class: \Atezate\Model\MarcasCompostador
+  fields: 
+    marca: 
+      title: _('Marca')
+      type: text
+      required: true
+      default: true
+    tipo: 
+      title: _('Tipo')
+      type: text
+    createdOn: 
+      title: _('Created on')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+testing: 
+  _extends: production
+development: 
+  _extends: production

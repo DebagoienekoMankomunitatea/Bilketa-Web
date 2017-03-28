@@ -1,0 +1,85 @@
+production: 
+  class: \Atezate\Model\Importadores
+  fields: 
+    archivo: 
+      title: _('Archivo')
+      type: file
+      required: true
+      source: 
+        data: fso
+        size_limit: 20M
+        extensions:
+          - mdb
+          - csv
+        options: 
+          download: 
+            external: true
+            type: command
+            target: ArchivoDownload_command
+            icon: ui-silk-bullet-disk
+            title: _("Download file")
+            onNull: hide
+          upload: 
+            type: command
+            target: ArchivoUpload_command
+            title: _("Upload file")
+            class: qq-uploader
+            onNull: show
+#          preview: 
+#            target: ArchivoPreview_command
+#            type: command
+#            class: filePreview
+#            external: 1
+#            props: 
+#              width: 150
+#              height: 150
+#            crop: 1
+#            onNull: hide
+#          previewList: 
+#            target: ArchivoPreview_command
+#            type: command
+#            class: filePreview
+#            listController: 1
+#            external: 1
+#            props: 
+#              width: 30
+#              height: 30
+#            crop: 1
+#            onNull: hide
+      default: true
+    tipo: 
+      title: _('Tipo')
+      type: select
+      required: true
+      source: 
+        data: inline
+        values: 
+          'contribuyente': _('Contribuyente')
+          'poste': _('Poste')
+    className: 
+      title: _('Perfil')
+      type: select
+      required: true
+      defaultValue: debagoiena
+      source: 
+        data: inline
+        values: 
+          'debagoiena': 'Oñati'
+          'debagoiena2': 'Aretxabaleta'
+          'eskoriatza': 'Eskoriatza'
+          'bergara': 'Bergara'
+    estado: 
+      title: _('Estado')
+      type: select
+      defaultValue: pendiente
+      source: 
+        data: inline
+        values: 
+          'pendiente': _('Pendiente')
+          'importando': _('Importando')
+          'importado': _('Importado')
+          'error': _('Error')
+testing: 
+  _extends: production
+development: 
+  _extends: production

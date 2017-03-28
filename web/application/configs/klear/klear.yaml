@@ -1,0 +1,269 @@
+production:
+  main:
+    log:
+      writerName: syslog
+      writerParams:
+        application: bilketa-web
+    sitename: "Bilketa Web"
+    logo: img/logo.png
+    year: 2013
+    lang: es
+    langs:
+      es:
+        title: Español
+        language: es
+        locale: es_ES
+      eu:
+        title: Euskera
+        language: eu
+        locale: eu_ES
+    jqueryUI:
+      theme: cupertino
+    raw:
+      css:
+        - "./default/css/style.css"
+    cssExtended:
+      silkExtendedIconPath: img/favicon.ico
+    actionHelpers:
+    timezone: Europe/Madrid
+
+    auth:
+      userMapper: Atezatelib_Auth_Users
+      adapter: Atezatelib_Auth_Adapter
+      title: _("Access denied")
+      description: _("Insert your username")
+      session:
+        name: klear_bilketa_web
+        disableChangeName: true
+
+  menu:
+    Control:
+      title: _("Control")
+      description: _("Main management")
+      submenus:
+        ContribuyentesList:
+          title: ngettext('Contribuyente', 'Contribuyentes', 0)
+          class: ui-silk-user
+          description: _("List of %s", ngettext('Contribuyente', 'Contribuyentes', 0))
+        CubosList:
+          title: ngettext('Cubo', 'Cubos', 0)
+          class: ui-silk-database
+          description: _("List of %s", ngettext('Cubo', 'Cubos', 0))
+
+        CubosImportadoresList:
+          title: ngettext('Cubos::importador', 'Cubos::importadores', 0)
+          class: ui-silk-database
+          description: _("List of %s", ngettext('Cubos::importador', 'Cubos::importadores', 0))
+
+        RutasRecogidaList:
+          title: _("Rutas Simplificado")
+          class: ui-silk-map
+          description: _("Listará todas las rutas.")
+
+    Configuracion:
+      title: _("Configuración")
+      description: _("Configuración de lo que se encargará la aplicación")
+      submenus:
+        CentrosEmergenciaList:
+          title: ngettext('Centro de Emergencia', 'Centros de emergencia', 0)
+          class: ui-silk-heart
+          description: _("List of %s", ngettext('Centro de Emergencia', 'Centros de Emergencia', 0))
+        PostesList:
+          title: ngettext('Poste', 'Postes', 0)
+          class: ui-silk-joystick
+          description: _("List of %s", ngettext('Poste', 'Postes', 0))
+        RutasList:
+          title: ngettext('Ruta', 'Rutas', 0)
+          class: ui-silk-map
+          description: _("List of %s", ngettext('Ruta', 'Rutas', 0))
+        CamionesList:
+          title: ngettext('Camione', 'Camiones', 0)
+          class: ui-silk-lorry
+          description: _("List of %s", ngettext('Camión', 'Camiones', 0))
+        DispositivosList:
+          title: ngettext('Tablet', 'Tablets', 0)
+          class: ui-silk-picture-empty
+          description: _("List of %s", ngettext('Tablet', 'Tablets', 0))
+        OperariosList:
+          title: ngettext('Operario', 'Operarios', 0)
+          class: ui-silk-group
+          description: _("List of %s", ngettext('Operario', 'Operarios', 0))
+        PuntosRecogidaList:
+          title: ngettext('Punto de recogida', 'Puntos de recogida', 0)
+          class: ui-silk-arrow-in
+          description: _("Listado de todos los puntos de recogidas."))
+        PuntosDescargaList:
+          title: ngettext('Punto de descarga', 'Puntos de descarga', 0)
+          class: ui-silk-bug
+          description: _("List of %s", ngettext('residuo', 'residuos', 0))
+
+    Compostadores:
+      title: ngettext('Compostador', 'Compostadores', 0)
+      description: _("Listado de compostadoras")
+      submenus:
+        CompostadoresList:
+          title: ngettext('Compostador', 'Compostadores', 0)
+          class: ui-silk-brick
+          description: _("List of %s", ngettext('Compostador', 'Compostadores', 0))
+        RevisionList:
+          title: ngettext('Revisión', 'Revisiones', 0)
+          class: ui-silk-book
+          description: _("List of %s", ngettext('Revisión', 'Revisiones', 0))
+
+    Incidencias:
+      title: _("Incidencias")
+      description: _("Listado de Incidencias")
+      submenus:
+        IncidenciasList:
+          title: _("Todas las Incidencias")
+          class: ui-silk-error
+          description: _("List of %s", ngettext('Incidencia', 'Incidencias', 0))
+        IncidenciasCamionList:
+          title: _("Por Camión  ")
+          class: ui-silk-arrow-right
+          description: _("List of %s", ngettext('Incidencia', 'Incidencias', 0))
+        IncidenciasContribuyenteList:
+          title: _("Por Contribuyentes")
+          class: ui-silk-arrow-right
+          description: _("List of %s", ngettext('Incidencia', 'Incidencias', 0))
+        IncidenciasCompostadorList:
+          title: _("Por Compostador")
+          class: ui-silk-arrow-right
+          description: _("List of %s", ngettext('Incidencia', 'Incidencias', 0))
+        IncidenciasCubosList:
+          title: _("Por Cubos")
+          class: ui-silk-arrow-right
+          description: _("List of %s", ngettext('Incidencia', 'Incidencias', 0))
+        IncidenciasPostesList:
+          title: _("Por Postes")
+          class: ui-silk-arrow-right
+          description: _("List of %s", ngettext('Incidencia', 'Incidencias', 0))
+        IncidenciasPuntosRecogidaList:
+          title: _("Por Puntos de Recogida")
+          class: ui-silk-arrow-right
+          description: _("List of %s", ngettext('Incidencia', 'Incidencias', 0))
+
+    Tipos:
+      title: _("Tipos")
+      description: _("Configuración de las opciones por defecto")
+      submenus:
+        CubosTiposList:
+          title: ngettext('Cubos tipo', 'De Cubos', 0)
+          class: ui-silk-database-go
+          description: _("List of %s", ngettext('Cubos tipo', 'Tipos Cubos', 0))
+        TiposIncidenciasList:
+          title: ngettext('De incidencia', 'De Incidencias', 0)
+          class: ui-silk-error-go
+          description: _("List of %s", ngettext('Tipo incidencia', 'Tipos incidencia', 0))
+        PostesTiposList:
+          title: ngettext('Postes tipo', 'De Postes', 0)
+          class: ui-silk-flag-green
+          description: _("List of %s", ngettext('Postes tipo', 'Tipos Postes', 0))
+        PuntosRecogidaTiposList:
+          title: ngettext('Puntos recogida tipo', 'De Puntos recogida', 0)
+          class: ui-silk-arrow-in
+          description: _("List of %s", ngettext('Puntos recogida tipo', 'Tipos Puntos recogida', 0))
+        RecogidaTiposList:
+          title: ngettext('Recogida tipo', 'De Recogida', 0)
+          class: ui-silk-lorry-go
+          description: _("List of %s", ngettext('Recogida tipo', 'Tipos Recogida', 0))
+        ResiduosTiposList:
+          title: ngettext('Residuos tipo', 'De Residuos', 0)
+          class: ui-silk-bug-go
+          description: _("List of %s", ngettext('Residuos tipo', 'Tipos Residuos', 0))
+        RevisionTiposList:
+          title: ngettext('Revision tipo', 'De Revisiones', 0)
+          class: ui-silk-table-go
+          description: _("List of %s", ngettext('Tipo de Revisión', 'Tipos de Revisión', 0))
+        RutasTiposList:
+          title: ngettext('Rutas tipo', 'De Rutas', 0)
+          class: ui-silk-map-go
+          description: _("List of %s", ngettext('Rutas tipo', 'Tipos Rutas', 0))
+        RolesList:
+          title: ngettext('Rol', 'Roles', 0)
+          class: ui-silk-group-link
+          description: _("List of %s", ngettext('Rol', 'Roles', 0))
+
+    Marcas:
+      title: _("Registro de marcas")
+      description: _("Registro de los objetos que tienen una marca de vinculación.")
+      submenus:
+        MarcasCompostadorList:
+          title: ngettext('Marca cubo', 'Compostadores', 0)
+          class: ui-silk-server-go
+          description: _("List of %s", ngettext('Marca cubo', 'Marcas cubo', 0))
+        MarcasCuboList:
+          title: ngettext('Marca cubo', 'Cubos', 0)
+          class: ui-silk-database-gear
+          description: _("List of %s", ngettext('Marca cubo', 'Marcas cubo', 0))
+        MarcasPosteList:
+          title: ngettext('Marca cubo', 'Postes', 0)
+          class: ui-silk-transmit-go
+          description: _("List of %s", ngettext('Marca cubo', 'Marcas cubo', 0))
+        MarcasDispositivoList:
+          title: ngettext('Marca cubo', 'Tablets', 0)
+          class: ui-silk-picture-go
+          description: _("List of %s", ngettext('Marca cubo', 'Marcas cubo', 0))
+
+    Plantillas:
+      title: _("Plantillas")
+      description: _("Configuración de las opciones por defecto")
+      submenus:
+        PlantillasEmailList:
+          title: ngettext('Plantilla email', 'Plantillas email', 0)
+          class: ui-silk-email-edit
+          description: _("List of %s", ngettext('Plantillas email', 'Plantillas email', 0))
+        PlantillasSmsList:
+          title: ngettext('Plantilla sms', 'Plantillas sms', 0)
+          class: ui-silk-comment-edit
+          description: _("List of %s", ngettext('Plantillas sm', 'Plantillas sms', 0))
+        PlantillasTelefonoList:
+          title: ngettext('Plantilla de teléfono', 'Plantillas de teléfono', 0)
+          class: ui-silk-telephone-edit
+          description: _("List of %s", ngettext('Plantillas telefono', 'Plantillas teléfono', 0))
+
+    Locuciones:
+      title: _("Configuración Locución")
+      description: _("Configuración de las opciones para la locución")
+      submenus:
+        MunicipiosList:
+          title: ngettext('Municipio', 'Municipios', 0)
+          class: ui-silk-application-home
+          description: _("List of %s", ngettext('Municipio', 'Tipos Municipios', 0))
+        LocucionesList:
+          title: ngettext('Locución', 'Locuciones', 0)
+          class: ui-silk-sound
+          description: _("List of %s", ngettext('Locución', 'Locuciones', 0))
+        CodigosAperturaList:
+          title: ngettext('Código de Apertura', 'Códigos de Apertura', 0)
+          class: ui-silk-spellcheck
+          description: _("List of %s", ngettext('Código de Apertura', 'Códigos de Apertura', 0))
+        CodigosAperturaPrivadosList:
+          title: ngettext('Código de Apertura Privado', 'Códigos de Apertura Privados', 0)
+          class: ui-silk-spellcheck
+          description: _("List of %s", ngettext('Código de Apertura Privado', 'Códigos de Apertura Privado', 0))
+
+    Klear:
+      title: _("Klear")
+      description: _("Usuarios con acceso al Klear")
+      submenus:
+        KlearUsersList:
+          title: ngettext('Usuario', 'Usuarios', 0)
+          class: ui-silk-user-gray
+          description: _("List of %s", ngettext('Klear user', 'Klear users', 0))
+        KlearRolesList:
+          title: ngettext('Rol', 'Roles', 0)
+          class: ui-silk-report-user
+          description: _("List of %s", ngettext('Klear role', 'Klear roles', 0))
+        Dashboard:
+          default: true
+          title:
+            i18n:
+              es: Panel de control
+          class: ui-silk-bricks
+          description: _("Vista general de todas las entidades")
+
+testing:
+  _extends: production
+development:
+  _extends: production

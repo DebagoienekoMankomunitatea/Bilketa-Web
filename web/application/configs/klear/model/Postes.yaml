@@ -1,0 +1,74 @@
+production: 
+  class: \Atezate\Model\Postes
+  fields: 
+    puntosRecogidaId: 
+      title: _('Puntos recogida')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosRecogida
+          fieldName: 
+            fields: 
+              - nombreDescriptivo
+            template: '%nombreDescriptivo%'
+          order: nombreDescriptivo
+      default: true
+    postesTiposId: 
+      title: _('Tipos de poste')
+      type: select
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PostesTipos
+          fieldName: 
+            fields: 
+              - columna
+              - capacidad
+              - caras
+            template: '%columna% - %capacidad% - %caras%'
+          order: columna
+      options:
+        screens:
+          postesTiposNew_screen: true
+    fechaColocacion: 
+      title: _('Fecha colocacion')
+      type: picker
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+    baja: 
+      title: _('Baja')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+            visualFilter:
+              show: []
+              hide: [fechaBaja]
+          '1': 
+            title: _("Yes")
+            visualFilter:
+              show: [fechaBaja]
+              hide: []
+    fechaBaja: 
+      title: _('Fecha baja')
+      type: picker
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+    postesIden: 
+      title: _('Identificación')
+      type: textarea
+      required: true
+      default: true
+testing: 
+  _extends: production
+development: 
+  _extends: production

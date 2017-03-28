@@ -1,0 +1,123 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+#include RutasTiposList.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: rutasList_screen
+  screens: 
+    rutasList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Rutas
+      title: _("List of %s", ngettext('Ruta', 'Rutas', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            rutasEdit_screen: true
+            turnosList_screen: true
+          dialogs: 
+            rutasDel_dialog: true
+          default: rutasEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          rutasNew_screen: true
+    rutasNew_screen: 
+      <<: *Rutas
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Ruta', 'Rutas', 1))
+    rutasEdit_screen: 
+      <<: *Rutas
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Ruta', 'Rutas', 1))
+      
+    rutasTiposNew_screen:
+      <<: *rutasNew_screenLink 
+      
+    turnosList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Turnos
+      title: _("Listado de turno de %s",'%parent%')
+      class: ui-silk-clock
+      filterField: rutaId
+      parentOptionCustomizer:
+        - recordCount
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            turnosEdit_screen: true
+          dialogs: 
+            turnosDel_dialog: true
+            informeRecogidas_dialog: true
+          default: turnosEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          turnosNew_screen: true
+    turnosNew_screen: 
+      <<: *Turnos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Turno', 'Turnos', 1))
+      filterField: rutaId
+      fields:
+        blacklist:
+          horaFinal: true
+    turnosEdit_screen: 
+      <<: *Turnos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Turno', 'Turnos', 1))
+      filterField: rutaId
+      fields:
+        blacklist:
+          horaFinal: true
+      
+  dialogs: 
+    rutasDel_dialog: 
+      <<: *Rutas
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Ruta', 'Rutas', 1))
+      description: _("Do you want to delete this %s?", ngettext('Ruta', 'Rutas', 1))
+      
+    turnosDel_dialog: 
+      <<: *Turnos
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Turno', 'Turnos', 1))
+      description: _("Do you want to delete this %s?", ngettext('Turno', 'Turnos', 1))
+      
+    informeRecogidas_dialog: 
+      <<: *Turnos
+      module: default
+      controller: klear-recogida
+      action: index
+      class: ui-silk-report
+      labelOption: false
+      title: _("Recogidas del %s", '%parent%')
+      description: 
+        i18n: 
+          es: Informe detallados de todas las Recogidas del Turno.
+          eu: Informe detallados de todas las Recogidas del Turno.
+testing: 
+  _extends: production
+development: 
+  _extends: production

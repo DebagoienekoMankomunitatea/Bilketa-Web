@@ -1,0 +1,138 @@
+#include ../conf.d/actions.yaml
+production: 
+  class: \Atezate\Model\Municipios
+  fields: 
+    municipio: 
+      title: _('Municipio')
+      type: text
+      required: true
+      default: true
+    esLoc: 
+      title: _('Fichero')
+      type: file
+      source: 
+        data: fso
+        size_limit: 20M
+        extensions:
+          - mp3
+          - wav
+          - aiff
+          - ra
+          - wma
+          - gsm
+          - oga
+          - ogg
+        options: 
+          download: 
+            external: true
+            type: command
+            target: EsLocDownload_command
+            icon: ui-silk-bullet-disk
+            title: _("Download file")
+            onNull: hide
+          upload: 
+            type: command
+            target: EsLocUpload_command
+            title: _("Upload file")
+            class: qq-uploader
+            onNull: show
+    euLoc: 
+      title: _('Fichero')
+      type: file
+      source: 
+        data: fso
+        size_limit: 20M
+        extensions:
+          - mp3
+          - wav
+          - aiff
+          - ra
+          - wma
+          - gsm
+          - oga
+          - ogg
+        options: 
+          download: 
+            external: true
+            type: command
+            target: EuLocDownload_command
+            icon: ui-silk-bullet-disk
+            title: _("Download file")
+            onNull: hide
+          upload: 
+            type: command
+            target: EuLocUpload_command
+            title: _("Upload file")
+            class: qq-uploader
+            onNull: show
+    esLocCodificado: 
+      title: _('Fichero codificado')
+      type: file
+      source: 
+        data: fso
+        size_limit: 20M
+        options: 
+          hiddenName: true         
+          mediaembed:
+            <<: *audioPlayer
+            target: EsLocCodificadoDownload_command
+    euLocCodificado: 
+      title: _('Fichero codificado')
+      type: file
+      source: 
+        data: fso
+        size_limit: 20M
+        options: 
+          hiddenName: true         
+          mediaembed:
+            <<: *audioPlayer
+            target: EuLocCodificadoDownload_command
+
+    createdOn: 
+      title: _('Created on')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+          
+    estado: 
+      title: _('Estado')
+      type: select
+      defaultValue: pending
+      source: 
+        data: inline
+        values: 
+          'pending': _('Pendiente')
+          'encoding': _('Codificando')
+          'encoded': _('Codificado')
+          'error': _('Error')
+          
+    MunicipiosRelCercaniaByMunicipio:
+      type: multiselect
+      title: _('Municipios Cercanos')
+      source:
+        data: mapper
+        config:
+          relationMapper: \Atezate\Mapper\Sql\MunicipiosRelCercania
+          relationProperty: MunicipioCercano
+          relatedMapperName: \Atezate\Mapper\Sql\Municipios
+          relatedFieldName: municipio
+          filterClass: Atezatelib_Filtros_FilterMunicipiosContribuyentes
+          
+    MunicipiosRelCodigosPostales:
+      type: multiselect
+      title: _('Código postal')
+      source:
+        data: mapper
+        config:
+          relationMapper: \Atezate\Mapper\Sql\MunicipiosRelCodigosPostales
+          relatedMapperName: \Atezate\Mapper\Sql\CodigosPostales
+          relationProperty: CodigoPostal
+          relatedFieldName: codigoPostal
+          
+testing: 
+  _extends: production
+development: 
+  _extends: production

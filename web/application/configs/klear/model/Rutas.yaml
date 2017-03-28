@@ -1,0 +1,71 @@
+production: 
+  class: \Atezate\Model\Rutas
+  fields: 
+    identificacion: 
+      title: _('Identificacion')
+      type: text
+      required: true
+      default: true
+    rutasTiposId: 
+      title: _('Tipos de ruta')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\RutasTipos
+          fieldName: 
+            fields: 
+              - nombre
+            template: '%nombre%'
+          order: nombre
+      options:
+        screens:
+          rutasTiposNew_screen: true
+    tiempoAprox: 
+      title: _('Tiempo aprox')
+      type: picker
+      source: 
+        control: time
+        settings: 
+          disabled: 'false'
+    puntosDescargaId: 
+      title: _('Puntos descarga')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosDescarga
+          fieldName: 
+            fields: 
+              - nombre
+            template: '%nombre%'
+          order: nombre
+    residuosTiposId: 
+      title: _('Tipos de residuos')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\ResiduosTipos
+          fieldName: 
+            fields: 
+              - nombre
+            template: '%nombre%'
+          order: nombre
+    RutasRelPuntosRecogida: 
+      title: _('Puntos de Recogida')
+      type: multiselect
+      source:
+        data: mapper
+        config:
+          relationMapper: \Atezate\Mapper\Sql\RutasRelPuntosRecogida
+          relatedMapperName: \Atezate\Mapper\Sql\PuntosRecogida
+          relatedFieldName: nombreDescriptivo
+          relationProperty: PuntosRecogida
+testing: 
+  _extends: production
+development: 
+  _extends: production

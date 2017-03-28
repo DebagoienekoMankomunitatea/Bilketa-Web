@@ -1,0 +1,60 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: klearRolesList_screen
+  screens: 
+    klearRolesList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *KlearRoles
+      title: _("List of %s", ngettext('Klear role', 'Klear roles', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            klearRolesEdit_screen: true
+          dialogs: 
+            klearRolesDel_dialog: true
+          default: klearRolesEdit_screen
+        blacklist:
+          KlearRolesSections: true
+          identifier: true
+      options: 
+        title: _("Options")
+        screens: 
+          klearRolesNew_screen: false
+    klearRolesNew_screen: 
+      <<: *KlearRoles
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Klear role', 'Klear roles', 1))
+      fields:
+        blacklist:
+          identifier: true
+    klearRolesEdit_screen: 
+      <<: *KlearRoles
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Klear role', 'Klear roles', 1))
+      fields:
+        blacklist:
+          identifier: true
+  dialogs: 
+    klearRolesDel_dialog: 
+      <<: *KlearRoles
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Klear role', 'Klear roles', 1))
+      description: _("Do you want to delete this %s?", ngettext('Klear role', 'Klear roles', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

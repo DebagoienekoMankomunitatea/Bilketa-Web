@@ -1,0 +1,331 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+fixedPositions:
+  - &fixedPositionsForIncidencias
+    group2:
+      label: _('Datos Compostador')
+      fields:
+        compostadorId: true
+        fieldFakeCompostador: true
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: incidenciasList_screen
+  screens: 
+    incidenciasList_screen: 
+      controller: list
+      preconfiguredFilters:
+        pendientes:
+          title: "Pendientes"
+          field: solucionada
+          value: 'no'
+        solucionadas:
+          title: "Solucionadas"
+          field: solucionada
+          value: 'si'
+      pagination: 
+        items: 25
+      <<: *Incidencias
+      title: _("List of %s", ngettext('Incidencia de Compostador', 'Incidencias de Compostadores', 0))
+      fields: 
+        order:
+          fechaAlta: true
+          gravedadDato: true
+        options: 
+          title: _("Options")
+          screens: 
+            incidenciasEdit_screen: true
+            llamadasList_screen: true
+            smsMensajesList_screen: true
+            emailsMensajesList_screen: true
+          dialogs: 
+            incidenciasDel_dialog: true
+          default: incidenciasEdit_screen
+        blacklist:
+          tipoId: true
+          createdOn: true
+          postesId: true
+          cuboId: true
+          contribuyenteId: true
+          puntoRecogidaId: true
+          camionId: true
+          fieldFakeCubo: true
+          fieldFakeCamion: true
+          fieldFakeCompostador: true
+          fieldFakeContribuyente: true
+          fieldFakePostes: true
+          fieldFakePuntosRecogida: true
+          observacionSolucion: true
+          observaciones: true
+          entidadDato: true
+      options: 
+        title: _("Options")
+        screens: 
+          incidenciasNew_screen: true
+      forcedValues: 
+        entidad: compostador
+    incidenciasNew_screen: 
+      <<: *Incidencias
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Incidencia de Compostador', 'Incidencias de Compostadores', 1))
+      fields:
+        order:
+          fechaAlta: true
+          entidad: true
+          cuboId: true
+          camionId: true
+          compostadorId: true
+          contribuyenteId: true
+          postesId: true
+          puntoRecogidaId: true
+          fieldFakeCubo: true
+          fieldFakeCamion: true
+          fieldFakeCompostador: true
+          fieldFakeContribuyente: true
+          fieldFakePostes: true
+          fieldFakePuntosRecogida: true
+          observaciones: true
+        blacklist:
+          observacionSolucion: true
+          estado: true
+          tipoId: true
+          createdOn: true
+          postesId: true
+          cuboId: true
+          contribuyenteId: true
+          puntoRecogidaId: true
+          camionId: true
+          gravedad: true
+          fieldFakeCubo: true
+          fieldFakeCamion: true
+          fieldFakeContribuyente: true
+          fieldFakePostes: true
+          fieldFakePuntosRecogida: true
+          entidadDato: true
+          paradaId: true
+          estadoGhost: true
+      forcedValues: 
+        entidad: compostador
+      fixedPositions:
+        <<: *fixedPositionsForIncidencias
+    incidenciasEdit_screen: 
+      <<: *Incidencias
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Incidencia de Compostador', 'Incidencias de Compostadores', 1))
+      fields:
+        order:
+          fechaAlta: true
+          entidad: true
+          cuboId: true
+          camionId: true
+          compostadorId: true
+          contribuyenteId: true
+          postesId: true
+          puntoRecogidaId: true
+          fieldFakeCubo: true
+          fieldFakeCamion: true
+          fieldFakeCompostador: true
+          fieldFakeContribuyente: true
+          fieldFakePostes: true
+          fieldFakePuntosRecogida: true
+          observaciones: true
+        blacklist:
+          tipoId: true
+          createdOn: true
+          postesId: true
+          cuboId: true
+          contribuyenteId: true
+          puntoRecogidaId: true
+          camionId: true
+          gravedad: true
+          fieldFakeCubo: true
+          fieldFakeCamion: true
+          fieldFakeContribuyente: true
+          fieldFakePostes: true
+          fieldFakePuntosRecogida: true
+          entidadDato: true
+          paradaId: true
+          estadoGhost: true
+      forcedValues: 
+        entidad: compostador
+      fixedPositions:
+        <<: *fixedPositionsForIncidencias
+    llamadasList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *LogLlamadas
+      title: _("List of %s", ngettext('Llamada', 'Llamadas', 0))
+      class: ui-silk-telephone
+      filterField: incidenciaId
+      parentOptionCustomizer:
+        - Atezatelib_Botones_Incidencias
+        - recordCount
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            llamadasEdit_screen: true
+          dialogs: 
+            llamadasDel_dialog: true
+          default: llamadasEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          llamadasNew_screen: true
+    llamadasNew_screen: 
+      <<: *LogLlamadas
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Llamada', 'Llamadas', 1))
+    llamadasEdit_screen: 
+      <<: *LogLlamadas
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Llamada', 'Llamadas', 1))
+      
+    smsMensajesList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *LogSms
+      title: _("List of %s", ngettext('Sms mensaje', 'Sms mensajes', 0))
+      class: ui-silk-comments
+      filterField: incidenciaId
+      parentOptionCustomizer:
+        - Atezatelib_Botones_Incidencias
+        - recordCount
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            smsMensajesEdit_screen: true
+          dialogs: 
+            smsMensajesDel_dialog: true
+          default: smsMensajesEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          smsMensajesNew_screen: true
+    smsMensajesNew_screen: 
+      <<: *LogSms
+      controller: new
+      filterField: incidenciaId
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Sms mensaje', 'Sms mensajes', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+    smsMensajesEdit_screen: 
+      <<: *LogSms
+      controller: edit
+      filterField: incidenciaId
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Sms mensaje', 'Sms mensajes', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+          
+    emailsMensajesList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *LogEmails
+      title: _("List of %s", ngettext('Emails mensaje', 'Emails mensajes', 0))
+      class: ui-silk-email-open
+      filterField: incidenciaId
+      parentOptionCustomizer:
+        - Atezatelib_Botones_Incidencias
+        - recordCount
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            emailsMensajesEdit_screen: true
+          dialogs: 
+            emailsMensajesDel_dialog: true
+          default: emailsMensajesEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          emailsMensajesNew_screen: true
+    emailsMensajesNew_screen: 
+      <<: *LogEmails
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Emails mensaje', 'Emails mensajes', 1))
+      filterField: incidenciaId
+      fields: 
+        blacklist: 
+          createdOn: true
+    emailsMensajesEdit_screen: 
+      <<: *LogEmails
+      filterField: incidenciaId
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Emails mensaje', 'Emails mensajes', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+        
+  dialogs: 
+    incidenciasDel_dialog: 
+      <<: *Incidencias
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Incidencia de Compostador', 'Incidencias de Compostadores', 1))
+      description: _("Do you want to delete this %s?", ngettext('Incidencia de Compostador', 'Incidencias de Compostadores', 1))
+      
+    llamadasDel_dialog: 
+      <<: *LogLlamadas
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Llamada', 'Llamadas', 1))
+      description: _("Do you want to delete this %s?", ngettext('Llamada', 'Llamadas', 1))
+      
+    smsMensajesDel_dialog: 
+      <<: *LogSms
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Sms mensaje', 'Sms mensajes', 1))
+      description: _("Do you want to delete this %s?", ngettext('Sms mensaje', 'Sms mensajes', 1))
+      
+    emailsMensajesDel_dialog: 
+      <<: *LogEmails
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Emails mensaje', 'Emails mensajes', 1))
+      description: _("Do you want to delete this %s?", ngettext('Emails mensaje', 'Emails mensajes', 1))
+      
+  commands:
+    autocomplete_command_compostador:
+      <<: *Incidencias
+      controller: field-decorator
+      action: index
+      autocomplete:
+        mapperName: \Atezate\Mapper\Sql\Compostadores
+        label: compostadoresIden
+        limit: 8
+      
+testing: 
+  _extends: production
+development: 
+  _extends: production

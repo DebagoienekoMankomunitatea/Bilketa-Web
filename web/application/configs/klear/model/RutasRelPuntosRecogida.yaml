@@ -1,0 +1,39 @@
+production: 
+  class: \Atezate\Model\RutasRelPuntosRecogida
+  fields: 
+    rutaId: 
+      title: _('Ruta')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Rutas
+          fieldName: 
+            fields: 
+              - identificacion
+            template: '%identificacion%'
+          order: identificacion
+      default: true
+    puntosRecogidaId: 
+      title: _('Puntos recogida')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosRecogida
+          fieldName: 
+            fields: 
+              - nombreDescriptivo
+            template: '%nombreDescriptivo%'
+          order: nombreDescriptivo
+    orden: 
+      title: _('Orden')
+      type: number
+      source: 
+        control: Spinner
+testing: 
+  _extends: production
+development: 
+  _extends: production

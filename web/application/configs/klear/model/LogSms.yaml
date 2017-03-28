@@ -1,0 +1,49 @@
+production: 
+  class: \Atezate\Model\LogSms
+  fields: 
+    mensaje: 
+      title: _('Mensaje')
+      type: textarea
+      default: true
+    createdOn: 
+      title: _('Created on')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+    incidenciaId: 
+      title: _('Incidencia')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Incidencias
+          fieldName: 
+            fields: 
+              - incidenciaId
+            template: '%incidenciaId%'
+          order: incidenciaId
+    telefono: 
+      title: _('Telefono')
+      type: text
+      defaultValue: 
+    plantillasSmsId: 
+      title: _('Plantillas sms')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PlantillasSms
+          fieldName: 
+            fields: 
+              - asunto
+            template: '%asunto%'
+          order: asunto
+testing: 
+  _extends: production
+development: 
+  _extends: production

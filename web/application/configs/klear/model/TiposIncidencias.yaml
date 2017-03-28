@@ -1,0 +1,132 @@
+production: 
+  class: \Atezate\Model\TiposIncidencias
+  fields: 
+    gravedad: 
+      title: _('Gravedad')
+      type: select
+      defaultValue: moderada
+      source: 
+        data: inline
+        values: 
+          leve: _('Leve')
+          moderada: _('Moderada')
+          grave: _('Grave')
+          muy grave: _('Muy grave')
+      default: true
+    tipo: 
+      title: _('Tipo')
+      type: select
+      source: 
+        data: inline
+        values: 
+          camion: 
+            title: _('Camión')
+            visualFilter:
+              show: []
+              hide: [resolucionAutomatica,plantillasEmailId, plantillasEmailPrioridad, plantillasSmsId, plantillasSmsPrioridad, plantillasTelefonoId, plantillasTelefonoPrioridad]
+          compostador: 
+            title: _('Compostador')
+            visualFilter:
+              show: []
+              hide: [resolucionAutomatica,plantillasEmailId, plantillasEmailPrioridad, plantillasSmsId, plantillasSmsPrioridad, plantillasTelefonoId, plantillasTelefonoPrioridad]
+          contribuyente: 
+            title: _('Contribuyente')
+            visualFilter:
+              show: [resolucionAutomatica]
+              hide: []
+          cubo: 
+            title: _('Cubo')
+            visualFilter:
+              show: []
+              hide: [resolucionAutomatica,plantillasEmailId, plantillasEmailPrioridad, plantillasSmsId, plantillasSmsPrioridad, plantillasTelefonoId, plantillasTelefonoPrioridad]
+          poste: 
+            title: _('Poste')
+            visualFilter:
+              show: []
+              hide: [resolucionAutomatica,plantillasEmailId, plantillasEmailPrioridad, plantillasSmsId, plantillasSmsPrioridad, plantillasTelefonoId, plantillasTelefonoPrioridad]
+          puntoRecogida: 
+            title: _('Punto de Recogida')
+            visualFilter:
+              show: []
+              hide: [resolucionAutomatica,plantillasEmailId, plantillasEmailPrioridad, plantillasSmsId, plantillasSmsPrioridad, plantillasTelefonoId, plantillasTelefonoPrioridad]
+    descripcion: 
+      title: _('Descripcion')
+      type: textarea
+    resolucionAutomatica: 
+      title: _('Resolucion automatica')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _('No')
+            visualFilter:
+              show: []
+              hide: [plantillasEmailId, plantillasEmailPrioridad, plantillasSmsId, plantillasSmsPrioridad, plantillasTelefonoId, plantillasTelefonoPrioridad]
+          '1': 
+            title: _("Yes")
+            visualFilter:
+              show: [plantillasEmailId, plantillasEmailPrioridad, plantillasSmsId, plantillasSmsPrioridad, plantillasTelefonoId, plantillasTelefonoPrioridad]
+              hide: []
+    plantillasEmailId: 
+      title: _('Plantillas email')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PlantillasEmail
+          fieldName: 
+            fields: 
+              - asunto
+            template: '%asunto%'
+          order: asunto
+    plantillasEmailPrioridad: 
+      title: _('Prioridad email')
+      type: number
+      defaultValue: 1
+      source: 
+        control: Spinner
+    plantillasSmsId: 
+      title: _('Plantillas sms')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PlantillasSms
+          fieldName: 
+            fields: 
+              - asunto
+            template: '%asunto%'
+          order: asunto
+    plantillasSmsPrioridad: 
+      title: _('Prioridad sms')
+      type: number
+      defaultValue: 1
+      source: 
+        control: Spinner
+    plantillasTelefonoId: 
+      title: _('Plantillas telefono')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PlantillasTelefono
+          fieldName: 
+            fields: 
+              - asunto
+            template: '%asunto%'
+          order: asunto
+    plantillasTelefonoPrioridad: 
+      title: _('Prioridad teléfono')
+      type: number
+      defaultValue: 1
+      source: 
+        control: Spinner
+testing: 
+  _extends: production
+development: 
+  _extends: production

@@ -1,0 +1,57 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: posicionamientoList_screen
+  screens: 
+    posicionamientoList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Posicionamiento
+      title: _("List of %s", ngettext('Posicionamiento', 'Posicionamiento(s)', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            posicionamientoEdit_screen: true
+          dialogs: 
+            posicionamientoDel_dialog: true
+          default: posicionamientoEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          posicionamientoNew_screen: true
+    posicionamientoNew_screen: 
+      <<: *Posicionamiento
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Posicionamiento', 'Posicionamiento(s)', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+    posicionamientoEdit_screen: 
+      <<: *Posicionamiento
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Posicionamiento', 'Posicionamiento(s)', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+  dialogs: 
+    posicionamientoDel_dialog: 
+      <<: *Posicionamiento
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Posicionamiento', 'Posicionamiento(s)', 1))
+      description: _("Do you want to delete this %s?", ngettext('Posicionamiento', 'Posicionamiento(s)', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

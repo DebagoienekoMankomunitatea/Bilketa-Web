@@ -1,0 +1,51 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: plantillasSmsList_screen
+  screens: 
+    plantillasSmsList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *PlantillasSms
+      title: _("List of %s", ngettext('Plantilla sms', 'Plantillas sms', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            plantillasSmsEdit_screen: true
+          dialogs: 
+            plantillasSmsDel_dialog: true
+          default: plantillasSmsEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          plantillasSmsNew_screen: true
+    plantillasSmsNew_screen: 
+      <<: *PlantillasSms
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Plantilla sms', 'Plantillas sms', 1))
+    plantillasSmsEdit_screen: 
+      <<: *PlantillasSms
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Plantilla sms', 'Plantillas sms', 1))
+  dialogs: 
+    plantillasSmsDel_dialog: 
+      <<: *PlantillasSms
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Plantilla sms', 'Plantillas sms', 1))
+      description: _("Do you want to delete this %s?", ngettext('Plantilla sms', 'Plantillas sms', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

@@ -1,0 +1,64 @@
+#include ../RevisionTiposList.yaml
+
+production:
+  class: \Atezate\Model\Revision
+  fields:
+    compostadoresId:
+      title: _('Compostador')
+      type: select
+      required: true
+      source:
+        data: mapper
+        config:
+          mapperName: \Atezate\Mapper\Sql\Compostadores
+          fieldName:
+            fields:
+              - compostadoresIden
+            template: '%compostadoresIden%'
+          order: compostadoresIden
+      default: true
+    fechaHora:
+      title: _('Fecha de la revisión')
+      type: picker
+      required: true
+      source:
+        control: datetime
+        settings:
+          disabled: 'false'
+      default: true
+    revisionTipoId:
+      title: _('Tipo de revisión')
+      type: select
+      source:
+        data: mapper
+        'null': _("Unasigned")
+        config:
+          mapperName: \Atezate\Mapper\Sql\RevisionTipos
+          fieldName:
+            fields:
+              - tipo
+            template: '%tipo%'
+          order: tipo
+      options:
+        screens:
+          revisionTiposNew_screen: true
+    operadorId:
+      title: _('Operador')
+      type: select
+      required: true
+      source:
+        data: mapper
+        config:
+          mapperName: \Atezate\Mapper\Sql\Operarios
+          fieldName:
+            fields:
+              - nombre
+            template: '%nombre%'
+          order: nombre
+    observaciones:
+      title: _('Observaciones')
+      type: textarea
+testing:
+  _extends: production
+development:
+  _extends: production

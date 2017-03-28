@@ -1,0 +1,35 @@
+production: 
+  class: \Atezate\Model\Dispositivos
+  fields: 
+    marcaDispositivoId: 
+      title: _('Marca dispositivo')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\MarcasDispositivo
+          fieldName: 
+            fields: 
+              - marca
+            template: '%marca%'
+          order: marca
+      default: true
+      options:
+        screens:
+          dispositivosTiposNew_screen: true
+    imei: 
+      title: _('Imei')
+      type: text
+      required: true
+    fechaCompra: 
+      title: _('Fecha compra')
+      type: picker
+      source: 
+        control: date
+        settings: 
+          disabled: 'false'
+testing: 
+  _extends: production
+development: 
+  _extends: production

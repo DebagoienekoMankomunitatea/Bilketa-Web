@@ -1,0 +1,30 @@
+production: 
+  class: \Atezate\Model\KlearRoles
+  fields: 
+    name: 
+      title: ngettext('Name', 'Names', 1)
+      type: text
+      required: true
+      default: true
+    description: 
+      title: ngettext('Description', 'Descriptions', 1)
+      type: text
+      defaultValue: 
+    identifier: 
+      title: ngettext('Identifier', 'Identifiers', 1)
+      type: text
+      required: true
+    KlearRolesSections:
+      type: multiselect
+      title: ngettext('Sección', 'Secciones', 0)
+      source:
+        data: mapper
+        config:
+          relationMapper: \Atezate\Mapper\Sql\KlearRolesSections
+          relatedMapperName: \Atezate\Mapper\Sql\KlearSections
+          relatedFieldName: identifier
+          relationProperty: KlearSection
+testing: 
+  _extends: production
+development: 
+  _extends: production

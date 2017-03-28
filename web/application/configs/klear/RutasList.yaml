@@ -1,0 +1,398 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+#include RutasTiposList.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: rutasList_screen
+  screens: 
+    rutasList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Rutas
+      title: _("List of %s", ngettext('Ruta', 'Rutas', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            rutasEdit_screen: true
+            rutasRelPuntosRecogidaList_screen: true
+            turnosList_screen: true
+          dialogs: 
+            rutasDel_dialog: true
+          default: rutasEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          rutasNew_screen: true
+      info:
+        type: box
+        position: left
+        icon: help
+        text: _("Una ruta es conjunto de Puntos de Recogida con un Punto de Descarga. Así que después de crear una Ruta, hay que asignarles un orden a los Puntos de Recogida en el que irán visitados en la opción Puntos de Recogida.")
+        label: _("¿Necesitas ayuda?")
+    rutasNew_screen: 
+      <<: *Rutas
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Ruta', 'Rutas', 1))
+    rutasEdit_screen: 
+      <<: *Rutas
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Ruta', 'Rutas', 1))
+      
+    rutasTiposNew_screen:
+      <<: *rutasNew_screenLink 
+      
+    rutasRelPuntosRecogidaList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *RutasRelPuntosRecogida
+      title: _(ngettext('Orden Punto de recogida', 'Orden Puntos de recogida', 0))
+      filterField: rutaId
+      order:
+        field: orden
+      parentOptionCustomizer:
+        - recordCount
+      class: ui-silk-arrow-in
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            rutasRelPuntosRecogidaEdit_screen: true
+          dialogs: 
+            rutasRelPuntosRecogidaDel_dialog: true
+          default: rutasRelPuntosRecogidaEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          rutasRelPuntosRecogidaNew_screen: true
+          #puntosRecogidaNew_screen: true
+    rutasRelPuntosRecogidaNew_screen: 
+      <<: *RutasRelPuntosRecogida
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Agregar nuevo Punto de Recogida")
+      filterField: rutaId
+    rutasRelPuntosRecogidaEdit_screen: 
+      <<: *RutasRelPuntosRecogida
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Orden Punto de recogida', 'Orden Puntos de recogida', 1))
+      filterField: rutaId
+      
+    turnosList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Turnos
+      title: _("Listado de turno de %s",'%parent%')
+      class: ui-silk-clock
+      filterField: rutaId
+      parentOptionCustomizer:
+        - recordCount
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            turnosEdit_screen: true
+            turnosRelCamionesList_screen: true
+          dialogs: 
+            turnosDel_dialog: true
+          default: turnosEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          turnosNew_screen: true
+    turnosNew_screen: 
+      <<: *Turnos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Turno', 'Turnos', 1))
+      filterField: rutaId
+      fields:
+        blacklist:
+          horaFinal: true
+    turnosEdit_screen: 
+      <<: *Turnos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Turno', 'Turnos', 1))
+      filterField: rutaId
+      fields:
+        readOnly:
+          coste: true
+        blacklist:
+          #horaFinal: true
+          
+    puntosRecogidaNew_screen: 
+      <<: *PuntosRecogida
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Nuevo Punto de recogida")
+      filterField: rutaId
+      
+    turnosRelCamionesList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *TurnosRelCamiones
+      title: _("Listado de camiones de las %s", '%parent%')
+      filterField: turnoId
+      class: ui-silk-lorry
+      parentOptionCustomizer:
+        - recordCount
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            turnosRelCamionesEdit_screen: true
+            paradasList_screen: true
+          dialogs: 
+            turnosRelCamionesDel_dialog: true
+          default: turnosRelCamionesEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          turnosRelCamionesNew_screen: true
+    turnosRelCamionesNew_screen: 
+      <<: *TurnosRelCamiones
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Camión', 'Camiones', 1))
+      filterField: turnoId
+      fields:
+        whitelist:
+          turnoId: true
+    turnosRelCamionesEdit_screen: 
+      <<: *TurnosRelCamiones
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Camión', 'Camiones', 1))
+      filterField: turnoId
+      
+    paradasList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Paradas
+      title: _("List of %s", ngettext('Parada', 'Paradas', 0))
+      filterField: turnosCamionesId
+      class: ui-silk-flag-green
+      parentOptionCustomizer:
+        - recordCount
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            paradasEdit_screen: true
+            recogidasList_screen: true
+          dialogs: 
+            paradasDel_dialog: true
+          default: paradasEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          paradasNew_screen: true
+    paradasNew_screen: 
+      <<: *Paradas
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Parada', 'Paradas', 1))
+      filterField: turnosCamionesId
+      fields:
+        blacklist:
+          createdOn: true
+          horaFinal: true
+    paradasEdit_screen: 
+      <<: *Paradas
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Parada', 'Paradas', 1))
+      filterField: turnosCamionesId
+      fields:
+        blacklist:
+          createdOn: true
+          horaFinal: true
+      
+    recogidasList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Recogidas
+      title: _("Registros de Recogida")
+      filterField: paradaId
+      parentOptionCustomizer:
+        - recordCount
+      class: ui-silk-report
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            recogidasEdit_screen: true
+            incidenciasList_screen: true
+          dialogs: 
+            recogidasDel_dialog: true
+          default: recogidasEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          recogidasNew_screen: true
+    recogidasNew_screen: 
+      <<: *Recogidas
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Recogida', 'Recogidas', 1))
+      filterField: paradaId
+      fields: 
+        blacklist: 
+          createdOn: true
+    recogidasEdit_screen: 
+      <<: *Recogidas
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Recogida', 'Recogidas', 1))
+      filterField: paradaId
+      fields: 
+        blacklist: 
+          createdOn: true
+          
+    incidenciasList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Incidencias
+      title: _("List of %s", ngettext('Incidencia', 'Incidencias', 0))
+      filterField: recogidasId
+      parentOptionCustomizer:
+        - recordCount
+      class: ui-silk-error
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            incidenciasEdit_screen: true
+          dialogs: 
+            incidenciasDel_dialog: true
+          default: incidenciasEdit_screen
+        blacklist:
+          solucionada: true
+          turnoId: true
+      options: 
+        title: _("Options")
+        screens: 
+          incidenciasNew_screen: true
+    incidenciasNew_screen: 
+      <<: *Incidencias
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      filterField: recogidasId
+      title: _("Add %s", ngettext('Incidencia', 'Incidencias', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+          solucionada: true
+          tipo: true
+          cuboId: true
+          postesId: true
+          compostadorId: true
+          turnoId: true
+    incidenciasEdit_screen: 
+      <<: *Incidencias
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      filterField: recogidasId
+      title: _("Edit %s", ngettext('Incidencia', 'Incidencias', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+          solucionada: true
+          
+  dialogs: 
+    rutasDel_dialog: 
+      <<: *Rutas
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Ruta', 'Rutas', 1))
+      description: _("Do you want to delete this %s?", ngettext('Ruta', 'Rutas', 1))
+      
+    rutasRelPuntosRecogidaDel_dialog: 
+      <<: *RutasRelPuntosRecogida
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Rutas rel puntos recogida', 'Rutas rel puntos recogida(s)', 1))
+      description: _("Do you want to delete this %s?", ngettext('Rutas rel puntos recogida', 'Rutas rel puntos recogida(s)', 1))
+      
+    turnosDel_dialog: 
+      <<: *Turnos
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Turno', 'Turnos', 1))
+      description: _("Do you want to delete this %s?", ngettext('Turno', 'Turnos', 1))
+      
+    turnosRelCamionesDel_dialog: 
+      <<: *TurnosRelCamiones
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Camión', 'Camiones', 1))
+      description: _("Do you want to delete this %s?", ngettext('Camión', 'Camiones', 1))
+      
+    paradasDel_dialog: 
+      <<: *Paradas
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Parada', 'Paradas', 1))
+      description: _("Do you want to delete this %s?", ngettext('Parada', 'Paradas', 1))
+      
+    recogidasDel_dialog: 
+      <<: *Recogidas
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Recogida', 'Recogidas', 1))
+      description: _("Do you want to delete this %s?", ngettext('Recogida', 'Recogidas', 1))
+      
+    incidenciasDel_dialog: 
+      <<: *Incidencias
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Incidencia', 'Incidencias', 1))
+      description: _("Do you want to delete this %s?", ngettext('Incidencia', 'Incidencias', 1))
+      
+testing: 
+  _extends: production
+development: 
+  _extends: production

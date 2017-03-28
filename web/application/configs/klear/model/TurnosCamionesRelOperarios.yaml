@@ -1,0 +1,35 @@
+production: 
+  class: \Atezate\Model\TurnosCamionesRelOperarios
+  fields: 
+    turnosRelCamionesId: 
+      title: _('Turnos rel camiones')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\TurnosRelCamiones
+          fieldName: 
+            fields: 
+              - id
+            template: '%id%'
+          order: id
+      default: true
+    operarioId: 
+      title: _('Operario')
+      type: select
+      required: true
+      default: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Operarios
+          fieldName: 
+            fields: 
+              - nombre
+            template: '%nombre%'
+          order: nombre
+testing: 
+  _extends: production
+development: 
+  _extends: production

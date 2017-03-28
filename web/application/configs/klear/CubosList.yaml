@@ -1,0 +1,152 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+#include CubosTiposList.yaml
+#include CubosImportadoresList.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: cubosList_screen
+  screens: 
+    cubosList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Cubos
+      title: _("List of %s", ngettext('Cubo', 'Cubos', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            cubosEdit_screen: true
+          dialogs: 
+            cubosDel_dialog: true
+          default: cubosEdit_screen
+        blacklist:
+          fieldFakeSelectContribuyente: true
+          fieldFakeContribuyenteNombre: true
+          cubosTiposId: true
+          puntosRecogidaId: true
+      options: 
+        title: _("Options")
+        screens: 
+          cubosNew_screen: true
+          cubosImportadoresList_screen: true
+      info:
+        type: box
+        position: left
+        icon: help
+        text: _("En esta sección puede registrar nuevos cubos y asignarles un contribuyente por medio de su NIF. Los cubos tendrán 3 tipos de ubicación en el que podrán ser recogidos - Poste, Punto de Recogida y Centro de Emergencia.")
+        label: _("¿Necesitas ayuda?")
+
+    cubosNew_screen: 
+      <<: *Cubos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Cubo', 'Cubos', 1))
+      fixedPositions:
+        group0:
+          label: _('Sección Contribuyente');
+          fields:
+            fieldFakeSelectContribuyente: true
+            fieldFakeContribuyenteNombre: true
+            contribuyenteId: true
+      fields:
+        order:
+          ubicacion: true
+          puntosRecogidaId: true
+          posteId: true
+          centrosEmergenciaId: true
+          fieldFakeSelectContribuyente: true
+          contribuyenteId: true
+          fieldFakeContribuyenteNombre: true
+      info:
+        type: box
+        position: left
+        icon: help
+        text: _("En esta sección puede registrar nuevos cubos y asignarles un contribuyente por medio de su NIF. Los cubos tendrán 3 tipos de ubicación en el que podrán ser recogidos - Poste, Punto de Recogida y Centro de Emergencia.")
+        label: _("¿Necesitas ayuda?")
+    cubosEdit_screen: 
+      <<: *Cubos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Cubo', 'Cubos', 1))
+      fixedPositions:
+        group0:
+          label: _('Sección Contribuyente');
+          fields:
+            fieldFakeSelectContribuyente: true
+            fieldFakeContribuyenteNombre: true
+            contribuyenteId: true
+      fields:
+        order:
+          ubicacion: true
+          puntosRecogidaId: true
+          posteId: true
+          centrosEmergenciaId: true
+          fieldFakeSelectContribuyente: true
+          contribuyenteId: true
+          fieldFakeContribuyenteNombre: true
+      info:
+        type: box
+        position: left
+        icon: help
+        text: _("En esta sección puede registrar nuevos cubos y asignarles un contribuyente por medio de su NIF. Los cubos tendrán 3 tipos de ubicación en el que podrán ser recogidos - Poste, Punto de Recogida y Centro de Emergencia.")
+        label: _("¿Necesitas ayuda?")
+
+    cubosTiposNew_screen:
+      <<: *cubosTiposNew_screenLink 
+
+    cubosImportadoresList_screen:  
+      <<: *cubosImportadoresList_screenLink
+
+    cubosImportadoresNew_screen: 
+      <<: *cubosImportadoresNew_screenLink 
+
+    cubosImportadoresEdit_screen: 
+      <<: *cubosImportadoresEdit_screenLink 
+    
+  dialogs: 
+    cubosDel_dialog: 
+      <<: *Cubos
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Cubo', 'Cubos', 1))
+      description: _("Do you want to delete this %s?", ngettext('Cubo', 'Cubos', 1))
+
+    cubosImportadoresDel_dialog: 
+      <<: *cubosImportadoresDel_dialogLink 
+
+  commands:
+    autocomplete_command:
+      <<: *Cubos
+      controller: field-decorator
+      action: index
+      autocomplete:
+        mapperName: \Atezate\Mapper\Sql\Contribuyentes
+        label: nif
+        limit: 8
+    autocomplete_command_nombre:
+      <<: *Cubos
+      controller: field-decorator
+      action: index
+      autocomplete:
+        mapperName: \Atezate\Mapper\Sql\Contribuyentes
+        label: nombre
+        limit: 8
+        
+    cubosImportadoresCsvDownload_command: 
+      <<: *cubosImportadoresCsvDownload_commandLink
+    cubosImportadoresCsvUpload_command: 
+      <<: *cubosImportadoresCsvUpload_commandLink 
+    cubosImportadoresCsvPreview_command: 
+      <<: *cubosImportadoresCsvPreview_commandLink 
+        
+testing: 
+  _extends: production
+development: 
+  _extends: production

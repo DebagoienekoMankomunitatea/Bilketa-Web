@@ -1,0 +1,416 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+#include PuntosRecogidaTiposList.yaml
+#include PostesList.yaml
+#include CubosList.yaml
+
+fixedPositions:
+  - &fixedPositionsForPuntosRecogida
+    group0:
+      fields:
+        puntosRecogidaTiposId: true
+        nombreDescriptivo: true
+    group1:
+      fields:
+        municipioId: true
+        barrio: true
+    group2:
+      fields:
+        posicionLat: 1
+        posicionLng: 1
+    group3:
+      fields:
+        calle: 1
+        numero: 1
+production:
+  main:
+    module: klearMatrix
+    defaultScreen: puntosRecogidaList_screen
+  screens:
+    puntosRecogidaList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *PuntosRecogida
+      title: _("List of %s", ngettext('Puntos recogida', 'Puntos recogida(s)', 0))
+      fields:
+        options:
+          title: _("Options")
+          screens:
+            puntosRecogidaEdit_screen: true
+            postesList_screen: true
+            cubosList_screen: true
+            centrosEmergenciaList_screen: true
+          dialogs:
+            puntosRecogidaDel_dialog: true
+          default: puntosRecogidaEdit_screen
+        blacklist:
+          rutaId: true
+          gradoLlenado: true
+          posicion: true
+          posicionLat: true
+          posicionLng: true
+          barrio: true
+          numero: true
+      options:
+        title: _("Options")
+        screens:
+          puntosRecogidaNew_screen: true
+    puntosRecogidaNew_screen:
+      <<: *PuntosRecogida
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Puntos recogida', 'Puntos recogida(s)', 1))
+      fields:
+        blacklist:
+          rutaId: true
+          posicion: true
+          posicionLat: true
+          posicionLng: true
+      fixedPositions:
+        <<: *fixedPositionsForPuntosRecogida
+    puntosRecogidaEdit_screen:
+      <<: *PuntosRecogida
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Puntos recogida', 'Puntos recogida(s)', 1))
+      fields:
+        blacklist:
+          rutaId: true
+          posicion: true
+          posicionLat: true
+          posicionLng: true
+      fixedPositions:
+        <<: *fixedPositionsForPuntosRecogida
+    puntosRecogidaTiposNew_screen:
+      <<: *puntosRecogidaTiposNew_screenLink
+    postesList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *Postes
+      title: _("List of %s", ngettext('Poste', 'Postes', 0))
+      class: ui-silk-joystick
+      filterField: puntosRecogidaId
+      parentOptionCustomizer:
+        - recordCount
+      fields:
+        options:
+          title: _("Options")
+          screens:
+            postesEdit_screen: true
+            cubosPosteList_screen: true
+          dialogs:
+            postesDel_dialog: true
+          default: postesEdit_screen
+        blacklist:
+          intuitivo: true
+      options:
+        title: _("Options")
+        screens:
+          postesNew_screen: true
+    postesNew_screen:
+      <<: *Postes
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Poste', 'Postes', 1))
+      filterField: puntosRecogidaId
+    postesEdit_screen:
+      <<: *Postes
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Poste', 'Postes', 1))
+      filterField: puntosRecogidaId
+    postesTiposNew_screen:
+      <<: *postesTiposNew_screenLink
+    marcaPosteNew_screen:
+      <<: *marcasPosteNew_screenLink
+
+    cubosPosteList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *Cubos
+      title: _("List of %s", ngettext('Cubo', 'Cubos', 0))
+      class: ui-silk-database
+      filterField: posteId
+      forcedValues:
+        ubicacion: poste
+      parentOptionCustomizer:
+        - recordCount
+      fields:
+        blacklist:
+          puntosRecogidaId: true
+          fieldFakeSelectContribuyente: true
+          fieldFakeContribuyenteNombre: true
+        options:
+          title: _("Options")
+          screens:
+            cubosPosteEdit_screen: true
+          dialogs:
+            cubosDel_dialog: true
+          default: cubosEdit_screen
+      options:
+        title: _("Options")
+        screens:
+          cubosPosteNew_screen: true
+    cubosPosteNew_screen:
+      <<: *Cubos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Cubo', 'Cubos', 1))
+      filterField: posteId
+      forcedValues:
+        ubicacion: poste
+      fields:
+        blacklist:
+          puntosRecogidaId: true
+        order:
+          ubicacion: true
+          puntosRecogidaId: true
+          posteId: true
+          centrosEmergenciaId: true
+          fieldFakeSelectContribuyente: true
+          contribuyenteId: true
+          fieldFakeContribuyenteNombre: true
+      fixedPositions:
+        group0:
+          label: _('Sección Contribuyente');
+          fields:
+            fieldFakeSelectContribuyente: true
+            fieldFakeContribuyenteNombre: true
+            contribuyenteId: true
+    cubosPosteEdit_screen:
+      <<: *Cubos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Cubo', 'Cubos', 1))
+      filterField: posteId
+      forcedValues:
+        ubicacion: poste
+      fields:
+        blacklist:
+          puntosRecogidaId: true
+        order:
+          ubicacion: true
+          puntosRecogidaId: true
+          posteId: true
+          centrosEmergenciaId: true
+          fieldFakeSelectContribuyente: true
+          contribuyenteId: true
+          fieldFakeContribuyenteNombre: true
+      fixedPositions:
+        group0:
+          label: _('Sección Contribuyente');
+          fields:
+            fieldFakeSelectContribuyente: true
+            fieldFakeContribuyenteNombre: true
+            contribuyenteId: true
+
+    cubosList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *Cubos
+      title: _("List of %s", ngettext('Cubo', 'Cubos', 0))
+      class: ui-silk-database
+      filterField: puntosRecogidaId
+      forcedValues:
+        ubicacion: puntoRecogida
+      parentOptionCustomizer:
+        - recordCount
+      fields:
+        options:
+          title: _("Options")
+          screens:
+            cubosEdit_screen: true
+          dialogs:
+            cubosDel_dialog: true
+          default: cubosEdit_screen
+        blacklist:
+          fieldFakeSelectContribuyente: true
+          fieldFakeContribuyenteNombre: true
+      options:
+        title: _("Options")
+        screens:
+          cubosNew_screen: true
+    cubosNew_screen:
+      <<: *Cubos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Cubo', 'Cubos', 1))
+      filterField: puntosRecogidaId
+      forcedValues:
+        ubicacion: puntoRecogida
+    cubosEdit_screen:
+      <<: *Cubos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Cubo', 'Cubos', 1))
+      filterField: puntosRecogidaId
+      forcedValues:
+        ubicacion: puntoRecogida
+    cubosTiposNew_screen:
+      <<: *cubosTiposNew_screenLink
+
+    centrosEmergenciaList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *CentrosEmergencia
+      title: _("List of %s", ngettext('Centro de emergencia', 'Centros de emergencia', 0))
+      parentOptionCustomizer:
+        - recordCount
+      filterField: puntoRecogidaId
+      class: ui-silk-heart
+      fields:
+        options:
+          title: _("Options")
+          screens:
+            centrosEmergenciaEdit_screen: true
+            cubosCentroList_screen: true
+          dialogs:
+            centrosEmergenciaDel_dialog: true
+          default: centrosEmergenciaEdit_screen
+      options:
+        title: _("Options")
+        screens:
+          centrosEmergenciaNew_screen: true
+    centrosEmergenciaNew_screen:
+      <<: *CentrosEmergencia
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Centro de emergencia', 'Centros  de emergencia', 1))
+      filterField: puntoRecogidaId
+    centrosEmergenciaEdit_screen:
+      <<: *CentrosEmergencia
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Centro de emergencia', 'Centros  de emergencia', 1))
+      filterField: puntoRecogidaId
+
+    cubosCentroList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *Cubos
+      title: _("List of %s", ngettext('Cubo', 'Cubos', 0))
+      class: ui-silk-database
+      filterField: centrosEmergenciaId
+      forcedValues:
+        ubicacion: centroEmergencia
+      parentOptionCustomizer:
+        - recordCount
+      fields:
+        blacklist:
+          puntosRecogidaId: true
+        options:
+          title: _("Options")
+          screens:
+            cubosCentroEdit_screen: true
+          dialogs:
+            cubosDel_dialog: true
+          default: cubosEdit_screen
+      options:
+        title: _("Options")
+        screens:
+          cubosCentroNew_screen: true
+    cubosCentroNew_screen:
+      <<: *Cubos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Cubo', 'Cubos', 1))
+      filterField: centrosEmergenciaId
+      forcedValues:
+        ubicacion: centroEmergencia
+      fields:
+        blacklist:
+          puntosRecogidaId: true
+    cubosCentroEdit_screen:
+      <<: *Cubos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Cubo', 'Cubos', 1))
+      filterField: centrosEmergenciaId
+      forcedValues:
+        ubicacion: centroEmergencia
+      fields:
+        blacklist:
+          puntosRecogidaId: true
+
+    cubosMarcasNew_screen:
+      <<: *marcasCuboNew_screenLink
+
+  dialogs:
+    contribuyentesDel_dialog:
+      <<: *Contribuyentes
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Contribuyente', 'Contribuyentes', 1))
+      description: _("Do you want to delete this %s?", ngettext('Contribuyente', 'Contribuyentes', 1))
+
+    puntosRecogidaDel_dialog:
+      <<: *PuntosRecogida
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Puntos recogida', 'Puntos recogida(s)', 1))
+      description: _("Do you want to delete this %s?", ngettext('Puntos recogida', 'Puntos recogida(s)', 1))
+
+    postesDel_dialog:
+      <<: *Postes
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Poste', 'Postes', 1))
+      description: _("Do you want to delete this %s?", ngettext('Poste', 'Postes', 1))
+
+    cubosDel_dialog:
+      <<: *Cubos
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Cubo', 'Cubos', 1))
+      description: _("Do you want to delete this %s?", ngettext('Cubo', 'Cubos', 1))
+
+    centrosEmergenciaDel_dialog:
+      <<: *CentrosEmergencia
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Centro de emergencia', 'Centros  de emergencia', 1))
+      description: _("Do you want to delete this %s?", ngettext('Centro de emergencia', 'Centros  de emergencia', 1))
+
+  commands:
+    autocomplete_command:
+      <<: *Cubos
+      controller: field-decorator
+      action: index
+      autocomplete:
+        mapperName: \Atezate\Mapper\Sql\Contribuyentes
+        label: nif
+        limit: 8
+
+testing:
+  _extends: production
+development:
+  _extends: production

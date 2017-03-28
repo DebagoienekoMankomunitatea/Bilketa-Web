@@ -1,0 +1,139 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+fixedPositions:
+  - &fixedPositionsForLocuciones
+    group0:
+      label: _('Audio Español')
+      fields:
+        esLoc: true
+        esLocCodificado: true
+    group1:
+      label: _('Audio Euskera')
+      fields:
+        euLoc: true
+        euLocCodificado: true
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: locucionesList_screen
+  screens: 
+    locucionesList_screen: &locucionesList_screenLink 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Locuciones
+      title: _("List of %s", ngettext('Locución', 'Locuciones', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            locucionesEdit_screen: true
+          dialogs: 
+            locucionesDel_dialog: true
+          default: locucionesEdit_screen
+        blacklist:
+          esLoc: true
+          esLocCodificado: true
+          euLoc: true
+          euLocCodificado: true
+      options: 
+        title: _("Options")
+        screens: 
+          locucionesNew_screen: true
+    locucionesNew_screen: &locucionesNew_screenLink 
+      <<: *Locuciones
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Locución', 'Locuciones', 1))
+      fields:
+        blacklist:
+          estado: true
+      fixedPositions:
+        <<: *fixedPositionsForLocuciones
+    locucionesEdit_screen: &locucionesEdit_screenLink 
+      <<: *Locuciones
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Locución', 'Locuciones', 1))
+      fields:
+        blacklist:
+          estado: true
+      fixedPositions:
+        <<: *fixedPositionsForLocuciones
+  dialogs: 
+    locucionesDel_dialog: 
+      <<: *Locuciones
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Locución', 'Locuciones', 1))
+      description: _("Do you want to delete this %s?", ngettext('Locución', 'Locuciones', 1))
+      message: _("%s successfully deleted.", ngettext('Locución', 'Locuciones', 1))
+  commands: 
+    EsLocDownload_command: 
+      <<: *Locuciones
+      controller: File
+      action: force-download
+      mainColumn: esLoc
+    EsLocUpload_command: 
+      <<: *Locuciones
+      controller: File
+      action: upload
+      mainColumn: esLoc
+    EsLocPreview_command: 
+      <<: *Locuciones
+      controller: File
+      action: preview
+      mainColumn: esLoc
+    EuLocDownload_command: 
+      <<: *Locuciones
+      controller: File
+      action: force-download
+      mainColumn: euLoc
+    EuLocUpload_command: 
+      <<: *Locuciones
+      controller: File
+      action: upload
+      mainColumn: euLoc
+    EuLocPreview_command: 
+      <<: *Locuciones
+      controller: File
+      action: preview
+      mainColumn: euLoc
+    EsLocCodificadoDownload_command: 
+      <<: *Locuciones
+      controller: File
+      action: force-download
+      mainColumn: esLocCodificado
+    EsLocCodificadoUpload_command: 
+      <<: *Locuciones
+      controller: File
+      action: upload
+      mainColumn: esLocCodificado
+    EsLocCodificadoPreview_command: 
+      <<: *Locuciones
+      controller: File
+      action: preview
+      mainColumn: esLocCodificado
+    EuLocCodificadoDownload_command: 
+      <<: *Locuciones
+      controller: File
+      action: force-download
+      mainColumn: euLocCodificado
+    EuLocCodificadoUpload_command: 
+      <<: *Locuciones
+      controller: File
+      action: upload
+      mainColumn: euLocCodificado
+    EuLocCodificadoPreview_command: 
+      <<: *Locuciones
+      controller: File
+      action: preview
+      mainColumn: euLocCodificado
+testing: 
+  _extends: production
+development: 
+  _extends: production

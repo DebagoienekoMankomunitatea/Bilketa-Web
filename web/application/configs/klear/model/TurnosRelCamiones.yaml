@@ -1,0 +1,81 @@
+production: 
+  class: \Atezate\Model\TurnosRelCamiones
+  fields: 
+    turnoId: 
+      title: _('Turno')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Turnos
+          fieldName: 
+            fields: 
+              - fecha
+              - horaInicio
+            template: '%fecha% - %horaInicio%'
+          order: fecha
+    camionesId: 
+      title: _('Camiones')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Camiones
+          fieldName: 
+            fields: 
+              - matricula
+            template: '%matricula%'
+          order: matricula
+      default: true
+    tabletId: 
+      title: _('Tablet')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Dispositivos
+          fieldName: 
+            fields: 
+              - imei
+            template: '%imei%'
+          order: imei
+    orden: 
+      title: _('Orden')
+      type: select
+      defaultValue: asc
+      source: 
+        data: inline
+        values: 
+          asc: _('Ascendente')
+          desc: _('Descendente')
+    origenPuntoRecogidaId: 
+      title: _('Origen punto recogida')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosRecogida
+          fieldName: 
+            fields: 
+              - nombreDescriptivo
+            template: '%nombreDescriptivo%'
+          order: nombreDescriptivo
+
+    TurnosCamionesRelOperarios:
+      type: multiselect
+      title: ngettext('Operario', 'Operarios', 0)
+      source:
+        data: mapper
+        config:
+          relationMapper: \Atezate\Mapper\Sql\TurnosCamionesRelOperarios
+          relatedMapperName: \Atezate\Mapper\Sql\Operarios
+          relatedFieldName: nombre
+          relationProperty: Operario
+testing: 
+  _extends: production
+development: 
+  _extends: production

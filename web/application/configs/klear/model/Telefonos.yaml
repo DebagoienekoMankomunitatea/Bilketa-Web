@@ -1,0 +1,42 @@
+production: 
+  class: \Atezate\Model\Telefonos
+  fields: 
+    contribuyenteId: 
+      title: _('Contribuyente')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Contribuyentes
+          fieldName: 
+            fields: 
+              - nif
+            template: '%nif%'
+          order: nif
+      default: true
+    telefono: 
+      title: _('Telefono')
+      type: text
+      defaultValue: 
+    tipo: 
+      title: _('Tipo')
+      type: select
+      defaultValue: movil
+      source: 
+        data: inline
+        values: 
+          movil: _('Móvil')
+          fijo: _('Teléfono fijo')
+    createdOn: 
+      title: _('Created on')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+testing: 
+  _extends: production
+development: 
+  _extends: production

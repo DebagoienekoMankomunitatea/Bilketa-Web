@@ -1,0 +1,63 @@
+production: 
+  class: \Atezate\Model\CubosImportadores
+  fields: 
+    csv: 
+      title: _('Csv')
+      type: file
+      required: true
+      source: 
+        data: fso
+        size_limit: 20M
+        options: 
+          download: 
+            external: true
+            type: command
+            target: cubosImportadoresCsvDownload_command
+            icon: ui-silk-bullet-disk
+            title: _("Download file")
+            onNull: hide
+          upload: 
+            type: command
+            target: cubosImportadoresCsvUpload_command
+            title: _("Upload file")
+            class: qq-uploader
+            onNull: show
+          preview: 
+            target: cubosImportadoresCsvPreview_command
+            type: command
+            class: filePreview
+            external: 1
+            props: 
+              width: 150
+              height: 150
+              crop: false
+            onNull: hide
+          previewList: 
+            target: cubosImportadoresCsvPreview_command
+            type: command
+            class: filePreview
+            listController: 1
+            external: 1
+            props: 
+              width: 30
+              height: 30
+              crop: false
+            onNull: hide
+      default: true
+    estado: 
+      title: _('Estado')
+      type: select
+      defaultValue: pendiente
+      source: 
+        data: inline
+        values: 
+          'pendiente': _('pendiente')
+          'importando': _('importando')
+          'importado': _('importado')
+          'error': _('error')
+staging: 
+  _extends: production
+testing: 
+  _extends: production
+development: 
+  _extends: production

@@ -1,0 +1,77 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: codigosAperturaPrivadosList_screen
+  screens: 
+    codigosAperturaPrivadosList_screen: &codigosAperturaPrivadosList_screenLink 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *CodigosAperturaPrivados
+      title: _("List of %s %2s", ngettext('Codigos apertura privado', 'Codigos apertura privados', 0), "[format| (%parent%)]")
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            codigosAperturaPrivadosEdit_screen: true
+          dialogs: 
+            codigosAperturaPrivadosDel_dialog: true
+          default: codigosAperturaPrivadosEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          codigosAperturaPrivadosNew_screen: true
+        dialogs: 
+          codigosAperturaPrivadosDel_dialog: true
+    codigosAperturaPrivadosNew_screen: &codigosAperturaPrivadosNew_screenLink 
+      <<: *CodigosAperturaPrivados
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Codigos apertura privado', 'Codigos apertura privados', 1))
+      shortcutOption: N
+    codigosAperturaPrivadosEdit_screen: &codigosAperturaPrivadosEdit_screenLink 
+      <<: *CodigosAperturaPrivados
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s %2s", ngettext('Codigos apertura privado', 'Codigos apertura privados', 1), "[format| (%item%)]")
+
+  dialogs: 
+    codigosAperturaPrivadosDel_dialog: &codigosAperturaPrivadosDel_dialogLink 
+      <<: *CodigosAperturaPrivados
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Codigos apertura privado', 'Codigos apertura privados', 1))
+      description: _("Do you want to delete this %s?", ngettext('Codigos apertura privado', 'Codigos apertura privados', 1))
+      message: _("%s successfully deleted.", ngettext('Codigos apertura privado', 'Codigos apertura privados', 1))
+      multiItem: 1
+      labelOnList: 1
+
+  commands:
+    autocomplete_contribuyente_command:
+      <<: *Contribuyentes
+      controller: field-decorator
+      action: index
+      autocomplete:
+        mapperName: \Atezate\Mapper\Sql\Contribuyentes
+        label: contribuyenteIden
+        fieldName:
+          fields:
+            - contribuyenteIden
+            - nombre
+          template: '%contribuyenteIden% (%nombre%)'
+        limit: 8
+        order: contribuyenteIden
+
+testing: 
+  _extends: production
+staging: 
+  _extends: production
+development: 
+  _extends: production

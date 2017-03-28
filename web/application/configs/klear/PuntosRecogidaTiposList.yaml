@@ -1,0 +1,51 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: puntosRecogidaTiposList_screen
+  screens: 
+    puntosRecogidaTiposList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *PuntosRecogidaTipos
+      title: _("List of %s", ngettext('Tipo de punto de recogida', 'Tipos de puntos de recogida', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            puntosRecogidaTiposEdit_screen: true
+          dialogs: 
+            puntosRecogidaTiposDel_dialog: true
+          default: puntosRecogidaTiposEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          puntosRecogidaTiposNew_screen: true
+    puntosRecogidaTiposNew_screen: &puntosRecogidaTiposNew_screenLink 
+      <<: *PuntosRecogidaTipos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Tipo de punto de recogida', 'Tipos de puntos de recogida', 1))
+    puntosRecogidaTiposEdit_screen: 
+      <<: *PuntosRecogidaTipos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Tipo de punto de recogida', 'Tipos de puntos de recogida', 1))
+  dialogs: 
+    puntosRecogidaTiposDel_dialog: 
+      <<: *PuntosRecogidaTipos
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Tipo de punto de recogida', 'Tipos de puntos de recogida', 1))
+      description: _("Do you want to delete this %s?", ngettext('Tipo de punto de recogida', 'Tipos de puntos de recogida', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

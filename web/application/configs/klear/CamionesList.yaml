@@ -1,0 +1,80 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: camionesList_screen
+  screens: 
+    camionesList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Camiones
+      title: _("List of %s", ngettext('Camión', 'Camiones', 0))
+      fields: 
+        blacklist:
+          precision: true
+          posicionAddr: true
+          posicion: true
+          posicionLat: true
+          posicionLng: true
+          otros: true
+          cuandoPosicion: true
+        options: 
+          title: _("Options")
+          screens: 
+            camionesEdit_screen: true
+          dialogs: 
+            camionesDel_dialog: true
+          default: camionesEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          camionesNew_screen: true
+
+    camionesNew_screen: 
+      <<: *Camiones
+      controller: new
+      fields:
+        blacklist:
+          precision: true
+          posicion: true
+          posicionLat: true
+          posicionLng: true
+          cuandoPosicion: true
+          posicionAddr: true
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Camión', 'Camiones', 1))
+
+    camionesEdit_screen: 
+      <<: *Camiones
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Camión', 'Camiones', 1))
+      fields:
+        readOnly: 
+          posicionAddr: true
+        blacklist:
+          precision: true
+          posicion: true
+          posicionLat: true
+          posicionLng: true
+          cuandoPosicion: true
+
+  dialogs: 
+    camionesDel_dialog: 
+      <<: *Camiones
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Camión', 'Camiones', 1))
+      description: _("Do you want to delete this %s?", ngettext('Camión', 'Camiones', 1))
+
+testing: 
+  _extends: production
+development: 
+  _extends: production

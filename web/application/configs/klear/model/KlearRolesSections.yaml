@@ -1,0 +1,34 @@
+production: 
+  class: \Atezate\Model\KlearRolesSections
+  fields: 
+    klearRoleId: 
+      title: _('Rol Klear')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\KlearRoles
+          fieldName: 
+            fields: 
+              - name
+            template: '%name%'
+          order: name
+      default: true
+    klearSectionId: 
+      title: _('Sección Klear')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\KlearSections
+          fieldName: 
+            fields: 
+              - identifier
+            template: '%identifier%'
+          order: identifier
+testing: 
+  _extends: production
+development: 
+  _extends: production

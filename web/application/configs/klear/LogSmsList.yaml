@@ -1,0 +1,57 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: logSmsList_screen
+  screens: 
+    logSmsList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *LogSms
+      title: _("List of %s", ngettext('Log sm', 'Log sms', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            logSmsEdit_screen: true
+          dialogs: 
+            logSmsDel_dialog: true
+          default: logSmsEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          logSmsNew_screen: true
+    logSmsNew_screen: 
+      <<: *LogSms
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Log sm', 'Log sms', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+    logSmsEdit_screen: 
+      <<: *LogSms
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Log sm', 'Log sms', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+  dialogs: 
+    logSmsDel_dialog: 
+      <<: *LogSms
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Log sm', 'Log sms', 1))
+      description: _("Do you want to delete this %s?", ngettext('Log sm', 'Log sms', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

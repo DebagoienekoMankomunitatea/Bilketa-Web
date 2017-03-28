@@ -1,0 +1,51 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: rutasRelPuntosRecogidaList_screen
+  screens: 
+    rutasRelPuntosRecogidaList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *RutasRelPuntosRecogida
+      title: _("List of %s", ngettext('Rutas rel puntos recogida', 'Rutas rel puntos recogida(s)', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            rutasRelPuntosRecogidaEdit_screen: true
+          dialogs: 
+            rutasRelPuntosRecogidaDel_dialog: true
+          default: rutasRelPuntosRecogidaEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          rutasRelPuntosRecogidaNew_screen: true
+    rutasRelPuntosRecogidaNew_screen: 
+      <<: *RutasRelPuntosRecogida
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Rutas rel puntos recogida', 'Rutas rel puntos recogida(s)', 1))
+    rutasRelPuntosRecogidaEdit_screen: 
+      <<: *RutasRelPuntosRecogida
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Rutas rel puntos recogida', 'Rutas rel puntos recogida(s)', 1))
+  dialogs: 
+    rutasRelPuntosRecogidaDel_dialog: 
+      <<: *RutasRelPuntosRecogida
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Rutas rel puntos recogida', 'Rutas rel puntos recogida(s)', 1))
+      description: _("Do you want to delete this %s?", ngettext('Rutas rel puntos recogida', 'Rutas rel puntos recogida(s)', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

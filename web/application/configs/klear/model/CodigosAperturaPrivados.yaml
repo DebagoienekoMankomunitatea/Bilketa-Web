@@ -1,0 +1,47 @@
+production: 
+  class: \Atezate\Model\CodigosAperturaPrivados
+  fields: 
+    codigoApertura: 
+      title: _('Codigo apertura')
+      type: text
+      required: true
+      default: true
+    municipioId: 
+      title: _('Municipio')
+      type: select
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Municipios
+          fieldName: 
+            fields: 
+              - municipio
+            template: '%municipio%'
+          order: municipio
+        'null': _("Unasigned")
+    contribuyenteId: 
+      title: _('Contribuyente')
+      type: select
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Contribuyentes
+          fieldName: 
+            fields: 
+              - contribuyenteIden
+              - nombre
+            template: '%contribuyenteIden% (%nombre%)'
+          order: nombre
+        'null': _("Unasigned")
+      decorators:
+        autocomplete:
+          command: autocomplete_contribuyente_command
+    description: 
+      title: ngettext('Description', 'Descriptions', 1)
+      type: text
+testing: 
+  _extends: production
+staging: 
+  _extends: production
+development: 
+  _extends: production

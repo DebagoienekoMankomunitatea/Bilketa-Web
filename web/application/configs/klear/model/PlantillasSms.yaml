@@ -1,0 +1,15 @@
+production: 
+  class: \Atezate\Model\PlantillasSms
+  fields: 
+    asunto: 
+      title: _('Asunto')
+      type: text
+      required: true
+      default: true
+    mensaje: 
+      title: _('Mensaje')
+      type: textarea
+testing: 
+  _extends: production
+development: 
+  _extends: production

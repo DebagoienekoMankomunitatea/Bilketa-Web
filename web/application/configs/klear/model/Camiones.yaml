@@ -1,0 +1,38 @@
+production: 
+  class: \Atezate\Model\Camiones
+  fields: 
+    matricula: 
+      title: _('Matricula')
+      type: text
+      required: true
+      default: true
+    precision: 
+      title: _('Precision')
+      type: text
+    cuandoPosicion: 
+      title: _('Cuando posicion')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+    posicion: 
+      title: _('Posicion')
+      type: textarea
+    posicionAddr: 
+      title: _('Última posición resgistrada')
+      type: map
+    costeHora:
+      title: _('Coste/Hora')
+    pesoNeto:
+      title: _('Peso neto máximo')
+    itv:
+      title: _('ITV')   
+    otros:
+      title: _('Otros')
+      type: textarea
+testing: 
+  _extends: production
+development: 
+  _extends: production

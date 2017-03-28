@@ -1,0 +1,11 @@
+production: 
+  class: \Atezate\Model\Mensajes
+  fields: 
+    mensaje: 
+      title: _('Mensaje')
+      type: textarea
+      default: true
+testing: 
+  _extends: production
+development: 
+  _extends: production

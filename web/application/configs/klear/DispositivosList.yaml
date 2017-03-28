@@ -1,0 +1,66 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+#include MarcasDispositivoList.yaml
+
+fixedPositions:
+  - &fixedPositionsForDispositivos
+    group0:
+      fields:
+        marcaDispositivoId: true
+        imei: true
+        fechaCompra: true
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: dispositivosList_screen
+  screens: 
+    dispositivosList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Dispositivos
+      title: _("List of %s", ngettext('Tablet', 'Tablets', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            dispositivosEdit_screen: true
+          dialogs: 
+            dispositivosDel_dialog: true
+          default: dispositivosEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          dispositivosNew_screen: true
+    dispositivosNew_screen: 
+      <<: *Dispositivos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Tablet', 'Tablets', 1))
+      fixedPositions:
+        <<: *fixedPositionsForDispositivos
+    dispositivosEdit_screen: 
+      <<: *Dispositivos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Tablet', 'Tablets', 1))
+      fixedPositions:
+        <<: *fixedPositionsForDispositivos
+    dispositivosTiposNew_screen:
+      <<: *marcasDispositivoNew_screenLink 
+      
+  dialogs: 
+    dispositivosDel_dialog: 
+      <<: *Dispositivos
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Tablet', 'Tablets', 1))
+      description: _("Do you want to delete this %s?", ngettext('Tablet', 'Tablets', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

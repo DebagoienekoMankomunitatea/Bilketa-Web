@@ -1,0 +1,372 @@
+production: 
+  class: \Atezate\Model\Incidencias
+  fields: 
+    fechaAlta: 
+      title: _('Fecha alta')
+      type: picker
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+    entidad: 
+      title: _('Entidad')
+      type: select
+      defaultValue: turno
+      required: true
+      source: 
+        data: inline
+        values: 
+          'null':
+            title: _('Unasigned')
+            visualFilter:
+              show: []
+              hide: [cuboId,camionId, puntoRecogidaId, postesId, compostadorId, contribuyenteId, fieldFakeCubo, fieldFakeCamion, fieldFakeCompostador, fieldFakeContribuyente, fieldFakePostes, fieldFakePuntosRecogida]
+          camion: 
+            title: _('Camión')
+            visualFilter:
+              show: [camionId, fieldFakeCamion]
+              hide: [cuboId, postesId, compostadorId, puntoRecogidaId, contribuyenteId, fieldFakeCubo, fieldFakeCompostador, fieldFakeContribuyente, fieldFakePostes, fieldFakePuntosRecogida]
+          compostador: 
+            title: _('Compostador')
+            visualFilter:
+              show: [compostadorId, fieldFakeCompostador]
+              hide: [cuboId, postesId, camionId, puntoRecogidaId, contribuyenteId, fieldFakeCubo, fieldFakeCamion, fieldFakeContribuyente, fieldFakePostes, fieldFakePuntosRecogida]
+          contribuyente: 
+            title: _('Contribuyente')
+            visualFilter:
+              show: [contribuyenteId, fieldFakeContribuyente]
+              hide: [cuboId, postesId, compostadorId, camionId, puntoRecogidaId, fieldFakeCubo, fieldFakeCamion, fieldFakeCompostador, fieldFakePostes, fieldFakePuntosRecogida]
+          cubo: 
+            title: _('Cubo')
+            visualFilter:
+              show: [cuboId, fieldFakeCubo]
+              hide: [camionId, puntoRecogidaId, postesId, compostadorId, contribuyenteId, fieldFakeCamion, fieldFakeCompostador, fieldFakeContribuyente, fieldFakePostes, fieldFakePuntosRecogida]
+          poste: 
+            title: _('Poste')
+            visualFilter:
+              show: [postesId, fieldFakePostes]
+              hide: [camionId, puntoRecogidaId, cuboId, compostadorId, contribuyenteId, fieldFakeCubo, fieldFakeCamion, fieldFakeCompostador, fieldFakeContribuyente, fieldFakePuntosRecogida]
+          puntoRecogida: 
+            title: _('Punto de Recogida')
+            visualFilter:
+              show: [puntoRecogidaId, fieldFakePuntosRecogida]
+              hide: [cuboId, postesId, compostadorId, camionId, contribuyenteId, fieldFakeCubo, fieldFakeCamion, fieldFakeCompostador, fieldFakeContribuyente, fieldFakePostes]
+    cuboId: 
+      title: _('RFID')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Cubos
+          fieldName: 
+            fields: 
+              - rfid
+            template: '%rfid%'
+          order: rfid
+      decorators:
+        autocomplete:
+          command: autocomplete_command_cubo
+    postesId: 
+      title: _('IDEN')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Postes
+          fieldName: 
+            fields: 
+              - postesIden
+            template: '%postesIden%'
+          order: postesIden
+      decorators:
+        autocomplete:
+          command: autocomplete_command_poste
+    compostadorId: 
+      title: _('IDEN')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Compostadores
+          fieldName: 
+            fields: 
+              - compostadoresIden
+            template: '%compostadoresIden%'
+          order: compostadoresIden
+      decorators:
+        autocomplete:
+          command: autocomplete_command_compostador
+    camionId: 
+      title: _('Matrícula')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Camiones
+          fieldName: 
+            fields: 
+              - matricula
+            template: '%matricula%'
+          order: matricula
+      decorators:
+        autocomplete:
+          command: autocomplete_command_camion
+    contribuyenteId: 
+      title: _('NIF')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Contribuyentes
+          fieldName: 
+            fields: 
+              - nif
+            template: '%nif%'
+          order: nif
+      decorators:
+        autocomplete:
+          command: autocomplete_command_contribuyente
+    puntoRecogidaId: 
+      title: _('Barrio')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosRecogida
+          fieldName: 
+            fields: 
+              - nombreDescriptivo
+            template: '%nombreDescriptivo%'
+          order: nombreDescriptivo
+      decorators:
+        autocomplete:
+          command: autocomplete_command_puntosrecogida
+    turnoId: 
+      title: _('Turno')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Turnos
+          fieldName: 
+            fields: 
+              - fecha
+              - horaInicio
+            template: '%fecha% %horaInicio%'
+          order: fecha
+    solucionada: 
+      title: _('Estado')
+      type: select
+      defaultValue: pendiente
+      source: 
+        data: inline
+        values: 
+          'automatico':
+            title: _('Automatizada')
+            visualFilter:
+              show: []
+              hide: [observacionSolucion]
+          'no': 
+            title: _('Pendiente')
+            visualFilter:
+              show: []
+              hide: [observacionSolucion]
+          'si': 
+            title: _('Solucionado')
+            visualFilter:
+              show: [observacionSolucion]
+              hide: []
+#    estadoGhost:
+#      type: ghost
+#      dirty: true
+#      title:
+#        i18n:
+#          es: "Estado"
+#      search:
+#        info:
+#          i18n:
+#            es: 'Datos Entidad'
+#      source:
+#        class: Atezatelib_Ghost_Incidencias
+#        method: getEstado
+#        orderMethod: getOrderForEstado
+#        field: solucionada
+    observacionSolucion: 
+      title: _('Observacion solucion')
+      type: textarea
+    tipoId: 
+      title: _('Tipo')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\TiposIncidencias
+          fieldName: 
+            fields: 
+              - tipo
+              - gravedad
+              - descripcion
+            template: '%gravedad% - %descripcion%'
+          order: gravedad
+    observaciones: 
+      title: _('Observaciones')
+      type: textarea
+    paradaId: 
+      title: _('Parada')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Paradas
+          fieldName: 
+            fields: 
+              - createdOn
+              - horaInicio
+            template: '%createdOn% / %horaInicio%'
+          order: createdOn
+    createdOn: 
+      title: _('Created on')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+    gravedadDato:
+      type: ghost
+      dirty: true
+      title:
+        i18n:
+          es: "Gravedad"
+      search:
+        info:
+          i18n:
+            es: 'Grado de llenado'
+      source:
+        class: Atezatelib_Ghost_Incidencias
+        method: getGravedadIncidencia
+        orderMethod: getOrderForTipo
+        searchMethod: getSearchConditionsGravedad
+    entidadDato:
+      type: ghost
+      dirty: true
+      title:
+        i18n:
+          es: "Datos Entidad"
+      search:
+        info:
+          i18n:
+            es: 'Datos Entidad'
+      source:
+        class: Atezatelib_Ghost_Incidencias
+        method: getEntidadIncidencia
+        searchMethod: getSearchConditionsEntidad
+    fieldFakeCubo:
+      title: _('Tipo de Incidencia Cubo')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\TiposIncidencias
+          filterClass: Atezatelib_Filtros_FilterIncidenciaCubo
+          fieldName: 
+            fields: 
+              - tipo
+              - gravedad
+              - descripcion
+            template: '%gravedad% - %descripcion%'
+          order: gravedad
+    fieldFakeCamion:
+      title: _('Tipo de Incidencia Camión')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\TiposIncidencias
+          filterClass: Atezatelib_Filtros_FilterIncidenciaCamion
+          fieldName: 
+            fields: 
+              - tipo
+              - gravedad
+              - descripcion
+            template: '%gravedad% - %descripcion%'
+          order: gravedad
+    fieldFakeCompostador:
+      title: _('Tipo de Incidencia Compostador')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\TiposIncidencias
+          filterClass: Atezatelib_Filtros_FilterIncidenciaCompostador
+          fieldName: 
+            fields: 
+              - tipo
+              - gravedad
+              - descripcion
+            template: '%gravedad% - %descripcion%'
+          order: gravedad
+    fieldFakeContribuyente:
+      title: _('Tipo de Incidencia Contribuyente')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\TiposIncidencias
+          filterClass: Atezatelib_Filtros_FilterIncidenciaContribuyente
+          fieldName: 
+            fields: 
+              - tipo
+              - gravedad
+              - descripcion
+            template: '%gravedad% - %descripcion%'
+          order: gravedad
+    fieldFakePostes:
+      title: _('Tipo de Incidencia Poste')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\TiposIncidencias
+          filterClass: Atezatelib_Filtros_FilterIncidenciaPoste
+          fieldName: 
+            fields: 
+              - tipo
+              - gravedad
+              - descripcion
+            template: '%gravedad% - %descripcion%'
+          order: gravedad
+    fieldFakePuntosRecogida:
+      title: _('Tipo de Incidencia Punto de Recogida')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\TiposIncidencias
+          filterClass: Atezatelib_Filtros_FilterIncidenciaPuntoRecogida
+          fieldName: 
+            fields: 
+              - tipo
+              - gravedad
+              - descripcion
+            template: '%gravedad% - %descripcion%'
+          order: gravedad
+testing: 
+  _extends: production
+development: 
+  _extends: production

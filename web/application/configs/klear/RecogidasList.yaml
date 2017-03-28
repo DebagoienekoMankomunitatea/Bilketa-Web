@@ -1,0 +1,69 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: recogidasList_screen
+  screens: 
+    recogidasList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *Recogidas
+      title: _("List of %s", ngettext('Recogida', 'Recogidas', 0))
+      fields: 
+        order:
+          recogidaTipoId: true
+          tipos: true
+          cuboId: true
+          posteId: true
+          centroEmergenciaId: true
+          paradaId: true
+          llenado: true
+        options: 
+          title: _("Options")
+          screens: 
+            recogidasEdit_screen: true
+          dialogs: 
+            recogidasDel_dialog: true
+          default: recogidasEdit_screen
+        blacklist:
+          gradoLlenado: true
+      options: 
+        title: _("Options")
+        screens: 
+          recogidasNew_screen: true
+    recogidasNew_screen: 
+      <<: *Recogidas
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Recogida', 'Recogidas', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+          llenado: true
+    recogidasEdit_screen: 
+      <<: *Recogidas
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Recogida', 'Recogidas', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+          llenado: true
+  dialogs: 
+    recogidasDel_dialog: 
+      <<: *Recogidas
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Recogida', 'Recogidas', 1))
+      description: _("Do you want to delete this %s?", ngettext('Recogida', 'Recogidas', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

@@ -1,0 +1,189 @@
+production: 
+  class: \Atezate\Model\Cubos
+  fields: 
+    ubicacion: 
+      title: _('Ubicación')
+      type: select
+      defaultValue: poste
+      source: 
+        data: inline
+        values: 
+          'poste': 
+            title: _('Poste')
+            visualFilter:
+              show: [posteId]
+              hide: [puntosRecogidaId,centrosEmergenciaId]
+          'puntoRecogida': 
+            title: _('Punto Recogida')
+            visualFilter:
+              show: [puntosRecogidaId]
+              hide: [posteId,centrosEmergenciaId]
+          'centroEmergencia': 
+            title: _('Centro Emergencia')
+            visualFilter:
+              show: [centrosEmergenciaId]
+              hide: [posteId,puntosRecogidaId]
+    puntosRecogidaId: 
+      title: _('Punto de recogida')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosRecogida
+          fieldName: 
+            fields: 
+              - nombreDescriptivo
+            template: '%nombreDescriptivo%'
+          order: nombreDescriptivo
+    centrosEmergenciaId: 
+      title: _('Centro emergencia')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\CentrosEmergencia
+          fieldName: 
+            fields: 
+              - identificador
+            template: '%identificador%'
+          order: identificador
+    posteId: 
+      title: _('Poste')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Postes
+          fieldName: 
+            fields: 
+              - postesIden
+            template: '%postesIden%'
+          order: postesIden
+    contribuyenteId: 
+      title: _('NIF')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Contribuyentes
+          fieldName: 
+            fields: 
+              - nif
+              - nombre
+            template: '%nif% - %nombre%'
+          order: nif
+      decorators:
+        autocomplete:
+          command: autocomplete_command
+    cubosTiposId: 
+      title: _('Tipo')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\CubosTipos
+          fieldName: 
+            fields: 
+              - tipo
+            template: '%tipo%'
+          order: tipo
+      options:
+        screens:
+          cubosTiposNew_screen: true
+    marcaCuboId: 
+      title: _('Marca')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\MarcasCubo
+          fieldName: 
+            fields: 
+              - marca
+            template: '%marca%'
+          order: marca
+    intuitivo: 
+      title: _('Intuitivo')
+      type: text
+      defaultValue: 
+    marca: 
+      title: _('Marca')
+      type: text
+      defaultValue: 
+      default: true
+    diaAsignado: 
+      title: _('Dia asignado')
+      type: text
+    baja: 
+      title: _('Baja')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+            visualFilter:
+              show: []
+              hide: [diaBaja]
+          '1': 
+            title: _("Yes")
+            visualFilter:
+              show: [diaBaja]
+              hide: []
+    diaBaja: 
+      title: _('Dia baja')
+      type: picker
+      source: 
+        'null': _("Unasigned")
+        control: date
+        settings: 
+          disabled: 'false'
+    rfid: 
+      title: _('RFID')
+      type: text
+      required: true
+      default: true
+    fieldFakeSelectContribuyente:
+      title: _('Buscar Contribuyente por')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          'nif': 
+            title: _("Nif")
+            visualFilter:
+              show: [contribuyenteId]
+              hide: [fieldFakeContribuyenteNombre]
+          'nombre': 
+            title: _("Nombre")
+            visualFilter:
+              show: [fieldFakeContribuyenteNombre]
+              hide: [contribuyenteId]
+    fieldFakeContribuyenteNombre:
+      title: _('Nombre')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Contribuyentes
+          fieldName: 
+            fields: 
+              - nombre
+            template: '%nombre%'
+          order: nombre
+      decorators:
+        autocomplete:
+          command: autocomplete_command_nombre
+testing: 
+  _extends: production
+development: 
+  _extends: production

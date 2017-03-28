@@ -1,0 +1,152 @@
+{{each(idx,row) values}}
+<form class="klearMatrix_form custom" action="${saveAction}" data-id="${$item.getIndex(row,pk)}">
+    <style type="text/css">
+        form.custom label {
+            display: inline;
+        }
+    </style>
+
+    <fieldset class="ui-widget-content ui-corner-all">
+        <legend class="ui-widget-header ui-corner-all">${$item.getTitle(title,idx)}</legend>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.cicfName.id}${randIden}">${columns.cicfName.name}:</label>
+            {{html $item.getEditDataForField(row[columns.cicfName.id],columns.cicfName)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label style="display:block;" for="${columns.incomingPhraseId.id}${randIden}">${columns.incomingPhraseId.name}:</label>
+            {{html $item.getEditDataForField(row[columns.incomingPhraseId.id],columns.incomingPhraseId)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.CompaniesHolidayCalendarsIncomingCallFilters.id}${randIden}">${columns.CompaniesHolidayCalendarsIncomingCallFilters.name}:</label>
+            {{html $item.getEditDataForField(row[columns.CompaniesHolidayCalendarsIncomingCallFilters.id],columns.CompaniesHolidayCalendarsIncomingCallFilters)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.CompaniesSchedulesIncomingCallFilters.id}${randIden}">${columns.CompaniesSchedulesIncomingCallFilters.name}:</label>
+            {{html $item.getEditDataForField(row[columns.CompaniesSchedulesIncomingCallFilters.id],columns.CompaniesSchedulesIncomingCallFilters)}}
+        </div>
+    </fieldset>
+
+    <fieldset class="ui-widget-content ui-corner-all">
+        <legend class="ui-widget-header ui-corner-all">${$.translate("En caso de festivo")}</legend>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.holidayPhraseId.id}${randIden}">${columns.holidayPhraseId.name}:</label>
+            {{html $item.getEditDataForField(row[columns.holidayPhraseId.id],columns.holidayPhraseId)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.holidayDestination.id}${randIden}">${columns.holidayDestination.name}:</label>
+            {{html $item.getEditDataForField(row[columns.holidayDestination.id],columns.holidayDestination)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.holidayDestinationNumber.id}${randIden}" rel="${columns.holidayDestinationNumber.id}">${columns.holidayDestinationNumber.name}:</label>
+            {{html $item.getEditDataForField(row[columns.holidayDestinationNumber.id],columns.holidayDestinationNumber)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.holidayDestinationVoiceMail.id}${randIden}" rel="${columns.holidayDestinationVoiceMail.id}">${columns.holidayDestinationVoiceMail.name}:</label>
+            {{html $item.getEditDataForField(row[columns.holidayDestinationVoiceMail.id],columns.holidayDestinationVoiceMail)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.holidayVoicemailPhoneType.id}${randIden}" rel="${columns.holidayVoicemailPhoneType.id}">${columns.holidayVoicemailPhoneType.name}:</label>
+            {{html $item.getEditDataForField(row[columns.holidayVoicemailPhoneType.id],columns.holidayVoicemailPhoneType)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.holidayShortNumberId.id}${randIden}" rel="${columns.holidayShortNumberId.id}">${columns.holidayShortNumberId.name}:</label>
+            {{html $item.getEditDataForField(row[columns.holidayShortNumberId.id],columns.holidayShortNumberId)}}
+        </div>
+    </fieldset>
+
+    <fieldset class="ui-widget-content ui-corner-all">
+        <legend class="ui-widget-header ui-corner-all">${$.translate("En caso de fuera de horario")}</legend>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.afterHoursPhraseId.id}${randIden}">${columns.afterHoursPhraseId.name}:</label>
+            {{html $item.getEditDataForField(row[columns.afterHoursPhraseId.id],columns.afterHoursPhraseId)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.afterHoursDestination.id}${randIden}">${columns.afterHoursDestination.name}:</label>
+            {{html $item.getEditDataForField(row[columns.afterHoursDestination.id],columns.afterHoursDestination)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.afterHoursDestinationNumber.id}${randIden}" rel="${columns.afterHoursDestinationNumber.id}">${columns.afterHoursDestinationNumber.name}:</label>
+            {{html $item.getEditDataForField(row[columns.afterHoursDestinationNumber.id],columns.afterHoursDestinationNumber)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.afterHoursDestinationVoiceMail.id}${randIden}" rel="${columns.afterHoursDestinationVoiceMail.id}">${columns.afterHoursDestinationVoiceMail.name}:</label>
+            {{html $item.getEditDataForField(row[columns.afterHoursDestinationVoiceMail.id],columns.afterHoursDestinationVoiceMail)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.afterHoursVoicemailPhoneType.id}${randIden}" rel="${columns.afterHoursVoicemailPhoneType.id}">${columns.afterHoursVoicemailPhoneType.name}:</label>
+            {{html $item.getEditDataForField(row[columns.afterHoursVoicemailPhoneType.id],columns.afterHoursVoicemailPhoneType)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.afterHoursShortNumberId.id}${randIden}" rel="${columns.afterHoursShortNumberId.id}">${columns.afterHoursShortNumberId.name}:</label>
+            {{html $item.getEditDataForField(row[columns.afterHoursShortNumberId.id],columns.afterHoursShortNumberId)}}
+        </div>
+    </fieldset>
+
+    <fieldset class="ui-widget-content ui-corner-all">
+        <legend class="ui-widget-header ui-corner-all">${$.translate("En caso de ocupado")}</legend>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.busyPhraseId.id}${randIden}">${columns.busyPhraseId.name}:</label>
+            {{html $item.getEditDataForField(row[columns.busyPhraseId.id],columns.busyPhraseId)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.busyDestination.id}${randIden}">${columns.busyDestination.name}:</label>
+            {{html $item.getEditDataForField(row[columns.busyDestination.id],columns.busyDestination)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.busyDestinationNumber.id}${randIden}" rel="${columns.busyDestinationNumber.id}">${columns.busyDestinationNumber.name}:</label>
+            {{html $item.getEditDataForField(row[columns.busyDestinationNumber.id],columns.busyDestinationNumber)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.busyDestinationVoiceMail.id}${randIden}" rel="${columns.busyDestinationVoiceMail.id}">${columns.busyDestinationVoiceMail.name}:</label>
+            {{html $item.getEditDataForField(row[columns.busyDestinationVoiceMail.id],columns.busyDestinationVoiceMail)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.busyVoicemailPhoneType.id}${randIden}" rel="${columns.busyVoicemailPhoneType.id}">${columns.busyVoicemailPhoneType.name}:</label>
+            {{html $item.getEditDataForField(row[columns.busyVoicemailPhoneType.id],columns.busyVoicemailPhoneType)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.busyShortNumberId.id}${randIden}" rel="${columns.busyShortNumberId.id}">${columns.busyShortNumberId.name}:</label>
+            {{html $item.getEditDataForField(row[columns.busyShortNumberId.id],columns.busyShortNumberId)}}
+        </div>
+    </fieldset>
+
+    <fieldset class="ui-widget-content ui-corner-all">
+        <legend class="ui-widget-header ui-corner-all">${$.translate("En caso de no respuesta")}</legend>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.noAnswerPhraseId.id}${randIden}">${columns.noAnswerPhraseId.name}:</label>
+            {{html $item.getEditDataForField(row[columns.noAnswerPhraseId.id],columns.noAnswerPhraseId)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.noAnswerTimeOut.id}${randIden}">${columns.noAnswerTimeOut.name}:</label>
+            {{html $item.getEditDataForField(row[columns.noAnswerTimeOut.id],columns.noAnswerTimeOut)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.noAnswerDestination.id}${randIden}">${columns.noAnswerDestination.name}:</label>
+            {{html $item.getEditDataForField(row[columns.noAnswerDestination.id],columns.noAnswerDestination)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.noAnswerDestinationNumber.id}${randIden}" rel="${columns.noAnswerDestinationNumber.id}">${columns.noAnswerDestinationNumber.name}:</label>
+            {{html $item.getEditDataForField(row[columns.noAnswerDestinationNumber.id],columns.noAnswerDestinationNumber)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.noAnswerDestinationVoiceMail.id}${randIden}" rel="${columns.noAnswerDestinationVoiceMail.id}">${columns.noAnswerDestinationVoiceMail.name}:</label>
+            {{html $item.getEditDataForField(row[columns.noAnswerDestinationVoiceMail.id],columns.noAnswerDestinationVoiceMail)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.noAnswerVoicemailPhoneType.id}${randIden}" rel="${columns.noAnswerVoicemailPhoneType.id}">${columns.noAnswerVoicemailPhoneType.name}:</label>
+            {{html $item.getEditDataForField(row[columns.noAnswerVoicemailPhoneType.id],columns.noAnswerVoicemailPhoneType)}}
+        </div>
+        <div class="container ui-widget-content ui-corner-all">
+            <label for="${columns.noAnswerShortNumberId.id}${randIden}" rel="${columns.noAnswerShortNumberId.id}">${columns.noAnswerShortNumberId.name}:</label>
+            {{html $item.getEditDataForField(row[columns.noAnswerShortNumberId.id],columns.noAnswerShortNumberId)}}
+        </div>
+    </fieldset>
+
+    <div class="generalOptionsToolbar ui-widget-content ui-corner-all">
+        <a class="closeTab" href="" title="${$.translate("Cerrar")}"><span class="ui-silk inline ui-silk-cross"></span>${$.translate("Cerrar")}</a>
+        <a class="action" href="" title="${$.translate("Guardar")}"><span class="ui-silk inline ui-silk-bullet-disk"></span>${$.translate("Guardar")}</a>
+        <span class="action autoClose "><span><input type="checkbox" name="autoclose" />${$.translate("Cerrar automáticamente después de guardar")}</span></span>
+    </div>
+
+</form>
+{{/each}}

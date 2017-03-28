@@ -1,0 +1,34 @@
+production: 
+  class: \Atezate\Model\MunicipiosRelCercania
+  fields: 
+    municipioId: 
+      title: _('Municipio')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Municipios
+          fieldName: 
+            fields: 
+              - municipio
+            template: '%municipio%'
+          order: municipio
+      default: true
+    municipioCercanoId: 
+      title: _('Municipio cercano')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Municipios
+          fieldName: 
+            fields: 
+              - municipio
+            template: '%municipio%'
+          order: municipio
+testing: 
+  _extends: production
+development: 
+  _extends: production

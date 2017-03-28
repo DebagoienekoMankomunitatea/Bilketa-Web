@@ -1,0 +1,57 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: marcasCuboList_screen
+  screens: 
+    marcasCuboList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *MarcasCubo
+      title: _("List of %s", ngettext('Marca', 'Marcas', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            marcasCuboEdit_screen: true
+          dialogs: 
+            marcasCuboDel_dialog: true
+          default: marcasCuboEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          marcasCuboNew_screen: true
+    marcasCuboNew_screen: &marcasCuboNew_screenLink 
+      <<: *MarcasCubo
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Marca', 'Marcas', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+    marcasCuboEdit_screen: 
+      <<: *MarcasCubo
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Marca', 'Marcas', 1))
+      fields: 
+        blacklist: 
+          createdOn: true
+  dialogs: 
+    marcasCuboDel_dialog: 
+      <<: *MarcasCubo
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Marca', 'Marcas', 1))
+      description: _("Do you want to delete this %s?", ngettext('Marca', 'Marcas', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

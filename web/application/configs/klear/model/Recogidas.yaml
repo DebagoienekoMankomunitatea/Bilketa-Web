@@ -1,0 +1,127 @@
+production: 
+  class: \Atezate\Model\Recogidas
+  fields: 
+    recogidaTipoId: 
+      title: _('Tipo de Recogida')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\RecogidaTipos
+          fieldName: 
+            fields: 
+              - nombre
+            template: '%nombre%'
+          order: nombre
+      default: true
+    cuboId: 
+      title: _('Cubo')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Cubos
+          fieldName: 
+            fields: 
+              - rfid
+            template: '%rfid%'
+          order: rfid
+    tipos: 
+      title: _('Tipo')
+      type: select
+      required: true
+      source: 
+        data: inline
+        values: 
+          'null': 
+            title: _('Unasigned')
+            visualFilter:
+              show: []
+              hide: [puntoRecogidaId, posteId, centroEmergenciaId, cuboId]
+          puntoRecogida: 
+            title: _('Punto de Recogida')
+            visualFilter:
+              show: [puntoRecogidaId, cuboId]
+              hide: [posteId, centroEmergenciaId]
+          poste: 
+            title: _('Poste')
+            visualFilter:
+              show: [posteId, cuboId]
+              hide: [puntoRecogidaId, centroEmergenciaId,]
+          centroEmergencia: 
+            title: _('Centro de Emergencia')
+            visualFilter:
+              show: [centroEmergenciaId]
+              hide: [puntoRecogidaId, posteId, cuboId]
+    puntoRecogidaId: 
+      title: _('Punto recogida')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosRecogida
+          fieldName: 
+            fields: 
+              - nombreDescriptivo
+            template: '%nombreDescriptivo%'
+          order: nombreDescriptivo
+    posteId: 
+      title: _('Poste')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Postes
+          fieldName: 
+            fields: 
+              - postesId
+            template: '%postesId%'
+          order: postesId
+    centroEmergenciaId: 
+      title: _('Centro emergencia')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\CentrosEmergencia
+          fieldName: 
+            fields: 
+              - ip
+            template: '%ip%'
+          order: ip
+    paradaId: 
+      title: _('Parada')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Paradas
+          fieldName: 
+            fields: 
+              - paradaId
+            template: '%paradaId%'
+          order: paradaId
+    gradoLlenado: 
+      title: _('Grado llenado')
+      type: number
+      defaultValue: 0
+      source: 
+        control: Spinner
+    createdOn: 
+      title: _('Created on')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+testing: 
+  _extends: production
+development: 
+  _extends: production

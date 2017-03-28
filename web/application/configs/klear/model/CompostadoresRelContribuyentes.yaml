@@ -1,0 +1,35 @@
+production: 
+  class: \Atezate\Model\CompostadoresRelContribuyentes
+  fields: 
+    compostadoresId: 
+      title: _('Compostadores')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Compostadores
+          fieldName: 
+            fields: 
+              - compostadoresIden
+            template: '%compostadoresIden%'
+          order: compostadoresIden
+      default: true
+    contribuyenteId: 
+      title: _('Contribuyente')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Contribuyentes
+          fieldName: 
+            fields: 
+              - nombre
+              - apellido
+            template: '%nombre% %apellido%'
+          order: nombre
+testing: 
+  _extends: production
+development: 
+  _extends: production

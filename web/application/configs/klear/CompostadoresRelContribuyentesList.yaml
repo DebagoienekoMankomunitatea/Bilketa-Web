@@ -1,0 +1,51 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: compostadoresRelContribuyentesList_screen
+  screens: 
+    compostadoresRelContribuyentesList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *CompostadoresRelContribuyentes
+      title: _("List of %s", ngettext('Compostadores rel contribuyente', 'Compostadores rel contribuyentes', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            compostadoresRelContribuyentesEdit_screen: true
+          dialogs: 
+            compostadoresRelContribuyentesDel_dialog: true
+          default: compostadoresRelContribuyentesEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          compostadoresRelContribuyentesNew_screen: true
+    compostadoresRelContribuyentesNew_screen: 
+      <<: *CompostadoresRelContribuyentes
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Compostadores rel contribuyente', 'Compostadores rel contribuyentes', 1))
+    compostadoresRelContribuyentesEdit_screen: 
+      <<: *CompostadoresRelContribuyentes
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Compostadores rel contribuyente', 'Compostadores rel contribuyentes', 1))
+  dialogs: 
+    compostadoresRelContribuyentesDel_dialog: 
+      <<: *CompostadoresRelContribuyentes
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Compostadores rel contribuyente', 'Compostadores rel contribuyentes', 1))
+      description: _("Do you want to delete this %s?", ngettext('Compostadores rel contribuyente', 'Compostadores rel contribuyentes', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

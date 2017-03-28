@@ -1,0 +1,70 @@
+production: 
+  class: \Atezate\Model\CodigosApertura
+  fields: 
+    fechaLlamada: 
+      title: _('Fecha llamada')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+      default: true
+    contribuyenteId: 
+      title: _('Contribuyente')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Contribuyentes
+          fieldName: 
+            fields: 
+              - contribuyenteIden
+            template: '%contribuyenteIden%'
+          order: contribuyenteIden
+    codigoApertura: 
+      title: _('Codigo apertura')
+      type: text
+      required: true
+    centroEmergenciaId: 
+      title: _('Centro emergencia')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\CentrosEmergencia
+          fieldName: 
+            fields: 
+              - identificador
+            template: '%identificador%'
+          order: identificador
+    municipioId: 
+      title: _('Municipio')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Municipios
+          fieldName: 
+            fields: 
+              - municipio
+            template: '%municipio%'
+          order: municipio
+    activado: 
+      title: _('Activado')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+          '1': 
+            title: _("Yes")
+testing: 
+  _extends: production
+development: 
+  _extends: production

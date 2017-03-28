@@ -1,0 +1,31 @@
+production: 
+  class: \Atezate\Model\CentrosEmergencia
+  fields: 
+    ip: 
+      title: _('Ip')
+      type: text
+    puerto: 
+      title: _('Puerto')
+      type: text
+    puntoRecogidaId: 
+      title: _('Punto recogida')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosRecogida
+          fieldName: 
+            fields: 
+              - nombreDescriptivo
+            template: '%nombreDescriptivo%'
+          order: nombreDescriptivo
+    identificador: 
+      title: _('Identificador')
+      type: text
+      required: true
+      default: true
+testing: 
+  _extends: production
+development: 
+  _extends: production

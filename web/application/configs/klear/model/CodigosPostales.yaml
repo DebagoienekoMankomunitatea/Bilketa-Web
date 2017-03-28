@@ -1,0 +1,14 @@
+production: 
+  class: \Atezate\Model\CodigosPostales
+  fields: 
+    codigoPostal: 
+      title: _('Código postal')
+      type: text
+      required: true
+      source: 
+        control: Spinner
+      default: true
+testing: 
+  _extends: production
+development: 
+  _extends: production

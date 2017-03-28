@@ -1,0 +1,127 @@
+{{if (info) }}
+
+<div class="ui-widget-content ui-corner-all assistant">
+<span class="
+ui-silk
+ui-silk-${info.icon}
+fieldInfo-${info.type}
+fieldInfo-position-${info.position}
+"
+data-title="${info.text}"
+></span>{{if (info.label)}} ${info.label} {{/if}}
+</div>
+{{/if}}
+
+{{each(idx,row) values}}
+<form class="klearMatrix_form cubo" action="${saveAction}" data-id="${$item.getIndex(row,pk)}">
+
+{{if (optionsPlacement == 'both' || optionsPlacement == 'top')}}
+    <div class="generalOptionsToolbar">
+        <a class="closeTab" href="" title="Cerrar"><span class="ui-silk inline ui-silk-cross"></span>Cerrar</a>
+        {{if (typeof disableSave == 'undefined' || disableSave != true)}}
+            <a class="action" href="" title="Guardar"><span class="ui-silk inline ui-silk-bullet-disk"></span>Guardar</a>
+            <span class="action autoClose "><span><input type="checkbox" name="autoclose" {{if (autoClose)}} checked="checked"{{/if}}/>Cerrar automáticamente después de cerrar</span></span>
+        {{/if}}
+
+    {{if (generalOptions.length>0) }}
+        {{each generalOptions}}
+            <a class="_generalOption option ${type}" href="" data-${type}="${$item.getIndex($value,type)}" title="${$item.getTitle(title,idx,true)}" {{if (multiInstance)}} data-multiinstance='true'{{/if}} {{if (external)}} data-externalfile='${file}'{{/if}}>
+            <span class="ui-silk inline ${icon}"></span>
+            {{if (label) }}
+                ${$item.getTitle(title,idx,true)}
+            {{/if}}
+            </a>
+        {{/each}}
+    {{/if}}
+    </div>
+{{/if}}
+
+    <fieldset class="ui-widget-content ui-corner-all">
+        <legend class="ui-widget-header ui-corner-all">${$item.getTitle(title,idx)}</legend>
+
+         {{each(colIdx,column) columns}}
+        <div class="${id} container ui-widget-content ui-corner-all{{if (column.properties && column.properties.expandable == true)}} expandable{{/if}}">
+            {{if column.fieldInfo}}
+                <span
+                    class="
+                        ui-silk
+                        ui-silk-${column.fieldInfo.icon}
+                        fieldInfo-${column.fieldInfo.type}
+                        fieldInfo-position-${column.fieldInfo.position}
+                        "
+                    data-title="${column.fieldInfo.text}"
+                ></span>
+            {{/if}}
+            <label rel="${id}" for="${id}${randIden}" {{if (column.expandable == true)}}class="pointer"{{/if}}>
+
+            ${name}:
+
+            </label>
+
+            {{html $item.getEditDataForField(row[id],column)}}
+
+            {{if (column.options)}}
+                {{each column.options}}
+
+                    {{if (
+                        (showOnlyOnNotNull == false && showOnlyOnNull == false) ||
+                        (showOnlyOnNotNull == true && row[id]) ||
+                        (showOnlyOnNull == true && !row[id])
+                    )}}
+                        <a class="_fieldOption inherit option ${type} {{if (defaultOption)}}default{{/if}} ui-state-nojump"
+                        href=""
+                        data-${type}="${$item.getIndex($value,type)}"
+                        title="${$item.getTitle(title,idx,true)}"
+                        {{if ($value.externalOption)}}
+                            data-externalid='${row[id]}'
+                            data-externalname='${id}'
+                            ${$item.getExternalData($value)}
+                        {{/if}}
+                        >
+                        <span class="ui-silk inline ${icon}"></span>{{if (label) }}${$item.getTitle(title,idx,true)}{{/if}}</a>
+                     {{/if}}
+                {{/each}}
+            {{/if}}
+
+            {{if (column.decorators)}}
+                {{each(name, decorator) column.decorators}}
+
+                    {{if (decorator._applyToForms)}}
+                        <a class="option command fieldDecorator ${column.type}" data-field="${column.type}" data-fielddecorator="${name}" data-external="true" rel="${id}${randIden}"
+                        {{each(key, val) decorator}}
+                            data-${key}="${val}"
+                        {{/each}}
+                        />
+                    {{/if}}
+
+                {{/each}}
+            {{/if}}
+        </div>
+        {{/each}}
+    </fieldset>
+
+{{if (optionsPlacement == 'both' || optionsPlacement == 'bottom')}}
+    <div class="generalOptionsToolbar">
+        <a class="closeTab" href="" title="Cerrar"><span class="ui-silk inline ui-silk-cross"></span>Cerrar</a>
+        {{if (typeof disableSave == 'undefined' || disableSave != true)}}
+            <a class="action" href="" title="Guardar"><span class="ui-silk inline ui-silk-bullet-disk"></span>Guardar</a>
+            <span class="action autoClose "><span><input type="checkbox" name="autoclose" {{if (autoClose)}} checked="checked"{{/if}}/>Cerrar automáticamente después de guardar</span></span>
+        {{/if}}
+
+    {{if (generalOptions.length>0) }}
+        {{each generalOptions}}
+            <a class="_generalOption option ${type}" href="" data-${type}="${$item.getIndex($value,type)}" title="${$item.getTitle(title,idx,true)}" {{if (multiInstance)}} data-multiinstance='true'{{/if}} {{if (external)}} data-externalfile='${file}'{{/if}}>
+            <span class="ui-silk inline ${icon}"></span>
+            {{if (label) }}
+                ${$item.getTitle(title,idx,true)}
+            {{/if}}
+            </a>
+        {{/each}}
+    {{/if}}
+    </div>
+{{/if}}
+    
+    
+
+</form>
+{{/each}}

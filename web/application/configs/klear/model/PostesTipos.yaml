@@ -1,0 +1,38 @@
+production: 
+  class: \Atezate\Model\PostesTipos
+  fields: 
+    columna: 
+      title: _('Columna')
+      type: textarea
+      required: true
+      default: true
+    capacidad: 
+      title: _('Capacidad')
+      type: text
+      defaultValue: 0.00
+    caras: 
+      title: _('Cara')
+      type: number
+      defaultValue: 0
+      source: 
+        control: Spinner
+    marcaPosteId: 
+      title: _('Marca poste')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\MarcasPoste
+          fieldName: 
+            fields: 
+              - marca
+            template: '%marca%'
+          order: marca
+      options:
+        screens:
+          marcaPosteNew_screen: true
+testing: 
+  _extends: production
+development: 
+  _extends: production

@@ -1,0 +1,454 @@
+@CHARSET "UTF-8";
+html, body, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    font-size: 13px;
+}
+
+#header {
+    background: url("wave-blue.jpg") repeat-x scroll -3706px -70px / 2500px 180px transparent;
+    
+    -webkit-animation: encabezado 15s;
+/*     -webkit-animation-timing-function: linear; */
+    
+    animation: encabezado 15s;
+/*     animation-timing-function: linear; */
+}
+
+#header.collapsedHeader {
+	background: none;
+}
+
+@-webkit-keyframes encabezado {
+    0%   {background-position-x: -1px; background-size: 2500px 200px;}
+    100% {background-position-x: -3706px; background-size: 2500px 180px;}
+}
+
+@keyframes encabezado {
+    0%   {background: url("wave-blue.jpg") repeat-x scroll -1px -70px / 2500px 200px transparent;}
+    100% {background: url("wave-blue.jpg") repeat-x scroll -3706px -70px / 2500px 180px transparent;}
+}
+
+.ui-widget-overlay {
+    background: #000;
+    opacity: .70;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+}
+
+#header h1 {
+    font-size: 20px;
+    color: rgb(158, 158, 158);
+}
+
+#header h1 span {
+    font-weight: normal;
+    text-transform: uppercase;
+    text-shadow: #fff 0px 0px;
+}
+
+#applicationLogo img {
+    max-height: 100px;
+}
+
+.assistant {
+    color: rgb(95, 95, 95);
+    font-weight: bold;
+    font-size: 1em!important;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {
+    font-weight: normal;
+}
+
+@media (min-width: 800px) {
+html, body, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    font-size: 13px;
+}
+    
+    
+    #applicationTools {
+        clear: right;
+    }
+    
+    #sidebar ul li a span{
+       color: rgb(85, 85, 85);
+    }
+    
+    .ui-widget-content a {
+       color: #333;
+    }
+    
+    *.ui-silk.inline {
+        opacity: 0.8;
+    }
+}
+
+#klearLogin input[type="text"]:focus, #klearLogin input[type="password"]:focus {
+	border-color: rgba(82, 168, 236, 0.8);
+	outline: 0;
+	outline: thin dotted \9;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+#klearLogin input[type="text"], #klearLogin input[type="password"] {
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+#klearLogin input[type="text"], #klearLogin input[type="password"] {
+	display: inline-block;
+	height: 20px;
+	padding: 4px 6px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #555555;
+	vertical-align: middle;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.loginDialog {
+	background: url("line-blue.jpg") #fff no-repeat;
+	background-position: center;
+	width: 45%;
+	
+	-webkit-animation: loginWelcome 1s;
+    
+    animation: loginWelcome 1s;
+}
+
+@-webkit-keyframes loginWelcome{
+	0%   {
+	   -webkit-transform: rotateY(0deg);
+        opacity: 0;
+    }
+    1%   {
+	    -webkit-transform: rotateY(90deg);
+	    opacity: 1;
+    }
+    100% {
+	    -webkit-transform: rotateY(0deg);
+    }
+}
+
+@keyframes loginWelcome {
+	0%   {
+        transform: rotateY(0deg);
+        opacity: 0;
+    }
+    1%   {
+        transform: rotateY(90deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.loginDialog .ui-dialog-titlebar {
+	display: none;
+}
+
+.loginDialog .description {
+	width: 90%;
+}
+
+.loginDialog .description p {
+	color: #636363;
+	font-size: 18px;
+}
+
+.loginDialog label {
+	text-transform: uppercase;
+	color: #525252;
+	font-size: 11px;
+}
+
+#klearLogin  {
+	
+	background: url("background-white.jpg") no-repeat;
+	background-position: 800px 0;
+	
+    -webkit-animation: login 5s;
+/*     -webkit-animation-timing-function: linear; */
+    
+    animation: login 5s;
+/*     animation-timing-function: linear; */
+}
+
+@-webkit-keyframes login {
+    0%   {background-position-x: 0px;}
+    100% {background-position-x: 800px;}
+}
+
+@keyframes login {
+    0%   {background: url("background-white.jpg") repeat-x scroll 0px 0 / 760px 230px transparent;}
+    100% {background: url("background-white.jpg") repeat-x scroll 800px 0 / 760px 230px transparent;}
+}
+
+#body {
+    margin-bottom: 0;
+}
+
+#main {
+    padding: 0 0 0 15px;
+}
+
+#footer {
+	margin: 0;
+	background: url("sea-abstract-2.jpg") no-repeat scroll right bottom transparent;
+}
+
+#footer p {
+	color: #2694e8;
+	font-size: 13px;
+	width: 100%;
+	float: right;
+	text-align: center;
+	padding: 70px 0 0;
+
+    background: url("klearblue.png") no-repeat scroll center top / 70px auto transparent;
+}
+
+#footer.collapsedFooter {
+	background: none;
+}
+
+#footer.collapsedFooter p {
+	background: none;
+	padding: 10px;
+	text-align: center;
+}
+
+/* #footer { */
+/* 	width: 100%; */
+/* } */
+
+/* #footer .box-footer { */
+/* 	width: 800px; */
+/* 	margin: 0 auto; */
+/* } */
+
+/* #footer p { */
+/* 	float:left; */
+/*     width: 598px; */
+/*     height: 100px; */
+    
+/*     border-top: solid 1px; */
+/* 	border-bottom: solid 1px; */
+/* 	border-left: solid 1px; */
+/* } */
+
+/* #footer .logo-klear { */
+/* 	float: left; */
+/* 	width: 198px; */
+/* 	height: 100px; */
+	
+/* 	border-left: solid 1px; */
+/*     border-radius: 100px; */
+/* } */
+
+
+
+/* Css para los del tipo Incidencia */
+
+form.tipo_incidencia div.plantillasEmailPrioridad {
+	margin-left: 5%;
+	height: 50px;
+	background: #3A85B8;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right: none;
+	width: 45%;
+	float: left;
+}
+
+form.tipo_incidencia div.plantillasEmailId {
+	height: 50px;
+    background: #3A85B8;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+	width: 43%;
+	float: left;
+}
+
+form.tipo_incidencia div.plantillasSmsPrioridad {
+	margin-left: 5%;
+    height: 50px;
+    background: #3A85B8;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    width: 45%;
+    clear: left;
+    float: left;
+}
+
+form.tipo_incidencia div.plantillasSmsId {
+    height: 50px;
+    background: #3A85B8;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    width: 43%;
+    float: left;
+}
+
+form.tipo_incidencia div.plantillasTelefonoPrioridad {
+	margin-left: 5%;
+    height: 50px;
+    background: #3A85B8;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    width: 45%;
+    clear: left;
+    float: left;
+}
+
+form.tipo_incidencia div.plantillasTelefonoId {
+    height: 50px;
+    background: #3A85B8;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    width: 43%;
+    float: left;
+}
+
+form.tipo_incidencia div.plantillasEmailId label {
+	color: #fff;
+}
+
+form.tipo_incidencia div.plantillasEmailPrioridad label {
+	color: #fff;
+}
+
+form.tipo_incidencia div.plantillasSmsId label {
+	color: #fff;
+}
+
+form.tipo_incidencia div.plantillasSmsPrioridad label {
+	color: #fff;
+}
+
+form.tipo_incidencia div.plantillasTelefonoId label {
+	color: #fff;
+}
+
+form.tipo_incidencia div.plantillasTelefonoPrioridad label {
+	color: #fff;
+}
+
+.paginator a {
+    padding: 3px 2px 1px;
+}
+
+
+
+/* Css para los Cubos */
+
+form.cubo .fieldFakeSelectContribuyente {
+	width: 40%;
+	float: left;
+	height: 50px;
+}
+
+form.cubo .fieldFakeContribuyenteNombre, .contribuyenteId {
+	width: 52%;
+	margin: .3em 0 .3em 1%!important;
+	float: left;
+	height: 50px;
+}
+
+form.cubo .cubosTiposId {
+	clear: left;
+}
+
+#formPersonal div.optionCheck {
+    padding: 10px 0 0 5px;
+    background: #DDD;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#formPersonal div.optionCheck label {
+	padding: 0 0 0 20px;
+}
+
+#formPersonal div.optionCheck input[type=checkbox]{
+    margin: -30px 0 0 0;	
+}
+
+.ui-widget-overlay {
+    -webkit-animation: light 0.4s;
+/*     -webkit-animation-timing-function: linear; */
+    
+    animation: light 0.4s;
+/*     animation-timing-function: linear; */
+}
+
+@-webkit-keyframes light {
+    0%   {opacity: 0.0;}
+    100% {opacity: 0.7;}
+}
+
+@keyframes light {
+    0%   {opacity: 0.0;}
+    100% {opacity: 0.7;}
+}
+
+.ui-dialog {
+    -webkit-animation: light-2 1s;
+/*     -webkit-animation-timing-function: linear; */
+    
+    animation: light-2 1s;
+/*     animation-timing-function: linear; */
+}
+
+@-webkit-keyframes light-2 {
+    0%   {opacity: 0.0;}
+    60%   {opacity: 0.0;}
+    100% {opacity: 1.0;}
+}
+
+@keyframes light-2 {
+    0%   {opacity: 0.0;}
+    60%   {opacity: 0.0;}
+    100% {opacity: 1.0;}
+}
+
+input.auto {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+table tr td.ui-widget-content ._fieldOption{
+    display: none;
+}
+
+table tr td.ui-widget-content.options ._fieldOption{
+	display: inline;
+}
+
+.spaceTel div {
+	margin: 20px 0;
+}
+
+/* eliminación del valor automatico */
+
+[data-val|=automatico] { 
+    display: none;
+}

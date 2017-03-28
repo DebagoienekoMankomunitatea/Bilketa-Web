@@ -1,0 +1,59 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+#include MarcasCuboList.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: cubosTiposList_screen
+  screens: 
+    cubosTiposList_screen: 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *CubosTipos
+      title: _("List of %s", ngettext('Tipo de cubo', 'Tipos de cubo', 0))
+      fields: 
+        options: 
+          title: _("Options")
+          screens: 
+            cubosTiposEdit_screen: true
+          dialogs: 
+            cubosTiposDel_dialog: true
+          default: cubosTiposEdit_screen
+        blacklist:
+          litros: true
+          color: true
+          altura: true
+          anchura: true
+      options: 
+        title: _("Options")
+        screens: 
+          cubosTiposNew_screen: true
+    cubosTiposNew_screen: &cubosTiposNew_screenLink 
+      <<: *CubosTipos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Tipo de cubo', 'Tipos de cubo', 1))
+    cubosTiposEdit_screen: 
+      <<: *CubosTipos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Tipo de cubo', 'Tipos de cubo', 1))
+    cubosMarcasNew_screen:
+      <<: *marcasCuboNew_screenLink 
+  dialogs: 
+    cubosTiposDel_dialog: 
+      <<: *CubosTipos
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Tipo de cubo', 'Tipos de cubo', 1))
+      description: _("Do you want to delete this %s?", ngettext('Tipo de cubo', 'Tipos de cubo', 1))
+testing: 
+  _extends: production
+development: 
+  _extends: production

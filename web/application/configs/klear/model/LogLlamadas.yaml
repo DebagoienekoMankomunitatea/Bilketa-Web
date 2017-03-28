@@ -1,0 +1,65 @@
+production: 
+  class: \Atezate\Model\LogLlamadas
+  fields: 
+    incidenciaId: 
+      title: _('Incidencia')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Incidencias
+          fieldName: 
+            fields: 
+              - incidenciaId
+            template: '%incidenciaId%'
+          order: incidenciaId
+      default: true
+    dia: 
+      title: _('Dia')
+      type: picker
+      required: true
+      source: 
+        control: date
+        settings: 
+          disabled: 'false'
+    hora: 
+      title: _('Hora')
+      type: picker
+      required: true
+      source: 
+        control: time
+        settings: 
+          disabled: 'false'
+    contactado: 
+      title: _('Contactado')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+          '1': 
+            title: _("Yes")
+    plantillasTelefonoId: 
+      title: _('Plantillas telefono')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PlantillasTelefono
+          fieldName: 
+            fields: 
+              - asunto
+            template: '%asunto%'
+          order: asunto
+    telefono: 
+      title: _('Telefono')
+      type: text
+      defaultValue: 
+testing: 
+  _extends: production
+development: 
+  _extends: production

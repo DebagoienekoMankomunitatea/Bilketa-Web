@@ -1,0 +1,17 @@
+production: 
+  class: \Atezate\Model\Roles
+  fields: 
+    rol: 
+      title: _('Rol')
+      type: text
+      required: true
+      default: true
+    descripcion: 
+      title: _('Descripcion')
+      type: textarea
+    costeHora: 
+      title: _('Coste/Hora')
+testing: 
+  _extends: production
+development: 
+  _extends: production

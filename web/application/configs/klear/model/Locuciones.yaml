@@ -1,0 +1,108 @@
+#include ../conf.d/actions.yaml
+production: 
+  class: \Atezate\Model\Locuciones
+  fields: 
+    iden: 
+      title: ngettext('Identificación', 'Identificaciones', 1)
+      type: text
+      required: true
+      default: true
+    descripcion: 
+      title: _('Descripcion')
+      type: textarea
+    esLoc: 
+      title: _('Fichero')
+      type: file
+      source: 
+        data: fso
+        size_limit: 20M
+        extensions:
+          - mp3
+          - wav
+          - aiff
+          - ra
+          - wma
+          - gsm
+          - oga
+          - ogg
+        options: 
+          download: 
+            external: true
+            type: command
+            target: EsLocDownload_command
+            icon: ui-silk-bullet-disk
+            title: _("Download file")
+            onNull: hide
+          upload: 
+            type: command
+            target: EsLocUpload_command
+            title: _("Upload file")
+            class: qq-uploader
+            onNull: show
+    euLoc: 
+      title: _('Fichero')
+      type: file
+      source: 
+        data: fso
+        size_limit: 20M
+        extensions:
+          - mp3
+          - wav
+          - aiff
+          - ra
+          - wma
+          - gsm
+          - oga
+          - ogg
+        options: 
+          download: 
+            external: true
+            type: command
+            target: EuLocDownload_command
+            icon: ui-silk-bullet-disk
+            title: _("Download file")
+            onNull: hide
+          upload: 
+            type: command
+            target: EuLocUpload_command
+            title: _("Upload file")
+            class: qq-uploader
+            onNull: show
+    esLocCodificado: 
+      title: _('Fichero codificado')
+      type: file
+      source: 
+        data: fso
+        size_limit: 20M
+        options: 
+          hiddenName: true         
+          mediaembed:
+            <<: *audioPlayer
+            target: EsLocCodificadoDownload_command
+    euLocCodificado: 
+      title: _('Fichero codificado')
+      type: file
+      source: 
+        data: fso
+        size_limit: 20M
+        options: 
+          hiddenName: true         
+          mediaembed:
+            <<: *audioPlayer
+            target: EuLocCodificadoDownload_command
+
+    estado: 
+      title: _('Estado')
+      type: select
+      defaultValue: pending
+      source: 
+        data: inline
+        values: 
+          'pending': _('Pendiente')
+          'encoding': _('Codificando')
+          'encoded': _('Codificado')
+          'error': _('Error')
+testing: 
+  _extends: production
+development: 
+  _extends: production

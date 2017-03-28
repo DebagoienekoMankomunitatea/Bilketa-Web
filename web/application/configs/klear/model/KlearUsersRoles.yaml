@@ -1,0 +1,34 @@
+production: 
+  class: \Atezate\Model\KlearUsersRoles
+  fields: 
+    klearUserId: 
+      title: _('Klear user')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\KlearUsers
+          fieldName: 
+            fields: 
+              - login
+            template: '%login%'
+          order: login
+      default: true
+    klearRoleId: 
+      title: _('Klear role')
+      type: select
+      required: true
+      source: 
+        data: mapper
+        config: 
+          mapperName: \Atezate\Mapper\Sql\KlearRoles
+          fieldName: 
+            fields: 
+              - name
+            template: '%name%'
+          order: name
+testing: 
+  _extends: production
+development: 
+  _extends: production

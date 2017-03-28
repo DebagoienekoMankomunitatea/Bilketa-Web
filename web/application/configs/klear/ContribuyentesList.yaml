@@ -1,0 +1,403 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+#include CubosTiposList.yaml
+#include ImportadoresList.yaml
+#include TelefonosList.yaml
+#include EmailsList.yaml
+
+fixedPositions:
+  - &fixedPositionsForContribuyentes
+    group0:
+      label: _('Zergaduna editatu')
+      fields:
+        nombre: true
+        nif: true
+        contribuyenteIden: true
+        intuitivo: true
+        idContribuyenteUsoa: true
+    group6:
+      fields:
+        getPhones: true
+        getEmails: true
+    group1:
+      label: _('Dirección')
+      fields:
+        codigoCalle: 1
+        direccion: 2
+        portal: 1
+        bis: 1
+        escalera: 1
+        piso: 1
+        mano: 1
+    group7:
+      fields:
+        municipioId: 2
+        otrosDomicilio: 3
+    group2:
+      label: _('Datu Fiskalak')
+      fields:
+        direccionFiscal: 2
+        portalFiscal: 1
+        bisFiscal: 1
+        escaleraFiscal: 1
+        pisoFiscal: 1
+        manoFiscal: 1
+    group3:
+      fields:
+        localidadFiscal: true
+        pkFiscal: true
+        provinciaFiscal: true
+    group4:
+      fields:
+        tarifa: true
+        cantidad: true
+        cuenta: true
+        excluido: true
+    group5:
+      fields:
+        coeficienteEntornoContribuyente: true
+        coeficienteEntornoZona: true
+        coeficienteEntornoPueblo: true
+
+  - &orderForContribuyentes
+    order:
+      nombre: true
+      nif: true
+      contribuyenteIden: true
+      intuitivo: true
+      idContribuyenteUsoa: true
+      getPhones: true
+      getEmails: true
+      codigoCalle: true
+      direccion: true
+      portal: true
+      bis: true
+      escalera: true
+      piso: true
+      mano: true
+      municipioId: true
+      otrosDomicilio: true
+      direccionFiscal: true
+      portalFiscal: true
+      bisFiscal: true
+      escaleraFiscal: true
+      pisoFiscal: true
+      manoFiscal: true
+      localidadFiscal: true
+      pkFiscal: true
+      provinciaFiscal: true
+      tarifa: true
+      cantidad: true
+      cuenta: true
+      excluido: true
+      coeficienteEntornoContribuyente: true
+      coeficienteEntornoZona: true
+      coeficienteEntornoPueblo: true
+
+production:
+  main:
+    module: klearMatrix
+    defaultScreen: contribuyentesList_screen
+  screens:
+    contribuyentesList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *Contribuyentes
+      title: _("List of %s", ngettext('Contribuyente', 'Contribuyentes', 0))
+      fields:
+        blacklist:
+          #contribuyenteIden: true
+          coeficienteEntornoContribuyente: true
+          coeficienteEntornoZona: true
+          coeficienteEntornoPueblo: true
+          idContribuyenteUsoa: true
+          createdOn: true
+          cuenta: true
+          codigo: true
+          codigoCalle: true
+          direccion: true
+          portal: true
+          bis: true
+          escalera: true
+          piso: true
+          mano: true
+          otrosDomicilio: true
+          direccionFiscal: true
+          portalFiscal: true
+          bisFiscal: true
+          escaleraFiscal: true
+          pisoFiscal: true
+          manoFiscal: true
+          localidadFiscal: true
+          pkFiscal: true
+          provinciaFiscal: true
+          CompostadoresRelContribuyentes: true
+          getPhones: true
+          getEmails: true
+        options:
+          title: _("Options")
+          screens:
+            contribuyentesEdit_screen: true
+            cubosList_screen: true
+            telefonosList_screen: true
+            emailsList_screen: true
+          dialogs:
+            contribuyentesDel_dialog: true
+          default: contribuyentesEdit_screen
+      options:
+        title: _("Options")
+        screens:
+          contribuyentesNew_screen: true
+          importadoresList_screen: true
+        dialogs:
+          contribuyentesDel_dialog: true
+      csv:
+        active: true
+        filename: "ArchivoCSV"
+        headers: true
+        enclosure: '"'
+        separator: ";"
+        nameklear: true
+        ignoreBlackList: true
+        encoding: "utf-8"
+    contribuyentesNew_screen:
+      <<: *Contribuyentes
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Contribuyente', 'Contribuyentes', 1))
+      fields:
+        <<: *orderForContribuyentes
+        blacklist:
+          createdOn: true
+          getPhones: true
+          getEmails: true
+      fullWidth: true
+      fixedPositions:
+        <<: *fixedPositionsForContribuyentes
+      info:
+        type: box
+        position: left
+        icon: help
+        label: _("Agregar teléfonos y correos")
+        text: _("Para agregar números de teléfonos o correos, el contacto debe estar previamente guardado.")
+
+    contribuyentesEdit_screen:
+      <<: *Contribuyentes
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Contribuyente', 'Contribuyentes', 1))
+      fullWidth: true
+      fields:
+        <<: *orderForContribuyentes
+        blacklist:
+          createdOn: true
+      fixedPositions:
+        <<: *fixedPositionsForContribuyentes
+
+
+    importadoresList_screen: 
+      <<: *importadoresList_screenLink
+      label: true
+      title: _("Importador")
+      class: ui-silk-arrow-up
+      autoRefresh: true
+      forcedValues:
+        tipo: contribuyente
+      info:
+        type: box
+        position: left
+        icon: help
+        text: _("La tabla de datos debe llamarse Contribuyentes y tiene que tener los campos en el siguiente orden, sin importar el nombre definido. idContribuyenteUsoa, nombre, municipioId, createdOn, nif, cuenta, intuitivo, codigoCalle, direccion, portal, bis, escalera, piso, mano, otrosDomicilio, tarifa, cantidad, direccionFiscal, portalFiscal, bisFiscal, escaleraFiscal, pisoFiscal, manoFiscal, localidadFiscal, pkFiscal, provinciaFiscal. Cualquier cambio de formato, hablar con el desarrolador.")
+        label: _("Requisitos fichero .mdb")
+    importadoresNew_screen: 
+      <<: *importadoresNew_screenLink
+      fields:
+        blacklist:
+          estado: pendiente
+      forcedValues:
+        tipo: contribuyente
+      info:
+        type: box
+        position: left
+        icon: help
+        text: _("La tabla de datos debe llamarse Contribuyentes y tiene que tener los campos en el siguiente orden, sin importar el nombre definido. idContribuyenteUsoa, nombre, municipioId, createdOn, nif, cuenta, intuitivo, codigoCalle, direccion, portal, bis, escalera, piso, mano, otrosDomicilio, tarifa, cantidad, direccionFiscal, portalFiscal, bisFiscal, escaleraFiscal, pisoFiscal, manoFiscal, localidadFiscal, pkFiscal, provinciaFiscal. Cualquier cambio de formato, hablar con el desarrollador.")
+        label: _("Requisitos fichero .mdb")
+    importadoresEdit_screen: 
+      <<: *importadoresEdit_screenLink 
+
+    cubosList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *Cubos
+      title: _("List of %s", ngettext('Cubo', 'Cubos', 0))
+      filterField: contribuyenteId
+      parentOptionCustomizer:
+        - recordCount
+      class: ui-silk-database
+      fields:
+        options:
+          title: _("Options")
+          screens:
+            cubosEdit_screen: true
+            incidenciasList_screen: true
+          dialogs:
+            cubosDel_dialog: true
+          default: cubosEdit_screen
+      options:
+        title: _("Options")
+        screens:
+          cubosNew_screen: true
+    cubosNew_screen:
+      <<: *Cubos
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Cubo', 'Cubos', 1))
+      filterField: contribuyenteId
+
+    cubosTiposNew_screen:
+      <<: *cubosTiposNew_screenLink
+
+    cubosEdit_screen:
+      <<: *Cubos
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Cubo', 'Cubos', 1))
+      filterField: contribuyenteId
+
+    incidenciasList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *Incidencias
+      title: _("List of %s", ngettext('Incidencia', 'Incidencias', 0))
+      class: ui-silk-error
+      filterField: cuboId
+      parentOptionCustomizer:
+        - recordCount
+      fields:
+        options:
+          title: _("Options")
+          screens:
+            incidenciasEdit_screen: true
+          dialogs:
+            incidenciasDel_dialog: true
+          default: incidenciasEdit_screen
+        blacklist:
+          createdOn: true
+          postesId: true
+          compostadorId: true
+      options:
+        title: _("Options")
+        screens:
+          incidenciasNew_screen: true
+      forcedValues:
+        entidad: cubo
+    incidenciasNew_screen:
+      <<: *Incidencias
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Incidencia', 'Incidencias', 1))
+      filterField: cuboId
+      fields:
+        blacklist:
+          createdOn: true
+          postesId: true
+          compostadorId: true
+      forcedValues:
+        entidad: cubo
+    incidenciasEdit_screen:
+      <<: *Incidencias
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Incidencia', 'Incidencias', 1))
+      filterField: cuboId
+      fields:
+        blacklist:
+          createdOn: true
+          postesId: true
+          compostadorId: true
+      forcedValues:
+        entidad: cubo
+
+    # DATOS TELÉFONO
+    <<: *telefonosList_screenTotal
+
+    # DATOS EMAIL
+    <<: *emailsList_screenTotal
+
+  dialogs:
+    contribuyentesDel_dialog: &contribuyentesDel_dialogLink 
+      <<: *Contribuyentes
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Contribuyente', 'Contribuyentes', 1))
+      description: _("Do you want to delete this %s?", ngettext('Contribuyente', 'Contribuyentes', 1))
+      message: _("%s successfully deleted.", ngettext('Contribuyente', 'Contribuyentes', 1))
+      multiItem: 1
+      labelOnList: 1
+
+    importadoresDel_dialog:
+      <<: *importadoresDel_screenLink 
+
+    cubosDel_dialog:
+      <<: *Cubos
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Cubo', 'Cubos', 1))
+      description: _("Do you want to delete this %s?", ngettext('Cubo', 'Cubos', 1))
+      filterField: contribuyenteId
+
+    incidenciasDel_dialog:
+      <<: *Incidencias
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Incidencia', 'Incidencias', 1))
+      description: _("Do you want to delete this %s?", ngettext('Incidencia', 'Incidencias', 1))
+
+    telefonosDel_dialog:
+      <<: *telefonosDel_dialogLink
+
+    telefonosAddDel_dialog:
+      <<: *telefonosAddDel_dialogLink 
+
+    emailsDel_dialog:
+      <<: *emailsDel_dialogLink 
+
+    emailsAddDel_dialog:
+      <<: *emailsAddDel_dialogLink 
+
+  commands:
+    ArchivoDownload_command:
+      <<: *Importadores
+      controller: File
+      action: force-download
+      mainColumn: archivo
+    ArchivoUpload_command:
+      <<: *Importadores
+      controller: File
+      action: upload
+      mainColumn: archivo
+    ArchivoPreview_command:
+      <<: *Importadores
+      controller: File
+      action: preview
+      mainColumn: archivo
+
+testing:
+  _extends: production
+development:
+  _extends: production

@@ -1,0 +1,70 @@
+production: 
+  class: \Atezate\Model\CubosTipos
+  fields: 
+    tipo: 
+      title: _('Tipo')
+      type: text
+      defaultValue: 
+      default: true
+    litros: 
+      title: _('Litro (l)')
+      type: text
+      required: true
+    color: 
+      title: _('Color')
+      type: text
+      defaultValue: 
+    altura: 
+      title: _('Altura (m)')
+      type: text
+      required: true
+    anchura: 
+      title: _('Anchura (m)')
+      type: text
+      required: true
+    longitud: 
+      title: _('Longitud (m)')
+      type: text
+      required: true
+    llave: 
+      title: _('Llave')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+          '1': 
+            title: _("Yes")
+    llenadoObligatorio: 
+      title: _('Llenado obligatorio')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+          '1': 
+            title: _("Yes")
+    marcaCuboId: 
+      title: _('Marca cubo')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\MarcasCubo
+          fieldName: 
+            fields: 
+              - marca
+            template: '%marca%'
+          order: marca
+#      options:
+#        screens:
+#          cubosMarcasNew_screen: true
+testing: 
+  _extends: production
+development: 
+  _extends: production

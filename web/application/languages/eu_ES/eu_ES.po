@@ -1,0 +1,3228 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Klear-Public\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-11 10:55+0100\n"
+"PO-Revision-Date: 2013-12-11 10:55+0100\n"
+"Last-Translator: Victor <victor@irontec.com>\n"
+"Language-Team: Irontec-Klear <lander+klear@irontec.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;translate;plural:1,2\n"
+"X-Poedit-Basepath: /home/victor/workspace/atez-ate/web/\n"
+"X-Poedit-Language: Basque\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: application/languages/common-strings.php:7
+msgid "Login"
+msgstr "Erabiltzaile izena"
+
+#: application/languages/common-strings.php:8
+msgid "Username"
+msgstr "Erabiltzaile izena"
+
+#: application/languages/common-strings.php:9
+msgid "Email"
+msgid_plural "Emails"
+msgstr[0] "Emaila"
+msgstr[1] "Emailak"
+
+#: application/languages/common-strings.php:10
+#, fuzzy
+msgid "Email address"
+msgid_plural "Email addresses"
+msgstr[0] "Helbidea"
+msgstr[1] "Helbideak"
+
+#: application/languages/common-strings.php:11
+msgid "Pass"
+msgstr "Pasahitza"
+
+#: application/languages/common-strings.php:12
+msgid "Password"
+msgid_plural "Passwords"
+msgstr[0] "Pasahitza"
+msgstr[1] "Pasahitzak"
+
+#: application/languages/common-strings.php:13
+msgid "User"
+msgid_plural "Users"
+msgstr[0] "Erabiltzailea"
+msgstr[1] "Erabiltzaileak"
+
+#: application/languages/common-strings.php:14
+msgid "Name"
+msgid_plural "Names"
+msgstr[0] "Izena"
+msgstr[1] "Izenak"
+
+#: application/languages/common-strings.php:15
+msgid "Surname"
+msgstr "Abizena"
+
+#: application/languages/common-strings.php:16
+msgid "FirstName"
+msgstr "Izena"
+
+#: application/languages/common-strings.php:17
+msgid "Firstname"
+msgstr "Izena"
+
+#: application/languages/common-strings.php:18
+msgid "First name"
+msgstr "Izena"
+
+#: application/languages/common-strings.php:19
+msgid "LastName"
+msgstr "Abizena"
+
+#: application/languages/common-strings.php:20
+msgid "Lastname"
+msgstr "Abizena"
+
+#: application/languages/common-strings.php:21
+msgid "Last name"
+msgstr "Abizena"
+
+#: application/languages/common-strings.php:22
+msgid "PhoneNumber"
+msgid_plural "PhoneNumbers"
+msgstr[0] "Telefono zenbakia"
+msgstr[1] "Telefono zenbakiak"
+
+#: application/languages/common-strings.php:23
+msgid "Phonenumber"
+msgid_plural "Phonenumbers"
+msgstr[0] "Telefono zenbakia"
+msgstr[1] "Telefono zenbakiak"
+
+#: application/languages/common-strings.php:24
+msgid "Phone number"
+msgid_plural "Phone numbers"
+msgstr[0] "Telefono zenbakia"
+msgstr[1] "Telefono zenbakiak"
+
+#: application/languages/common-strings.php:25
+msgid "Address"
+msgid_plural "Addresses"
+msgstr[0] "Helbidea"
+msgstr[1] "Helbideak"
+
+#: application/languages/common-strings.php:26
+msgid "Street"
+msgid_plural "Streets"
+msgstr[0] "Kalea"
+msgstr[1] "Kaleak"
+
+#: application/languages/common-strings.php:27
+msgid "PostalCode"
+msgid_plural "PostalCodes"
+msgstr[0] "Posta kodea"
+msgstr[1] "Posta kodeak"
+
+#: application/languages/common-strings.php:28
+msgid "Postalcode"
+msgid_plural "Postalcodes"
+msgstr[0] "Posta kodea"
+msgstr[1] "Posta kodeak"
+
+#: application/languages/common-strings.php:29
+msgid "Postal code"
+msgid_plural "Postal codes"
+msgstr[0] "Posta kodea"
+msgstr[1] "Posta kodeak"
+
+#: application/languages/common-strings.php:30
+msgid "ZipCode"
+msgid_plural "ZipCodes"
+msgstr[0] "Posta kodea"
+msgstr[1] "Posta kodeak"
+
+#: application/languages/common-strings.php:31
+msgid "Zipcode"
+msgid_plural "Zipcodes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/languages/common-strings.php:32
+msgid "Zip code"
+msgid_plural "Zip codes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/languages/common-strings.php:33
+msgid "Province"
+msgid_plural "Provinces"
+msgstr[0] "Probintzia"
+msgstr[1] "Probintziak"
+
+#: application/languages/common-strings.php:34
+msgid "City"
+msgid_plural "Cities"
+msgstr[0] "Hiria"
+msgstr[1] "Hiriak"
+
+#: application/languages/common-strings.php:35
+msgid "State"
+msgid_plural "States"
+msgstr[0] "Estatua"
+msgstr[1] "Estatuak"
+
+#: application/languages/common-strings.php:36
+msgid "Country"
+msgid_plural "Countries"
+msgstr[0] "Herrialdea"
+msgstr[1] "Herrialdeak"
+
+#: application/languages/common-strings.php:41
+msgid "File"
+msgid_plural "Files"
+msgstr[0] "Fitxategia"
+msgstr[1] "Fitxategiak"
+
+#: application/languages/common-strings.php:42
+msgid "Path"
+msgid_plural "Paths"
+msgstr[0] "Helbidea"
+msgstr[1] "Helbideak"
+
+#: application/languages/common-strings.php:43
+msgid "Size"
+msgid_plural "Sizes"
+msgstr[0] "Tamaina"
+msgstr[1] "Tamainak"
+
+#: application/languages/common-strings.php:44
+msgid "FileSize"
+msgstr "Fitxategi tamaina"
+
+#: application/languages/common-strings.php:45
+msgid "Filesize"
+msgstr "Fitxategi tamaina"
+
+#: application/languages/common-strings.php:46
+msgid "File size"
+msgstr "Fitxategi tamaina"
+
+#: application/languages/common-strings.php:47
+msgid "FilePath"
+msgstr "Fitxategi helbidea"
+
+#: application/languages/common-strings.php:48
+msgid "Filepath"
+msgstr "Fitxategi helbidea"
+
+#: application/languages/common-strings.php:49
+msgid "File path"
+msgstr "Fitxategi helbidea"
+
+#: application/languages/common-strings.php:50
+msgid "MimeType"
+msgid_plural "MimeTypes"
+msgstr[0] "Fitxategi mota"
+msgstr[1] "Fitxategi motak"
+
+#: application/languages/common-strings.php:51
+msgid "Mimetype"
+msgid_plural "Mimetypes"
+msgstr[0] "Fitxategi mota"
+msgstr[1] "Fitxategi motak"
+
+#: application/languages/common-strings.php:52
+msgid "Mime type"
+msgid_plural "Mime types"
+msgstr[0] "Fitxategi mota"
+msgstr[1] "Fitxategi motak"
+
+#: application/languages/common-strings.php:53
+msgid "BaseName"
+msgstr "Oinarrizko izena"
+
+#: application/languages/common-strings.php:54
+msgid "Base name"
+msgstr "Oinarrizko izena"
+
+#: application/languages/common-strings.php:55
+msgid "Image"
+msgid_plural "Images"
+msgstr[0] "Irudia"
+msgstr[1] "Irudiak"
+
+#: application/languages/common-strings.php:56
+msgid "ImageSize"
+msgstr "Irudi tamaina"
+
+#: application/languages/common-strings.php:57
+msgid "Imagesize"
+msgstr "Irudi tamaina"
+
+#: application/languages/common-strings.php:58
+msgid "Image size"
+msgstr "Irudi tamaina"
+
+#: application/languages/common-strings.php:59
+msgid "ImagePath"
+msgstr "Irudi helbidea"
+
+#: application/languages/common-strings.php:60
+msgid "Imagepath"
+msgstr "Irudi helbidea"
+
+#: application/languages/common-strings.php:61
+msgid "Image path"
+msgstr "Irudi helbidea"
+
+#: application/languages/common-strings.php:62
+msgid "Picture"
+msgid_plural "Pictures"
+msgstr[0] "Argazkia"
+msgstr[1] "Argazkiak"
+
+#: application/languages/common-strings.php:63
+msgid "PictureSize"
+msgstr "Argazki tamaina"
+
+#: application/languages/common-strings.php:64
+msgid "Picturesize"
+msgstr "Argazki tamaina"
+
+#: application/languages/common-strings.php:65
+msgid "Picture size"
+msgstr "Argazki tamaina"
+
+#: application/languages/common-strings.php:66
+msgid "PicturePath"
+msgstr "Argazki helbidea"
+
+#: application/languages/common-strings.php:67
+msgid "Picturepath"
+msgstr "Argazki helbidea"
+
+#: application/languages/common-strings.php:68
+msgid "Picture path"
+msgstr "Argazki helbidea"
+
+#: application/languages/common-strings.php:73
+msgid "Active"
+msgstr "Aktiboa"
+
+#: application/languages/common-strings.php:74
+msgid "Status"
+msgid_plural "Statuses"
+msgstr[0] "Egoera"
+msgstr[1] "Egoerak"
+
+#: application/languages/common-strings.php:75
+msgid "CreatedOn"
+msgstr "Sortua"
+
+#: application/languages/common-strings.php:76
+msgid "Createdon"
+msgstr "Sortua"
+
+#: application/languages/common-strings.php:77
+msgid "Created on"
+msgstr "Sortua"
+
+#: application/languages/common-strings.php:78
+msgid "UpdatedOn"
+msgstr "Aldatua"
+
+#: application/languages/common-strings.php:79
+msgid "Updatedon"
+msgstr "Aldatua"
+
+#: application/languages/common-strings.php:80
+msgid "Updated on"
+msgstr "Aldatua"
+
+#: application/languages/common-strings.php:81
+msgid "StartTime"
+msgstr "Hasiera"
+
+#: application/languages/common-strings.php:82
+msgid "Starttime"
+msgstr "Hasiera"
+
+#: application/languages/common-strings.php:83
+msgid "Start time"
+msgstr "Hasiera"
+
+#: application/languages/common-strings.php:84
+msgid "EndTime"
+msgstr "Amaiera"
+
+#: application/languages/common-strings.php:85
+msgid "Endtime"
+msgstr ""
+
+#: application/languages/common-strings.php:86
+msgid "End time"
+msgstr ""
+
+#: application/languages/common-strings.php:87
+msgid "Start"
+msgstr "Hasiera"
+
+#: application/languages/common-strings.php:88
+msgid "End"
+msgstr "Amaiera"
+
+#: application/languages/common-strings.php:89
+msgid "Date"
+msgid_plural "Dates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/languages/common-strings.php:90
+msgid "Time"
+msgid_plural "Times"
+msgstr[0] "Denbora"
+msgstr[1] "Denborak"
+
+#: application/languages/common-strings.php:91
+msgid "Interval"
+msgid_plural "Intervals"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/languages/common-strings.php:92
+msgid "Identifier"
+msgid_plural "Identifiers"
+msgstr[0] "Identifikatzailea"
+msgstr[1] "Identifikatzaileak"
+
+#: application/languages/common-strings.php:93
+msgid "Iden"
+msgid_plural "Idens"
+msgstr[0] "Identifikatzailea"
+msgstr[1] "Identifikatzaileak"
+
+#: application/languages/common-strings.php:94
+msgid "Order"
+msgid_plural "Orders"
+msgstr[0] "Ordena"
+msgstr[1] "Ordenak"
+
+#: application/languages/common-strings.php:95
+msgid "Value"
+msgid_plural "Values"
+msgstr[0] "Balioa"
+msgstr[1] "Balioak"
+
+#: application/languages/common-strings.php:96
+msgid "Title"
+msgid_plural "Titles"
+msgstr[0] "Izenburua"
+msgstr[1] "Izenburuak"
+
+#: application/languages/common-strings.php:97
+msgid "Subtitle"
+msgid_plural "Subtitles"
+msgstr[0] "Azpi izenburua"
+msgstr[1] "Azpi izenburuak"
+
+#: application/languages/common-strings.php:98
+msgid "Intro"
+msgid_plural "Intros"
+msgstr[0] "Sarrera"
+msgstr[1] "Sarrerak"
+
+#: application/languages/common-strings.php:99
+msgid "Introduction"
+msgid_plural "Introductions"
+msgstr[0] "Sarrera"
+msgstr[1] "Sarrerak"
+
+#: application/languages/common-strings.php:100
+msgid "Description"
+msgid_plural "Descriptions"
+msgstr[0] "Deskribapena"
+msgstr[1] "Deskribapenak"
+
+#: application/languages/common-strings.php:101
+msgid "Text"
+msgid_plural "Texts"
+msgstr[0] "Testua"
+msgstr[1] "Testuak"
+
+#: application/languages/common-strings.php:102
+msgid "News"
+msgid_plural "News(s)"
+msgstr[0] "Albiste"
+msgstr[1] "Albisteak"
+
+#: application/languages/common-strings.php:103
+msgid "Subject"
+msgid_plural "Subjects"
+msgstr[0] "Gaia"
+msgstr[1] "Gaiak"
+
+#: application/languages/common-strings.php:104
+msgid "Message"
+msgid_plural "Messages"
+msgstr[0] "Mezua"
+msgstr[1] "Mezuak"
+
+#: application/languages/common-strings.php:105
+msgid "Section"
+msgid_plural "Sections"
+msgstr[0] "Atala"
+msgstr[1] "Atalak"
+
+#: application/languages/common-strings.php:106
+msgid "Content"
+msgid_plural "Contents"
+msgstr[0] "Edukia"
+msgstr[1] "Edukiak"
+
+#: application/languages/common-strings.php:107
+msgid "Html"
+msgstr ""
+
+#: application/languages/common-strings.php:108
+msgid "Website"
+msgid_plural "Websites"
+msgstr[0] "Web tokia"
+msgstr[1] "Web tokiak"
+
+#: application/languages/common-strings.php:109
+msgid "Url"
+msgid_plural "Urls"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/languages/common-strings.php:110
+msgid "Link"
+msgid_plural "Links"
+msgstr[0] "Esteka"
+msgstr[1] "Estekak"
+
+#: application/languages/common-strings.php:111
+msgid "Slug"
+msgstr ""
+
+#: application/languages/common-strings.php:113
+msgid "Type"
+msgid_plural "Types"
+msgstr[0] "Mota"
+msgstr[1] "Motak"
+
+#: application/languages/common-strings.php:114
+msgid "Other"
+msgid_plural "Others"
+msgstr[0] "Bestelakoa"
+msgstr[1] "Bestelakoak"
+
+#: application/languages/common-strings.php:115
+msgid "Price"
+msgid_plural "Prices"
+msgstr[0] "Prezioa"
+msgstr[1] "Prezioak"
+
+#: application/languages/common-strings.php:116
+msgid "Quantity"
+msgid_plural "Quantities"
+msgstr[0] "Zenbatekoa"
+msgstr[1] "Zenbatekoak"
+
+#: application/languages/common-strings.php:118
+msgid "Category"
+msgid_plural "Categories"
+msgstr[0] "Kategoria"
+msgstr[1] "Kategoriak"
+
+#: application/languages/common-strings.php:119
+msgid "Theme"
+msgid_plural "Themes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/languages/common-strings.php:120
+msgid "Template"
+msgid_plural "Templates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/languages/common-strings.php:122
+msgid "No"
+msgstr "Ez"
+
+#: application/languages/common-strings.php:123
+msgid "Yes"
+msgstr "Bai"
+
+#: application/languages/common-strings.php:124
+msgid "Off"
+msgstr "Desaktibatua"
+
+#: application/languages/common-strings.php:125
+msgid "On"
+msgstr "Piztuta"
+
+#: application/languages/common-strings.php:126
+msgid "Unasigned"
+msgstr "Esleigabea"
+
+#: application/languages/common-strings.php:127
+msgid "Error"
+msgid_plural "Errors"
+msgstr[0] "Akatsa"
+msgstr[1] "Akatsak"
+
+#: application/languages/common-strings.php:128
+msgid "Success"
+msgstr "Arrakastatsua"
+
+#: application/languages/common-strings.php:129
+msgid "OK"
+msgstr "OK"
+
+#: application/languages/common-strings.php:130
+msgid "Public"
+msgstr "Publikoa"
+
+#: application/languages/common-strings.php:131
+msgid "Private"
+msgstr "Pribatua"
+
+#: application/languages/common-strings.php:132
+msgid "Visibility"
+msgstr "Ikuspena"
+
+#: application/languages/common-strings.php:138
+msgid "Upload file"
+msgstr "Fitxategia igo"
+
+#: application/languages/common-strings.php:139
+msgid "Download"
+msgid_plural "Downloads"
+msgstr[0] "Jaitsi"
+msgstr[1] "Jaitsierak"
+
+#: application/languages/common-strings.php:140
+msgid "Download file"
+msgid_plural "Download files"
+msgstr[0] "Fitxategia jaitsi"
+msgstr[1] "Fitxategiak jaitsi"
+
+#: application/languages/common-strings.php:141
+#, php-format
+msgid "List of %s"
+msgstr "%s-(r)en zerrenda"
+
+#: application/languages/common-strings.php:142
+#, php-format
+msgid "Edit %s"
+msgstr "%s editatu"
+
+#: application/languages/common-strings.php:143
+#, php-format
+msgid "Add %s"
+msgstr "%s gehitu"
+
+#: application/languages/common-strings.php:144
+#, php-format
+msgid "Delete %s"
+msgstr "%s ezabatu"
+
+#: application/languages/common-strings.php:145
+#, php-format
+msgid "You want to delete this %s?"
+msgstr "%s ezabatu nahi duzu?"
+
+#: application/languages/common-strings.php:146
+msgid "Option"
+msgid_plural "Options"
+msgstr[0] "Aukera"
+msgstr[1] "Aukerak"
+
+#: application/languages/common-strings.php:147
+msgid "Setting"
+msgid_plural "Settings"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/languages/common-strings.php:148
+msgid "Main management"
+msgstr "Kudeaketa orokorra"
+
+#: application/languages/common-strings.php:151
+msgid "Test"
+msgid_plural "Tests"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/languages/common-strings.php:156
+msgid "field"
+msgid_plural "fields"
+msgstr[0] "Eremua"
+msgstr[1] "Eremuak"
+
+#: application/languages/common-strings.php:157
+msgid "note"
+msgid_plural "notes"
+msgstr[0] "Oharra"
+msgstr[1] "Oharrak"
+
+#: application/languages/common-strings.php:158
+msgid "tag"
+msgid_plural "tags"
+msgstr[0] "etiketa"
+msgstr[1] "etiketak"
+
+#: application/languages/common-strings.php:159
+msgid "src-line"
+msgstr ""
+
+#: application/languages/common-strings.php:160
+msgid "Access denied"
+msgstr "Sarbide ukatua"
+
+#: application/languages/common-strings.php:161
+msgid "Insert your username"
+msgstr "Zure erabiltzaile izena sartu"
+
+#: application/languages/common-strings.php:162
+msgid "Insert your username or email address"
+msgstr "Zure erabiltzaile izena edo emaila sartu"
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:57
+msgid "Teléfono repetido"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:58
+msgid "Este número de teléfono se encuentra agregado."
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:60
+#: application/controllers/KlearContribuyenteTelefonoController.php:109
+#: application/controllers/KlearContribuyenteTelefonoController.php:124
+#: application/controllers/KlearContribuyenteEmailController.php:59
+#: application/controllers/KlearContribuyenteEmailController.php:106
+#: application/controllers/KlearContribuyenteEmailController.php:121
+msgid "Ok"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:76
+msgid "Número añadido:"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:94
+#: application/controllers/KlearContribuyenteEmailController.php:92
+msgid "Borrado:"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:106
+msgid "Teléfonos registrados"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:121
+#: application/controllers/KlearContribuyenteEmailController.php:118
+msgid "Mensaje"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:122
+#: application/controllers/KlearContribuyenteEmailController.php:119
+msgid "Rellene todos los campos"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:132
+msgid "Añadir Teléfono"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:135
+#: application/controllers/KlearContribuyenteEmailController.php:132
+msgid "Cancelar"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteTelefonoController.php:138
+#: application/controllers/KlearContribuyenteEmailController.php:135
+msgid "Modificar"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteEmailController.php:56
+msgid "Correo repetido"
+msgstr ""
+
+#: application/controllers/KlearContribuyenteEmailController.php:57
+msgid "Esta cuenta ya se encuentra agregado en nuestra base de datos."
+msgstr ""
+
+#: application/controllers/KlearContribuyenteEmailController.php:74
+#, fuzzy
+msgid "Email añadido:"
+msgstr "Helbidea"
+
+#: application/controllers/KlearContribuyenteEmailController.php:103
+#, fuzzy
+msgid "Emails registrados"
+msgstr "Helbidea"
+
+#: application/controllers/KlearContribuyenteEmailController.php:129
+msgid "Añadir Email"
+msgstr ""
+
+#: application/controllers/KlearRecogidaController.php:48
+msgid "Cliente Eliminado"
+msgstr ""
+
+#: application/controllers/KlearRecogidaController.php:49
+msgid "Los datos del cliente fueron eliminados."
+msgstr ""
+
+#: library/Atezate/Model/Raw/CodigosPostales.php:157
+#: library/Atezate/Model/Raw/PlantillasSms.php:180
+#: library/Atezate/Model/Raw/Descargas.php:254
+msgid "Required values cannot be null"
+msgstr ""
+
+#: library/Atezate/Model/Raw/Incidencias.php:456
+msgid "Invalid value for entidad"
+msgstr ""
+
+#: library/Atezate/Model/Raw/Incidencias.php:669
+msgid "Invalid value for solucionada"
+msgstr ""
+
+#: library/Atezate/Model/Raw/PlantillasTelefono.php:867
+msgid "Invalid value for estado"
+msgstr ""
+
+#: library/Atezate/Model/Raw/Telefonos.php:254
+msgid "Invalid value for tipo"
+msgstr ""
+
+#: library/Atezate/Model/Raw/Cubos.php:306
+msgid "Invalid value for ubicacion"
+msgstr ""
+
+#: library/Atezate/Model/Raw/TiposIncidencias.php:285
+msgid "Invalid value for gravedad"
+msgstr ""
+
+#: library/Atezate/Model/Raw/Recogidas.php:354
+msgid "Invalid value for tipos"
+msgstr ""
+
+#: library/Atezate/Model/Raw/Contribuyentes.php:1497
+msgid "Invalid value for ivr"
+msgstr ""
+
+#: library/Atezate/Model/Raw/TurnosRelCamiones.php:363
+msgid "Invalid value for orden"
+msgstr ""
+
+#: library/Atezate/Model/Raw/Importadores.php:387
+msgid "Invalid value for className"
+msgstr ""
+
+#: application/assets/bin/template/edit.phtml:20
+#: application/assets/bin/template/edit.phtml:105
+msgid "Close"
+msgstr ""
+
+#: application/assets/bin/template/edit.phtml:22
+#: application/assets/bin/template/edit.phtml:107
+msgid "Save"
+msgstr ""
+
+#: application/assets/bin/template/edit.phtml:23
+#: application/assets/bin/template/edit.phtml:108
+msgid "Close automatically after save"
+msgstr ""
+
+#: application/assets/bin/template/ejemplo.tmpl.html:30
+msgid "En caso de festivo"
+msgstr ""
+
+#: application/assets/bin/template/ejemplo.tmpl.html:58
+msgid "En caso de fuera de horario"
+msgstr ""
+
+#: application/assets/bin/template/ejemplo.tmpl.html:86
+msgid "En caso de ocupado"
+msgstr ""
+
+#: application/assets/bin/template/ejemplo.tmpl.html:114
+msgid "En caso de no respuesta"
+msgstr ""
+
+#: application/assets/bin/template/ejemplo.tmpl.html:146
+msgid "Cerrar"
+msgstr ""
+
+#: application/assets/bin/template/ejemplo.tmpl.html:147
+msgid "Guardar"
+msgstr ""
+
+#: application/assets/bin/template/ejemplo.tmpl.html:148
+msgid "Cerrar automáticamente después de guardar"
+msgstr ""
+
+#: application/configs/klearRaw/EmailsList.yaml:17
+#: application/configs/klearRaw/EmailsList.yaml:24
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:17
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:24
+#: application/configs/klearRaw/PlantillasSmsList.yaml:17
+#: application/configs/klearRaw/PlantillasSmsList.yaml:24
+#: application/configs/klearRaw/CubosTiposList.yaml:17
+#: application/configs/klearRaw/CubosTiposList.yaml:24
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:17
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:24
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:17
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:24
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:17
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:24
+#: application/configs/klearRaw/MarcasCuboList.yaml:17
+#: application/configs/klearRaw/MarcasCuboList.yaml:24
+#, fuzzy
+msgid "Options"
+msgstr "Aukera"
+
+#: application/configs/klearRaw/EmailsList.yaml:53
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:47
+#: application/configs/klearRaw/PlantillasSmsList.yaml:47
+#: application/configs/klearRaw/CubosTiposList.yaml:47
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:47
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:47
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:47
+#: application/configs/klearRaw/MarcasCuboList.yaml:53
+#, fuzzy, python-format
+msgid "Do you want to delete this %s?"
+msgstr "%s ezabatu nahi duzu?"
+
+#: application/configs/klearRaw/EmailsList.yaml:54
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:48
+#: application/configs/klearRaw/PlantillasSmsList.yaml:48
+#: application/configs/klearRaw/CubosTiposList.yaml:48
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:48
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:48
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:48
+#: application/configs/klearRaw/MarcasCuboList.yaml:54
+#, python-format
+msgid "%s successfully deleted."
+msgstr ""
+
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:14
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:33
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:39
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:46
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:47
+#: application/configs/klearRaw/PuntosRecogidaTiposList.yaml:48
+msgid "Puntos recogida tipo"
+msgid_plural "Puntos recogida tipos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/PlantillasSmsList.yaml:14
+#: application/configs/klearRaw/PlantillasSmsList.yaml:33
+#: application/configs/klearRaw/PlantillasSmsList.yaml:39
+#: application/configs/klearRaw/PlantillasSmsList.yaml:46
+#: application/configs/klearRaw/PlantillasSmsList.yaml:47
+#: application/configs/klearRaw/PlantillasSmsList.yaml:48
+msgid "Plantillas sm"
+msgid_plural "Plantillas sms"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/CubosTiposList.yaml:14
+#: application/configs/klearRaw/CubosTiposList.yaml:33
+#: application/configs/klearRaw/CubosTiposList.yaml:39
+#: application/configs/klearRaw/CubosTiposList.yaml:46
+#: application/configs/klearRaw/CubosTiposList.yaml:47
+#: application/configs/klearRaw/CubosTiposList.yaml:48
+msgid "Cubos tipo"
+msgid_plural "Cubos tipos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:14
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:33
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:39
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:46
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:47
+#: application/configs/klearRaw/CompostadoresRelContribuyentesList.yaml:48
+msgid "Compostadores rel contribuyente"
+msgid_plural "Compostadores rel contribuyentes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:14
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:33
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:39
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:46
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:47
+#: application/configs/klearRaw/PlantillasTelefonoList.yaml:48
+msgid "Plantillas telefono"
+msgid_plural "Plantillas telefono(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:14
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:33
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:39
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:46
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:47
+#: application/configs/klearRaw/CentrosEmergenciaList.yaml:48
+msgid "Centros emergencia"
+msgid_plural "Centros emergencia(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/MarcasCuboList.yaml:14
+#: application/configs/klearRaw/MarcasCuboList.yaml:33
+#: application/configs/klearRaw/MarcasCuboList.yaml:42
+#: application/configs/klearRaw/MarcasCuboList.yaml:52
+#: application/configs/klearRaw/MarcasCuboList.yaml:53
+#: application/configs/klearRaw/MarcasCuboList.yaml:54
+msgid "Marcas cubo"
+msgid_plural "Marcas cubo(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/MunicipiosList.yaml:14
+#: application/configs/klearRaw/MunicipiosList.yaml:33
+#: application/configs/klearRaw/MunicipiosList.yaml:42
+#: application/configs/klearRaw/MunicipiosList.yaml:52
+#: application/configs/klearRaw/MunicipiosList.yaml:53
+#: application/configs/klearRaw/MunicipiosList.yaml:54
+msgid "Municipio"
+msgid_plural "Municipios"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/IncidenciasList.yaml:14
+#: application/configs/klearRaw/IncidenciasList.yaml:33
+#: application/configs/klearRaw/IncidenciasList.yaml:42
+#: application/configs/klearRaw/IncidenciasList.yaml:52
+#: application/configs/klearRaw/IncidenciasList.yaml:53
+#: application/configs/klearRaw/IncidenciasList.yaml:54
+msgid "Incidencia"
+msgid_plural "Incidencias"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/OperariosList.yaml:14
+#: application/configs/klearRaw/OperariosList.yaml:33
+#: application/configs/klearRaw/OperariosList.yaml:39
+#: application/configs/klearRaw/OperariosList.yaml:46
+#: application/configs/klearRaw/OperariosList.yaml:47
+#: application/configs/klearRaw/OperariosList.yaml:48
+msgid "Operario"
+msgid_plural "Operarios"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/CompostadoresList.yaml:14
+#: application/configs/klearRaw/CompostadoresList.yaml:33
+#: application/configs/klearRaw/CompostadoresList.yaml:39
+#: application/configs/klearRaw/CompostadoresList.yaml:46
+#: application/configs/klearRaw/CompostadoresList.yaml:47
+#: application/configs/klearRaw/CompostadoresList.yaml:48
+msgid "Compostadore"
+msgid_plural "Compostadores"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/RevisionList.yaml:14
+#: application/configs/klearRaw/RevisionList.yaml:33
+#: application/configs/klearRaw/RevisionList.yaml:39
+#: application/configs/klearRaw/RevisionList.yaml:46
+#: application/configs/klearRaw/RevisionList.yaml:47
+#: application/configs/klearRaw/RevisionList.yaml:48
+msgid "Revision"
+msgid_plural "Revision(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/RutasTiposList.yaml:14
+#: application/configs/klearRaw/RutasTiposList.yaml:33
+#: application/configs/klearRaw/RutasTiposList.yaml:39
+#: application/configs/klearRaw/RutasTiposList.yaml:46
+#: application/configs/klearRaw/RutasTiposList.yaml:47
+#: application/configs/klearRaw/RutasTiposList.yaml:48
+msgid "Rutas tipo"
+msgid_plural "Rutas tipos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/TurnosRelCamionesList.yaml:14
+#: application/configs/klearRaw/TurnosRelCamionesList.yaml:33
+#: application/configs/klearRaw/TurnosRelCamionesList.yaml:39
+#: application/configs/klearRaw/TurnosRelCamionesList.yaml:46
+#: application/configs/klearRaw/TurnosRelCamionesList.yaml:47
+#: application/configs/klearRaw/TurnosRelCamionesList.yaml:48
+msgid "Turnos rel camione"
+msgid_plural "Turnos rel camiones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/DescargasList.yaml:14
+#: application/configs/klearRaw/DescargasList.yaml:33
+#: application/configs/klearRaw/DescargasList.yaml:42
+#: application/configs/klearRaw/DescargasList.yaml:52
+#: application/configs/klearRaw/DescargasList.yaml:53
+#: application/configs/klearRaw/DescargasList.yaml:54
+msgid "Descarga"
+msgid_plural "Descargas"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/DispositivosList.yaml:14
+#: application/configs/klearRaw/DispositivosList.yaml:33
+#: application/configs/klearRaw/DispositivosList.yaml:39
+#: application/configs/klearRaw/DispositivosList.yaml:46
+#: application/configs/klearRaw/DispositivosList.yaml:47
+#: application/configs/klearRaw/DispositivosList.yaml:48
+msgid "Dispositivo"
+msgid_plural "Dispositivos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/RecogidaTiposList.yaml:14
+#: application/configs/klearRaw/RecogidaTiposList.yaml:33
+#: application/configs/klearRaw/RecogidaTiposList.yaml:39
+#: application/configs/klearRaw/RecogidaTiposList.yaml:46
+#: application/configs/klearRaw/RecogidaTiposList.yaml:47
+#: application/configs/klearRaw/RecogidaTiposList.yaml:48
+msgid "Recogida tipo"
+msgid_plural "Recogida tipos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/KlearRolesSectionsList.yaml:14
+#: application/configs/klearRaw/KlearRolesSectionsList.yaml:33
+#: application/configs/klearRaw/KlearRolesSectionsList.yaml:39
+#: application/configs/klearRaw/KlearRolesSectionsList.yaml:46
+#: application/configs/klearRaw/KlearRolesSectionsList.yaml:47
+#: application/configs/klearRaw/KlearRolesSectionsList.yaml:48
+msgid "Klear roles section"
+msgid_plural "Klear roles sections"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/TelefonosList.yaml:14
+#: application/configs/klearRaw/TelefonosList.yaml:33
+#: application/configs/klearRaw/TelefonosList.yaml:42
+#: application/configs/klearRaw/TelefonosList.yaml:52
+#: application/configs/klearRaw/TelefonosList.yaml:53
+#: application/configs/klearRaw/TelefonosList.yaml:54
+msgid "Telefono"
+msgid_plural "Telefonos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/MarcasPosteList.yaml:14
+#: application/configs/klearRaw/MarcasPosteList.yaml:33
+#: application/configs/klearRaw/MarcasPosteList.yaml:42
+#: application/configs/klearRaw/MarcasPosteList.yaml:52
+#: application/configs/klearRaw/MarcasPosteList.yaml:53
+#: application/configs/klearRaw/MarcasPosteList.yaml:54
+msgid "Marcas poste"
+msgid_plural "Marcas poste(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/LogEmailsList.yaml:14
+#: application/configs/klearRaw/LogEmailsList.yaml:33
+#: application/configs/klearRaw/LogEmailsList.yaml:42
+#: application/configs/klearRaw/LogEmailsList.yaml:52
+#: application/configs/klearRaw/LogEmailsList.yaml:53
+#: application/configs/klearRaw/LogEmailsList.yaml:54
+msgid "Log email"
+msgid_plural "Log emails"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/ContribuyentesList.yaml:14
+#: application/configs/klearRaw/ContribuyentesList.yaml:33
+#: application/configs/klearRaw/ContribuyentesList.yaml:42
+#: application/configs/klearRaw/ContribuyentesList.yaml:52
+#: application/configs/klearRaw/ContribuyentesList.yaml:53
+#: application/configs/klearRaw/ContribuyentesList.yaml:54
+#, fuzzy
+msgid "Contribuyente"
+msgid_plural "Contribuyentes"
+msgstr[0] "Edukia"
+msgstr[1] "Edukiak"
+
+#: application/configs/klearRaw/RolesList.yaml:14
+#: application/configs/klearRaw/RolesList.yaml:33
+#: application/configs/klearRaw/RolesList.yaml:39
+#: application/configs/klearRaw/RolesList.yaml:46
+#: application/configs/klearRaw/RolesList.yaml:47
+#: application/configs/klearRaw/RolesList.yaml:48
+#: application/configs/klearRaw/klear.yaml:218
+#: application/configs/klearRaw/klear.yaml:220
+msgid "Role"
+msgid_plural "Roles"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/RutasList.yaml:14
+#: application/configs/klearRaw/RutasList.yaml:33
+#: application/configs/klearRaw/RutasList.yaml:39
+#: application/configs/klearRaw/RutasList.yaml:46
+#: application/configs/klearRaw/RutasList.yaml:47
+#: application/configs/klearRaw/RutasList.yaml:48
+#: application/configs/klearRaw/klear.yaml:222
+#: application/configs/klearRaw/klear.yaml:224
+msgid "Ruta"
+msgid_plural "Rutas"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/RecogidasList.yaml:14
+#: application/configs/klearRaw/RecogidasList.yaml:33
+#: application/configs/klearRaw/RecogidasList.yaml:42
+#: application/configs/klearRaw/RecogidasList.yaml:52
+#: application/configs/klearRaw/RecogidasList.yaml:53
+#: application/configs/klearRaw/RecogidasList.yaml:54
+#: application/configs/klearRaw/klear.yaml:202
+#: application/configs/klearRaw/klear.yaml:204
+msgid "Recogida"
+msgid_plural "Recogidas"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/ImportadoresList.yaml:14
+#: application/configs/klearRaw/ImportadoresList.yaml:33
+#: application/configs/klearRaw/ImportadoresList.yaml:39
+#: application/configs/klearRaw/ImportadoresList.yaml:46
+#: application/configs/klearRaw/ImportadoresList.yaml:47
+#: application/configs/klearRaw/ImportadoresList.yaml:48
+#: application/configs/klearRaw/klear.yaml:82
+#: application/configs/klearRaw/klear.yaml:84
+msgid "Importadore"
+msgid_plural "Importadores"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/RutasRelPuntosRecogidaList.yaml:14
+#: application/configs/klearRaw/RutasRelPuntosRecogidaList.yaml:33
+#: application/configs/klearRaw/RutasRelPuntosRecogidaList.yaml:39
+#: application/configs/klearRaw/RutasRelPuntosRecogidaList.yaml:46
+#: application/configs/klearRaw/RutasRelPuntosRecogidaList.yaml:47
+#: application/configs/klearRaw/RutasRelPuntosRecogidaList.yaml:48
+#: application/configs/klearRaw/klear.yaml:226
+#: application/configs/klearRaw/klear.yaml:228
+msgid "Rutas rel puntos recogida"
+msgid_plural "Rutas rel puntos recogida(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/MunicipiosRelCodigosPostalesList.yaml:14
+#: application/configs/klearRaw/MunicipiosRelCodigosPostalesList.yaml:33
+#: application/configs/klearRaw/MunicipiosRelCodigosPostalesList.yaml:39
+#: application/configs/klearRaw/MunicipiosRelCodigosPostalesList.yaml:46
+#: application/configs/klearRaw/MunicipiosRelCodigosPostalesList.yaml:47
+#: application/configs/klearRaw/MunicipiosRelCodigosPostalesList.yaml:48
+#: application/configs/klearRaw/klear.yaml:150
+#: application/configs/klearRaw/klear.yaml:152
+msgid "Municipios rel codigos postale"
+msgid_plural "Municipios rel codigos postales"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/ResiduosTiposList.yaml:14
+#: application/configs/klearRaw/ResiduosTiposList.yaml:33
+#: application/configs/klearRaw/ResiduosTiposList.yaml:39
+#: application/configs/klearRaw/ResiduosTiposList.yaml:46
+#: application/configs/klearRaw/ResiduosTiposList.yaml:47
+#: application/configs/klearRaw/ResiduosTiposList.yaml:48
+#: application/configs/klearRaw/klear.yaml:206
+#: application/configs/klearRaw/klear.yaml:208
+msgid "Residuos tipo"
+msgid_plural "Residuos tipos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/MarcasCompostadorList.yaml:14
+#: application/configs/klearRaw/MarcasCompostadorList.yaml:33
+#: application/configs/klearRaw/MarcasCompostadorList.yaml:42
+#: application/configs/klearRaw/MarcasCompostadorList.yaml:52
+#: application/configs/klearRaw/MarcasCompostadorList.yaml:53
+#: application/configs/klearRaw/MarcasCompostadorList.yaml:54
+#: application/configs/klearRaw/klear.yaml:126
+#: application/configs/klearRaw/klear.yaml:128
+msgid "Marcas compostador"
+msgid_plural "Marcas compostador(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/PostesList.yaml:14
+#: application/configs/klearRaw/PostesList.yaml:33
+#: application/configs/klearRaw/PostesList.yaml:39
+#: application/configs/klearRaw/PostesList.yaml:46
+#: application/configs/klearRaw/PostesList.yaml:47
+#: application/configs/klearRaw/PostesList.yaml:48
+#: application/configs/klearRaw/klear.yaml:178
+#: application/configs/klearRaw/klear.yaml:180
+#, fuzzy
+msgid "Poste"
+msgid_plural "Postes"
+msgstr[0] "Posta kodea"
+msgstr[1] "Posta kodeak"
+
+#: application/configs/klearRaw/PuntosRecogidaList.yaml:14
+#: application/configs/klearRaw/PuntosRecogidaList.yaml:33
+#: application/configs/klearRaw/PuntosRecogidaList.yaml:39
+#: application/configs/klearRaw/PuntosRecogidaList.yaml:46
+#: application/configs/klearRaw/PuntosRecogidaList.yaml:47
+#: application/configs/klearRaw/PuntosRecogidaList.yaml:48
+#: application/configs/klearRaw/klear.yaml:190
+#: application/configs/klearRaw/klear.yaml:192
+msgid "Puntos recogida"
+msgid_plural "Puntos recogida(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/RevisionTiposList.yaml:14
+#: application/configs/klearRaw/RevisionTiposList.yaml:33
+#: application/configs/klearRaw/RevisionTiposList.yaml:39
+#: application/configs/klearRaw/RevisionTiposList.yaml:46
+#: application/configs/klearRaw/RevisionTiposList.yaml:47
+#: application/configs/klearRaw/RevisionTiposList.yaml:48
+#: application/configs/klearRaw/klear.yaml:214
+#: application/configs/klearRaw/klear.yaml:216
+msgid "Revision tipo"
+msgid_plural "Revision tipos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/KlearRolesList.yaml:14
+#: application/configs/klearRaw/KlearRolesList.yaml:33
+#: application/configs/klearRaw/KlearRolesList.yaml:39
+#: application/configs/klearRaw/KlearRolesList.yaml:46
+#: application/configs/klearRaw/KlearRolesList.yaml:47
+#: application/configs/klearRaw/KlearRolesList.yaml:48
+#: application/configs/klearRaw/klear.yaml:90
+#: application/configs/klearRaw/klear.yaml:92
+msgid "Klear role"
+msgid_plural "Klear roles"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/LogSmsList.yaml:14
+#: application/configs/klearRaw/LogSmsList.yaml:33
+#: application/configs/klearRaw/LogSmsList.yaml:42
+#: application/configs/klearRaw/LogSmsList.yaml:52
+#: application/configs/klearRaw/LogSmsList.yaml:53
+#: application/configs/klearRaw/LogSmsList.yaml:54
+#: application/configs/klearRaw/klear.yaml:122
+#: application/configs/klearRaw/klear.yaml:124
+msgid "Log sm"
+msgid_plural "Log sms"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:34
+#: application/configs/klearRaw/klear.yaml:36
+msgid "Camione"
+msgid_plural "Camiones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:42
+#: application/configs/klearRaw/klear.yaml:44
+#: application/configs/klearRaw/CodigosAperturaList.yaml:14
+#: application/configs/klearRaw/CodigosAperturaList.yaml:33
+#: application/configs/klearRaw/CodigosAperturaList.yaml:42
+#: application/configs/klearRaw/CodigosAperturaList.yaml:52
+#: application/configs/klearRaw/CodigosAperturaList.yaml:53
+#: application/configs/klearRaw/CodigosAperturaList.yaml:54
+msgid "Codigos apertura"
+msgid_plural "Codigos apertura"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:46
+#: application/configs/klearRaw/klear.yaml:48
+msgid "Codigos postale"
+msgid_plural "Codigos postales"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:62
+#: application/configs/klearRaw/klear.yaml:64
+msgid "Cubo"
+msgid_plural "Cubos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:98
+#: application/configs/klearRaw/klear.yaml:100
+#, fuzzy
+msgid "Klear section"
+msgid_plural "Klear sections"
+msgstr[0] "Atala"
+msgstr[1] "Atalak"
+
+#: application/configs/klearRaw/klear.yaml:102
+#: application/configs/klearRaw/klear.yaml:104
+msgid "Klear user"
+msgid_plural "Klear users"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:106
+#: application/configs/klearRaw/klear.yaml:108
+msgid "Klear users role"
+msgid_plural "Klear users roles"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:110
+#: application/configs/klearRaw/klear.yaml:112
+msgid "Locucione"
+msgid_plural "Locuciones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:118
+#: application/configs/klearRaw/klear.yaml:120
+#: application/configs/klearRaw/LogLlamadasList.yaml:14
+#: application/configs/klearRaw/LogLlamadasList.yaml:33
+#: application/configs/klearRaw/LogLlamadasList.yaml:39
+#: application/configs/klearRaw/LogLlamadasList.yaml:46
+#: application/configs/klearRaw/LogLlamadasList.yaml:47
+#: application/configs/klearRaw/LogLlamadasList.yaml:48
+msgid "Log llamada"
+msgid_plural "Log llamadas"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:134
+#: application/configs/klearRaw/klear.yaml:136
+msgid "Marcas dispositivo"
+msgid_plural "Marcas dispositivo"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:146
+#: application/configs/klearRaw/klear.yaml:148
+msgid "Municipios rel cercania"
+msgid_plural "Municipios rel cercania"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:158
+#: application/configs/klearRaw/klear.yaml:160
+msgid "Parada"
+msgid_plural "Paradas"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:162
+#: application/configs/klearRaw/klear.yaml:164
+msgid "Plantillas email"
+msgid_plural "Plantillas email"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:174
+#: application/configs/klearRaw/klear.yaml:176
+msgid "Posicionamiento"
+msgid_plural "Posicionamiento"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:182
+#: application/configs/klearRaw/klear.yaml:184
+msgid "Postes tipo"
+msgid_plural "Postes tipos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:186
+#: application/configs/klearRaw/klear.yaml:188
+msgid "Puntos descarga"
+msgid_plural "Puntos descarga"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:238
+#: application/configs/klearRaw/klear.yaml:240
+msgid "Tipos incidencia"
+msgid_plural "Tipos incidencias"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:242
+#: application/configs/klearRaw/klear.yaml:244
+msgid "Turno"
+msgid_plural "Turnos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/klear.yaml:246
+#: application/configs/klearRaw/klear.yaml:248
+msgid "Turnos camiones rel operario"
+msgid_plural "Turnos camiones rel operarios"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klearRaw/model/LogEmails.yaml:5
+#: application/configs/klearRaw/model/PlantillasEmail.yaml:5
+msgid "Asunto"
+msgstr ""
+
+#: application/configs/klearRaw/model/LogEmails.yaml:21
+msgid "Incidencia id"
+msgstr ""
+
+#: application/configs/klearRaw/model/PuntosDescarga.yaml:5
+msgid "Puntos descarga iden"
+msgstr ""
+
+#: application/configs/klearRaw/model/PuntosDescarga.yaml:10
+msgid "Residuos tipos id"
+msgstr ""
+
+#: application/configs/klearRaw/model/PuntosDescarga.yaml:23
+msgid "Nombre"
+msgstr ""
+
+#: application/configs/klearRaw/model/PuntosDescarga.yaml:27
+#: application/configs/klearRaw/model/Roles.yaml:10
+#, fuzzy
+msgid "Descripcion"
+msgstr "Deskribapena"
+
+#: application/configs/klearRaw/model/PuntosDescarga.yaml:31
+#: application/configs/klearRaw/model/Posicionamiento.yaml:38
+#: application/configs/klearRaw/model/PuntosRecogida.yaml:40
+#: application/configs/klearRaw/model/Compostadores.yaml:56
+msgid "Posicion"
+msgstr ""
+
+#: application/configs/klearRaw/model/MarcasCubo.yaml:5
+msgid "Marca"
+msgstr ""
+
+#: application/configs/klearRaw/model/MarcasCubo.yaml:10
+#: application/configs/klearRaw/model/Importadores.yaml:48
+msgid "Tipo"
+msgstr ""
+
+#: application/configs/klearRaw/model/Paradas.yaml:5
+#: application/configs/klearRaw/model/Posicionamiento.yaml:5
+msgid "Turnos camiones id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Paradas.yaml:19
+msgid "Hora inicio"
+msgstr ""
+
+#: application/configs/klearRaw/model/Paradas.yaml:27
+msgid "Finalizado"
+msgstr ""
+
+#: application/configs/klearRaw/model/Paradas.yaml:38
+msgid "Hora final"
+msgstr ""
+
+#: application/configs/klearRaw/model/Paradas.yaml:45
+msgid "Puntos recogidas id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:5
+msgid "Archivo"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:54
+msgid "contribuyente"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:55
+msgid "poste"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:57
+#, fuzzy
+msgid "Class name"
+msgstr "Abizena"
+
+#: application/configs/klearRaw/model/Importadores.yaml:63
+msgid "debagoiena"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:64
+msgid "debagoiena2"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:66
+msgid "Estado"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:72
+msgid "pendiente"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:73
+msgid "importando"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:74
+msgid "importado"
+msgstr ""
+
+#: application/configs/klearRaw/model/Importadores.yaml:75
+#, fuzzy
+msgid "error"
+msgstr "Akatsa"
+
+#: application/configs/klearRaw/model/Posicionamiento.yaml:19
+msgid "Precision"
+msgstr ""
+
+#: application/configs/klearRaw/model/Posicionamiento.yaml:22
+msgid "Fecha"
+msgstr ""
+
+#: application/configs/klearRaw/model/TurnosCamionesRelOperarios.yaml:5
+msgid "Turnos rel camiones id"
+msgstr ""
+
+#: application/configs/klearRaw/model/TurnosCamionesRelOperarios.yaml:19
+msgid "Operario id"
+msgstr ""
+
+#: application/configs/klearRaw/model/PuntosRecogida.yaml:5
+msgid "Puntos recogida tipos id"
+msgstr ""
+
+#: application/configs/klearRaw/model/PuntosRecogida.yaml:19
+#, fuzzy
+msgid "Nombre descriptivo"
+msgstr "Deskribapena"
+
+#: application/configs/klearRaw/model/PuntosRecogida.yaml:23
+msgid "Municipio id"
+msgstr ""
+
+#: application/configs/klearRaw/model/PuntosRecogida.yaml:36
+msgid "Barrio"
+msgstr ""
+
+#: application/configs/klearRaw/model/PuntosRecogida.yaml:43
+msgid "Rfid"
+msgstr ""
+
+#: application/configs/klearRaw/model/TurnosRelCamiones.yaml:5
+msgid "Turno id"
+msgstr ""
+
+#: application/configs/klearRaw/model/TurnosRelCamiones.yaml:19
+msgid "Camiones id"
+msgstr ""
+
+#: application/configs/klearRaw/model/TurnosRelCamiones.yaml:32
+msgid "Tablet id"
+msgstr ""
+
+#: application/configs/klearRaw/model/TurnosRelCamiones.yaml:45
+#: application/configs/klearRaw/model/RutasRelPuntosRecogida.yaml:32
+#, fuzzy
+msgid "Orden"
+msgstr "Ordena"
+
+#: application/configs/klearRaw/model/TurnosRelCamiones.yaml:51
+msgid "asc"
+msgstr ""
+
+#: application/configs/klearRaw/model/TurnosRelCamiones.yaml:52
+msgid "desc"
+msgstr ""
+
+#: application/configs/klearRaw/model/TurnosRelCamiones.yaml:54
+msgid "Origen punto recogida id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Compostadores.yaml:5
+msgid "Alta fecha"
+msgstr ""
+
+#: application/configs/klearRaw/model/Compostadores.yaml:14
+msgid "Emplazamiento"
+msgstr ""
+
+#: application/configs/klearRaw/model/Compostadores.yaml:18
+msgid "Marca compostador id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Compostadores.yaml:31
+msgid "Ventajas comunidad"
+msgstr ""
+
+#: application/configs/klearRaw/model/Compostadores.yaml:42
+#, fuzzy
+msgid "Privado"
+msgstr "Pribatua"
+
+#: application/configs/klearRaw/model/Compostadores.yaml:53
+msgid "Compostadores iden"
+msgstr ""
+
+#: application/configs/klearRaw/model/Roles.yaml:5
+msgid "Rol"
+msgstr ""
+
+#: application/configs/klearRaw/model/RutasRelPuntosRecogida.yaml:5
+msgid "Ruta id"
+msgstr ""
+
+#: application/configs/klearRaw/model/RutasRelPuntosRecogida.yaml:19
+msgid "Puntos recogida id"
+msgstr ""
+
+#: application/configs/klearRaw/model/PlantillasTelefono.yaml:10
+#: application/configs/klearRaw/model/Municipios.yaml:10
+msgid "Es loc"
+msgstr ""
+
+#: application/configs/klearRaw/model/PlantillasTelefono.yaml:51
+#: application/configs/klearRaw/model/Municipios.yaml:92
+msgid "Es loc codificado"
+msgstr ""
+
+#: application/configs/klearRaw/model/PlantillasTelefono.yaml:92
+#: application/configs/klearRaw/model/Municipios.yaml:51
+msgid "Eu loc"
+msgstr ""
+
+#: application/configs/klearRaw/model/PlantillasTelefono.yaml:133
+#: application/configs/klearRaw/model/Municipios.yaml:133
+msgid "Eu loc codificado"
+msgstr ""
+
+#: application/configs/klearRaw/model/PlantillasTelefono.yaml:180
+#: application/configs/klearRaw/model/Municipios.yaml:180
+msgid "pending"
+msgstr ""
+
+#: application/configs/klearRaw/model/PlantillasTelefono.yaml:181
+#: application/configs/klearRaw/model/Municipios.yaml:181
+msgid "encoding"
+msgstr ""
+
+#: application/configs/klearRaw/model/PlantillasTelefono.yaml:182
+#: application/configs/klearRaw/model/Municipios.yaml:182
+msgid "encoded"
+msgstr ""
+
+#: application/configs/klearRaw/model/KlearRolesSections.yaml:5
+msgid "Klear role id"
+msgstr ""
+
+#: application/configs/klearRaw/model/KlearRolesSections.yaml:19
+msgid "Klear section id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Rutas.yaml:5
+#, fuzzy
+msgid "Identificacion"
+msgstr "Identifikatzailea"
+
+#: application/configs/klearRaw/model/Rutas.yaml:10
+msgid "Rutas tipos id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Rutas.yaml:23
+msgid "Tiempo aprox"
+msgstr ""
+
+#: application/configs/klearRaw/model/Rutas.yaml:30
+msgid "Puntos descarga id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Recogidas.yaml:5
+msgid "Recogida tipo id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Recogidas.yaml:19
+msgid "Cubo id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Recogidas.yaml:38
+msgid "puntoRecogida"
+msgstr ""
+
+#: application/configs/klearRaw/model/Recogidas.yaml:40
+msgid "centroEmergencia"
+msgstr ""
+
+#: application/configs/klearRaw/model/Recogidas.yaml:42
+msgid "Punto recogida id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Recogidas.yaml:55
+#, fuzzy
+msgid "Poste id"
+msgstr "Posta kodea"
+
+#: application/configs/klearRaw/model/Recogidas.yaml:68
+msgid "Centro emergencia id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Recogidas.yaml:81
+msgid "Parada id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Recogidas.yaml:94
+msgid "Grado llenado"
+msgstr ""
+
+#: application/configs/klearRaw/model/Descargas.yaml:5
+msgid "Camion id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Descargas.yaml:19
+msgid "Punto descarga id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Descargas.yaml:32
+msgid "Kilo"
+msgstr ""
+
+#: application/configs/klearRaw/model/Postes.yaml:19
+msgid "Postes tipos id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Postes.yaml:32
+msgid "Fecha colocacion"
+msgstr ""
+
+#: application/configs/klearRaw/model/Postes.yaml:39
+msgid "Baja"
+msgstr ""
+
+#: application/configs/klearRaw/model/Postes.yaml:50
+msgid "Fecha baja"
+msgstr ""
+
+#: application/configs/klearRaw/model/Postes.yaml:57
+#, fuzzy
+msgid "Postes iden"
+msgstr "Posta kodea"
+
+#: application/configs/klearRaw/model/CubosTipos.yaml:10
+msgid "Litro"
+msgstr ""
+
+#: application/configs/klearRaw/model/CubosTipos.yaml:13
+msgid "Color"
+msgstr ""
+
+#: application/configs/klearRaw/model/CubosTipos.yaml:17
+msgid "Altura"
+msgstr ""
+
+#: application/configs/klearRaw/model/CubosTipos.yaml:20
+msgid "Anchura"
+msgstr ""
+
+#: application/configs/klearRaw/model/CubosTipos.yaml:23
+msgid "Longitud"
+msgstr ""
+
+#: application/configs/klearRaw/model/CubosTipos.yaml:26
+msgid "Llave"
+msgstr ""
+
+#: application/configs/klearRaw/model/CubosTipos.yaml:37
+msgid "Llenado obligatorio"
+msgstr ""
+
+#: application/configs/klearRaw/model/CubosTipos.yaml:48
+msgid "Marca cubo id"
+msgstr ""
+
+#: application/configs/klearRaw/model/LogSms.yaml:34
+msgid "Plantillas sms id"
+msgstr ""
+
+#: application/configs/klearRaw/model/LogLlamadas.yaml:19
+msgid "Dia"
+msgstr ""
+
+#: application/configs/klearRaw/model/LogLlamadas.yaml:27
+msgid "Hora"
+msgstr ""
+
+#: application/configs/klearRaw/model/LogLlamadas.yaml:35
+msgid "Contactado"
+msgstr ""
+
+#: application/configs/klearRaw/model/LogLlamadas.yaml:46
+msgid "Plantillas telefono id"
+msgstr ""
+
+#: application/configs/klearRaw/model/CompostadoresRelContribuyentes.yaml:5
+#: application/configs/klearRaw/model/Revision.yaml:5
+msgid "Compostadores id"
+msgstr ""
+
+#: application/configs/klearRaw/model/CompostadoresRelContribuyentes.yaml:19
+#: application/configs/klearRaw/model/Telefonos.yaml:5
+#: application/configs/klearRaw/model/Cubos.yaml:55
+#: application/configs/klearRaw/model/CodigosApertura.yaml:14
+#: application/configs/klearRaw/model/Emails.yaml:5
+#: application/configs/klearRaw/model/Incidencias.yaml:77
+#, fuzzy
+msgid "Contribuyente id"
+msgstr "Edukia"
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:5
+msgid "Gravedad"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:11
+msgid "leve"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:12
+msgid "moderada"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:13
+msgid "grave"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:14
+msgid "muy grave"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:22
+#: application/configs/klearRaw/model/Incidencias.yaml:18
+msgid "cubo"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:24
+#: application/configs/klearRaw/model/Incidencias.yaml:20
+msgid "compostador"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:25
+#: application/configs/klearRaw/model/Incidencias.yaml:21
+msgid "camion"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:32
+msgid "Resolucion automatica"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:43
+msgid "Plantillas email id"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:56
+msgid "Plantillas email prioridad"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:75
+msgid "Plantillas sms prioridad"
+msgstr ""
+
+#: application/configs/klearRaw/model/TiposIncidencias.yaml:94
+msgid "Plantillas telefono prioridad"
+msgstr ""
+
+#: application/configs/klearRaw/model/PostesTipos.yaml:5
+msgid "Columna"
+msgstr ""
+
+#: application/configs/klearRaw/model/PostesTipos.yaml:10
+msgid "Capacidad"
+msgstr ""
+
+#: application/configs/klearRaw/model/PostesTipos.yaml:16
+msgid "Cara"
+msgstr ""
+
+#: application/configs/klearRaw/model/PostesTipos.yaml:22
+msgid "Marca poste id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Telefonos.yaml:29
+msgid "movil"
+msgstr ""
+
+#: application/configs/klearRaw/model/Telefonos.yaml:30
+msgid "fijo"
+msgstr ""
+
+#: application/configs/klearRaw/model/Cubos.yaml:5
+msgid "Ubicacion"
+msgstr ""
+
+#: application/configs/klearRaw/model/Cubos.yaml:29
+msgid "Centros emergencia id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Cubos.yaml:68
+msgid "Cubos tipos id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Cubos.yaml:81
+msgid "Dia asignado"
+msgstr ""
+
+#: application/configs/klearRaw/model/Cubos.yaml:98
+msgid "Dia baja"
+msgstr ""
+
+#: application/configs/klearRaw/model/CodigosApertura.yaml:5
+msgid "Fecha llamada"
+msgstr ""
+
+#: application/configs/klearRaw/model/CodigosApertura.yaml:20
+msgid "Codigo apertura"
+msgstr ""
+
+#: application/configs/klearRaw/model/CodigosApertura.yaml:50
+#, fuzzy
+msgid "Activado"
+msgstr "Aktiboa"
+
+#: application/configs/klearRaw/model/KlearUsers.yaml:38
+#, fuzzy
+msgid "Update on"
+msgstr "Aldatua"
+
+#: application/configs/klearRaw/model/CentrosEmergencia.yaml:5
+msgid "Ip"
+msgstr ""
+
+#: application/configs/klearRaw/model/CentrosEmergencia.yaml:9
+msgid "Puerto"
+msgstr ""
+
+#: application/configs/klearRaw/model/CentrosEmergencia.yaml:27
+#, fuzzy
+msgid "Identificador"
+msgstr "Identifikatzailea"
+
+#: application/configs/klearRaw/model/Revision.yaml:19
+msgid "Fecha hora"
+msgstr ""
+
+#: application/configs/klearRaw/model/Revision.yaml:27
+msgid "Operador id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Revision.yaml:40
+msgid "Revision tipo id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Revision.yaml:53
+#: application/configs/klearRaw/model/Incidencias.yaml:129
+msgid "Observacione"
+msgstr ""
+
+#: application/configs/klearRaw/model/MunicipiosRelCodigosPostales.yaml:19
+msgid "Codigo postal id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Incidencias.yaml:5
+msgid "Fecha alta"
+msgstr ""
+
+#: application/configs/klearRaw/model/Incidencias.yaml:13
+msgid "Entidad"
+msgstr ""
+
+#: application/configs/klearRaw/model/Incidencias.yaml:38
+#, fuzzy
+msgid "Postes id"
+msgstr "Posta kodea"
+
+#: application/configs/klearRaw/model/Incidencias.yaml:51
+msgid "Compostador id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Incidencias.yaml:103
+msgid "Solucionada"
+msgstr ""
+
+#: application/configs/klearRaw/model/Incidencias.yaml:109
+msgid "si"
+msgstr ""
+
+#: application/configs/klearRaw/model/Incidencias.yaml:110
+#, fuzzy
+msgid "no"
+msgstr "Oharra"
+
+#: application/configs/klearRaw/model/Incidencias.yaml:111
+msgid "automatico"
+msgstr ""
+
+#: application/configs/klearRaw/model/Incidencias.yaml:113
+msgid "Observacion solucion"
+msgstr ""
+
+#: application/configs/klearRaw/model/Incidencias.yaml:116
+msgid "Tipo id"
+msgstr ""
+
+#: application/configs/klearRaw/model/KlearUsersRoles.yaml:5
+msgid "Klear user id"
+msgstr ""
+
+#: application/configs/klearRaw/model/MunicipiosRelCercania.yaml:19
+msgid "Municipio cercano id"
+msgstr ""
+
+#: application/configs/klearRaw/model/CodigosPostales.yaml:5
+msgid "Codigo postal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Camiones.yaml:5
+msgid "Matricula"
+msgstr ""
+
+#: application/configs/klearRaw/model/Camiones.yaml:10
+msgid "Cuando posicion"
+msgstr ""
+
+#: application/configs/klearRaw/model/Operarios.yaml:10
+msgid "Rol id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:5
+msgid "Contribuyente iden"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:10
+msgid "Coeficiente entorno contribuyente"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:14
+msgid "Coeficiente entorno zona"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:18
+msgid "Coeficiente entorno pueblo"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:22
+msgid "Id contribuyente usoa"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:51
+msgid "Nif"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:55
+msgid "Cuenta"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:59
+msgid "Intuitivo"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:63
+msgid "Codigo calle"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:69
+msgid "Direccion"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:73
+msgid "Portal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:77
+msgid "Bi"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:81
+msgid "Escalera"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:85
+msgid "Piso"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:89
+msgid "Mano"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:93
+msgid "Otros domicilio"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:97
+msgid "Tarifa"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:101
+msgid "Cantidad"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:106
+msgid "Direccion fiscal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:110
+msgid "Portal fiscal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:114
+msgid "Bis fiscal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:118
+msgid "Escalera fiscal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:122
+msgid "Piso fiscal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:126
+msgid "Mano fiscal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:130
+msgid "Localidad fiscal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:134
+msgid "Pk fiscal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:138
+msgid "Provincia fiscal"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:142
+msgid "Excluido"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:153
+msgid "Ivr"
+msgstr ""
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:158
+#, fuzzy
+msgid "es"
+msgstr "Bai"
+
+#: application/configs/klearRaw/model/Contribuyentes.yaml:159
+msgid "eu"
+msgstr ""
+
+#: application/configs/klearRaw/model/Dispositivos.yaml:5
+msgid "Marca dispositivo id"
+msgstr ""
+
+#: application/configs/klearRaw/model/Dispositivos.yaml:19
+msgid "Imei"
+msgstr ""
+
+#: application/configs/klearRaw/model/Dispositivos.yaml:23
+msgid "Fecha compra"
+msgstr ""
+
+#: application/configs/klear/PuntosRecogidaTiposList.yaml:14
+#: application/configs/klear/PuntosRecogidaTiposList.yaml:33
+#: application/configs/klear/PuntosRecogidaTiposList.yaml:39
+#: application/configs/klear/PuntosRecogidaTiposList.yaml:46
+#: application/configs/klear/PuntosRecogidaTiposList.yaml:47
+msgid "Tipo de punto de recogida"
+msgid_plural "Tipos de puntos de recogida"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/PlantillasSmsList.yaml:14
+#: application/configs/klear/PlantillasSmsList.yaml:33
+#: application/configs/klear/PlantillasSmsList.yaml:39
+#: application/configs/klear/PlantillasSmsList.yaml:46
+#: application/configs/klear/PlantillasSmsList.yaml:47
+msgid "Plantilla sms"
+msgid_plural "Plantillas sms"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/CubosTiposList.yaml:15
+#: application/configs/klear/CubosTiposList.yaml:39
+#: application/configs/klear/CubosTiposList.yaml:45
+#: application/configs/klear/CubosTiposList.yaml:54
+#: application/configs/klear/CubosTiposList.yaml:55
+msgid "Tipo de cubo"
+msgid_plural "Tipos de cubo"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:6
+msgid "Datos Punto de Recogida"
+msgstr ""
+
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:29
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:75
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:121
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:295
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:296
+msgid "Incidencia de Punto de Recogida"
+msgid_plural "Incidencias de Puntos de Recogida"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:165
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:189
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:196
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:303
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:304
+msgid "Llamada"
+msgid_plural "Llamadas"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:204
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:229
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:239
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:311
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:312
+msgid "Sms mensaje"
+msgid_plural "Sms mensajes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:249
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:273
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:284
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:319
+#: application/configs/klear/IncidenciasPuntosRecogidaList.yaml:320
+msgid "Emails mensaje"
+msgid_plural "Emails mensajes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/Dashboard.yaml:12
+msgid "Vista general de la plataforma"
+msgstr ""
+
+#: application/configs/klear/PlantillasTelefonoList.yaml:6
+#: application/configs/klear/MunicipiosList.yaml:6
+msgid "Audio Español"
+msgstr ""
+
+#: application/configs/klear/PlantillasTelefonoList.yaml:11
+#: application/configs/klear/MunicipiosList.yaml:11
+msgid "Audio Euskera"
+msgstr ""
+
+#: application/configs/klear/IncidenciasCubosList.yaml:6
+#: application/configs/klear/IncidenciasList.yaml:6
+msgid "Datos Cubo"
+msgstr ""
+
+#: application/configs/klear/IncidenciasCubosList.yaml:29
+#: application/configs/klear/IncidenciasCubosList.yaml:75
+#: application/configs/klear/IncidenciasCubosList.yaml:121
+#: application/configs/klear/IncidenciasCubosList.yaml:295
+#: application/configs/klear/IncidenciasCubosList.yaml:296
+msgid "Incidencia de Cubo"
+msgid_plural "Incidencias de Cubos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/CentrosEmergenciaList.yaml:20
+#: application/configs/klear/CentrosEmergenciaList.yaml:40
+#: application/configs/klear/CentrosEmergenciaList.yaml:51
+#: application/configs/klear/CentrosEmergenciaList.yaml:105
+#: application/configs/klear/CentrosEmergenciaList.yaml:106
+msgid "Centro de emergencia"
+msgid_plural "Centros de emergencia"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/CentrosEmergenciaList.yaml:60
+#, python-format
+msgid "Codigos de apertura de %s"
+msgstr ""
+
+#: application/configs/klear/CentrosEmergenciaList.yaml:83
+#: application/configs/klear/CentrosEmergenciaList.yaml:93
+#: application/configs/klear/CentrosEmergenciaList.yaml:113
+#: application/configs/klear/CentrosEmergenciaList.yaml:114
+msgid "Codigo de apertura"
+msgid_plural "Codigos de apertura"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/MunicipiosList.yaml:55
+#: application/configs/klear/MunicipiosList.yaml:91
+#: application/configs/klear/IncidenciasList.yaml:126
+msgid "¿Necesitas ayuda?"
+msgstr ""
+
+#: application/configs/klear/MunicipiosList.yaml:56
+msgid "Aquí se lista solo los Municipios que tengan una relación con un Centro de Emergencia."
+msgstr ""
+
+#: application/configs/klear/MunicipiosList.yaml:77
+#, python-format
+msgid "%s %s"
+msgstr ""
+
+#: application/configs/klear/MunicipiosList.yaml:92
+msgid "En relación de cercanías, se listan solo los municipios que tienen relación con un contribuyente. De esta manera indicamos que Centros de Emergencia se encuentran disponible para el contribuyente por su zona."
+msgstr ""
+
+#: application/configs/klear/MunicipiosList.yaml:100
+#: application/configs/klear/MunicipiosList.yaml:106
+#: application/configs/klear/MunicipiosList.yaml:121
+#: application/configs/klear/MunicipiosList.yaml:122
+#: application/configs/klear/MunicipiosList.yaml:123
+msgid "Código postal"
+msgid_plural "Códigos postales"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/IncidenciasList.yaml:11
+msgid "Datos Poste"
+msgstr ""
+
+#: application/configs/klear/IncidenciasList.yaml:16
+msgid "Datos Compostador"
+msgstr ""
+
+#: application/configs/klear/IncidenciasList.yaml:21
+msgid "Datos Contribuyente"
+msgstr ""
+
+#: application/configs/klear/IncidenciasList.yaml:26
+msgid "Datos Camión"
+msgstr ""
+
+#: application/configs/klear/IncidenciasList.yaml:125
+msgid "Después de crear una incidencia, algunos campos ya no se podrán editar. Para añadir una parada, se hace desde la misma aplicación móvil."
+msgstr ""
+
+#: application/configs/klear/CompostadoresList.yaml:26
+#: application/configs/klear/CompostadoresList.yaml:48
+#: application/configs/klear/CompostadoresList.yaml:59
+#: application/configs/klear/CompostadoresList.yaml:112
+#: application/configs/klear/CompostadoresList.yaml:113
+msgid "Compostador"
+msgid_plural "Compostadores"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/CompostadoresList.yaml:72
+#: application/configs/klear/CompostadoresList.yaml:95
+#: application/configs/klear/CompostadoresList.yaml:102
+#: application/configs/klear/CompostadoresList.yaml:120
+#: application/configs/klear/CompostadoresList.yaml:121
+#: application/configs/klear/RevisionList.yaml:23
+#: application/configs/klear/RevisionList.yaml:42
+#: application/configs/klear/RevisionList.yaml:51
+#: application/configs/klear/RevisionList.yaml:64
+#: application/configs/klear/RevisionList.yaml:65
+msgid "Revisión"
+msgid_plural "Revisiones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/RutasTiposList.yaml:14
+#: application/configs/klear/RutasTiposList.yaml:33
+#: application/configs/klear/RutasTiposList.yaml:39
+#: application/configs/klear/RutasTiposList.yaml:46
+#: application/configs/klear/RutasTiposList.yaml:47
+msgid "Tipo de ruta"
+msgid_plural "Tipos de ruta"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/TurnosRelCamionesList.yaml:14
+#: application/configs/klear/TurnosRelCamionesList.yaml:33
+#: application/configs/klear/TurnosRelCamionesList.yaml:39
+#: application/configs/klear/TurnosRelCamionesList.yaml:46
+#: application/configs/klear/TurnosRelCamionesList.yaml:47
+msgid "Camión"
+msgid_plural "Camiones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/DispositivosList.yaml:22
+#: application/configs/klear/DispositivosList.yaml:41
+#: application/configs/klear/DispositivosList.yaml:49
+#: application/configs/klear/DispositivosList.yaml:61
+#: application/configs/klear/DispositivosList.yaml:62
+msgid "Tablet"
+msgid_plural "Tablets"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/RecogidaTiposList.yaml:14
+msgid "Tipo de recogida"
+msgid_plural "Tipos de recogida"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/TelefonosList.yaml:14
+#: application/configs/klear/TelefonosList.yaml:33
+#: application/configs/klear/TelefonosList.yaml:39
+#: application/configs/klear/TelefonosList.yaml:46
+#: application/configs/klear/TelefonosList.yaml:47
+#: application/configs/klear/ContribuyentesList.yaml:343
+#: application/configs/klear/ContribuyentesList.yaml:366
+#: application/configs/klear/ContribuyentesList.yaml:377
+#: application/configs/klear/ContribuyentesList.yaml:386
+#: application/configs/klear/ContribuyentesList.yaml:476
+#: application/configs/klear/ContribuyentesList.yaml:477
+msgid "Teléfono"
+msgid_plural "Teléfonos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/ContribuyentesList.yaml:6
+msgid "Zergaduna editatu"
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:18
+msgid "Dirección"
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:32
+msgid "Datu Fiskalak"
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:177
+msgid "Agregar teléfonos y correos"
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:178
+msgid "Para agregar números de teléfonos o correos, el contacto debe estar previamente guardado."
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:199
+#: application/configs/klear/ContribuyentesList.yaml:450
+#: application/configs/klear/ContribuyentesList.yaml:451
+#: application/configs/klear/ContribuyentesList.yaml:452
+#: application/configs/klear/ImportadoresList.yaml:14
+#: application/configs/klear/ImportadoresList.yaml:33
+#: application/configs/klear/ImportadoresList.yaml:39
+#: application/configs/klear/ImportadoresList.yaml:46
+#: application/configs/klear/ImportadoresList.yaml:47
+#: application/configs/klear/ImportadoresList.yaml:48
+msgid "Importador"
+msgid_plural "Importadores"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/ContribuyentesList.yaml:220
+msgid "La tabla de datos debe llamarse Contribuyentes y tiene que tener los campos en el siguiente orden, sin importar el nombre definido. idContribuyenteUsoa, nombre, municipioId, createdOn, nif, cuenta, intuitivo, codigoCalle, direccion, portal, bis, escalera, piso, mano, otrosDomicilio, tarifa, cantidad, direccionFiscal, portalFiscal, bisFiscal, escaleraFiscal, pisoFiscal, manoFiscal, localidadFiscal, pkFiscal, provinciaFiscal. Cualquier cambio de formato, hablar con el desarrolador."
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:221
+#: application/configs/klear/ContribuyentesList.yaml:239
+msgid "Requisitos fichero .mdb"
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:228
+msgid "Fichero"
+msgid_plural "Ficheros"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/ContribuyentesList.yaml:228
+#, python-format
+msgid "Importar %s"
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:238
+msgid "La tabla de datos debe llamarse Contribuyentes y tiene que tener los campos en el siguiente orden, sin importar el nombre definido. idContribuyenteUsoa, nombre, municipioId, createdOn, nif, cuenta, intuitivo, codigoCalle, direccion, portal, bis, escalera, piso, mano, otrosDomicilio, tarifa, cantidad, direccionFiscal, portalFiscal, bisFiscal, escaleraFiscal, pisoFiscal, manoFiscal, localidadFiscal, pkFiscal, provinciaFiscal. Cualquier cambio de formato, hablar con el desarrollador."
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:486
+msgid "Agregar teléfono"
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:487
+msgid "Se añadirá un número de teléfono al contribuyente al que se está editando."
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:504
+msgid "Agregar email"
+msgstr ""
+
+#: application/configs/klear/ContribuyentesList.yaml:505
+msgid "Se añadirá una cuenta de correo al contribuyente al que se está editando."
+msgstr ""
+
+#: application/configs/klear/RutasList.yaml:34
+msgid "Una ruta es conjunto de Puntos de Recogida con un Punto de Descarga. Así que después de crear una Ruta, hay que asignarles un orden a los Puntos de Recogida en el que irán visitados en la opción Puntos de Recogida."
+msgstr ""
+
+#: application/configs/klear/RutasList.yaml:58
+#: application/configs/klear/RutasList.yaml:91
+msgid "Orden Punto de recogida"
+msgid_plural "Orden Puntos de recogida"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/RutasList.yaml:84
+msgid "Agregar nuevo Punto de Recogida"
+msgstr ""
+
+#: application/configs/klear/RutasList.yaml:99
+#, python-format
+msgid "Listado de turno de %s"
+msgstr ""
+
+#: application/configs/klear/RutasList.yaml:145
+msgid "Nuevo Punto de recogida"
+msgstr ""
+
+#: application/configs/klear/RutasList.yaml:153
+#, python-format
+msgid "Listado de camiones de las %s"
+msgstr ""
+
+#: application/configs/klear/RutasList.yaml:242
+msgid "Registros de Recogida"
+msgstr ""
+
+#: application/configs/klear/IncidenciasCompostadorList.yaml:29
+#: application/configs/klear/IncidenciasCompostadorList.yaml:74
+#: application/configs/klear/IncidenciasCompostadorList.yaml:120
+#: application/configs/klear/IncidenciasCompostadorList.yaml:292
+#: application/configs/klear/IncidenciasCompostadorList.yaml:293
+msgid "Incidencia de Compostador"
+msgid_plural "Incidencias de Compostadores"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/OperariosRelTurnoList.yaml:14
+#: application/configs/klear/OperariosRelTurnoList.yaml:33
+#: application/configs/klear/OperariosRelTurnoList.yaml:39
+#: application/configs/klear/OperariosRelTurnoList.yaml:46
+#: application/configs/klear/OperariosRelTurnoList.yaml:47
+msgid "Operarios rel turno"
+msgid_plural "Operarios rel turno(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/ResiduosTiposList.yaml:14
+msgid "Tipo de residuos"
+msgid_plural "Tipos de residuos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/PostesList.yaml:195
+msgid "Incidencia de Poste"
+msgid_plural "Incidencias de Postes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/PuntosRecogidaList.yaml:170
+#: application/configs/klear/PuntosRecogidaList.yaml:197
+msgid "Sección Contribuyente"
+msgstr ""
+
+#: application/configs/klear/RevisionTiposList.yaml:14
+#: application/configs/klear/RevisionTiposList.yaml:33
+#: application/configs/klear/RevisionTiposList.yaml:39
+#: application/configs/klear/RevisionTiposList.yaml:46
+#: application/configs/klear/RevisionTiposList.yaml:47
+msgid "Tipo de revisión"
+msgid_plural "Tipos de revisión"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:42
+#, fuzzy
+msgid "Control"
+msgstr "Sarrera"
+
+#: application/configs/klear/klear.yaml:54
+msgid "Rutas Simplificado"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:56
+msgid "Listará todas las rutas."
+msgstr ""
+
+#: application/configs/klear/klear.yaml:63
+msgid "Configuración"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:64
+msgid "Configuración de lo que se encargará la aplicación"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:67
+#: application/configs/klear/klear.yaml:69
+msgid "Centro de Emergencia"
+msgid_plural "Centros de emergencia"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:91
+msgid "Punto de recogida"
+msgid_plural "Puntos de recogida"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:93
+msgid "Listado de todos los puntos de recogidas."
+msgstr ""
+
+#: application/configs/klear/klear.yaml:95
+msgid "Punto de descarga"
+msgid_plural "Puntos de descarga"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:97
+msgid "residuo"
+msgid_plural "residuos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:101
+msgid "Listado de compostadoras"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:113
+msgid "Incidencias"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:114
+msgid "Listado de Incidencias"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:117
+msgid "Todas las Incidencias"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:121
+msgid "Por Camión  "
+msgstr ""
+
+#: application/configs/klear/klear.yaml:125
+msgid "Por Contribuyentes"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:129
+msgid "Por Compostador"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:133
+msgid "Por Cubos"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:137
+msgid "Por Postes"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:141
+msgid "Por Puntos de Recogida"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:146
+msgid "Tipos"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:147
+#: application/configs/klear/klear.yaml:209
+msgid "Configuración de las opciones por defecto"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:154
+msgid "De incidencia"
+msgid_plural "De Incidencias"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:156
+msgid "Tipo incidencia"
+msgid_plural "Tipos incidencia"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:176
+msgid "Tipo de Revisión"
+msgid_plural "Tipos de Revisión"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:187
+msgid "Registro de marcas"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:188
+msgid "Registro de los objetos que tienen una marca de vinculación."
+msgstr ""
+
+#: application/configs/klear/klear.yaml:191
+#: application/configs/klear/klear.yaml:193
+#: application/configs/klear/klear.yaml:195
+#: application/configs/klear/klear.yaml:197
+#: application/configs/klear/klear.yaml:199
+#: application/configs/klear/klear.yaml:201
+#: application/configs/klear/klear.yaml:203
+#: application/configs/klear/klear.yaml:205
+msgid "Marca cubo"
+msgid_plural "Compostadores"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:208
+msgid "Plantillas"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:212
+msgid "Plantilla email"
+msgid_plural "Plantillas email"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:220
+msgid "Plantilla de teléfono"
+msgid_plural "Plantillas de teléfono"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:224
+msgid "Configuración Locución"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:225
+msgid "Configuración de las opciones para la locución"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:232
+#: application/configs/klear/klear.yaml:234
+#: application/configs/klear/LocucionesList.yaml:25
+#: application/configs/klear/LocucionesList.yaml:49
+#: application/configs/klear/LocucionesList.yaml:60
+#: application/configs/klear/LocucionesList.yaml:72
+#: application/configs/klear/LocucionesList.yaml:73
+#: application/configs/klear/LocucionesList.yaml:74
+msgid "Locución"
+msgid_plural "Locuciones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:236
+#: application/configs/klear/klear.yaml:238
+msgid "Código de Apertura"
+msgid_plural "Códigos de Apertura"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/klear.yaml:240
+msgid "Klear"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:241
+msgid "Usuarios con acceso al Klear"
+msgstr ""
+
+#: application/configs/klear/klear.yaml:244
+msgid "Usuario"
+msgid_plural "Usuarios"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/IncidenciasCamionList.yaml:30
+#: application/configs/klear/IncidenciasCamionList.yaml:75
+#: application/configs/klear/IncidenciasCamionList.yaml:121
+#: application/configs/klear/IncidenciasCamionList.yaml:295
+#: application/configs/klear/IncidenciasCamionList.yaml:296
+msgid "Incidencia de camión"
+msgid_plural "Incidencias de camiones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/IncidenciasContribuyenteList.yaml:29
+#: application/configs/klear/IncidenciasContribuyenteList.yaml:74
+#: application/configs/klear/IncidenciasContribuyenteList.yaml:120
+#: application/configs/klear/IncidenciasContribuyenteList.yaml:295
+#: application/configs/klear/IncidenciasContribuyenteList.yaml:296
+msgid "Incidencia de Contribuyente"
+msgid_plural "Incidencias de Contribuyentes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/PostesTiposList.yaml:15
+#: application/configs/klear/PostesTiposList.yaml:34
+#: application/configs/klear/PostesTiposList.yaml:40
+#: application/configs/klear/PostesTiposList.yaml:51
+#: application/configs/klear/PostesTiposList.yaml:52
+msgid "Tipo de poste"
+msgid_plural "Tipos de poste"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/RutasRecogidaList.yaml:115
+#, python-format
+msgid "Recogidas del %s"
+msgstr ""
+
+#: application/configs/klear/CubosList.yaml:37
+#: application/configs/klear/CubosList.yaml:66
+#: application/configs/klear/CubosList.yaml:94
+msgid "En esta sección puede registrar nuevos cubos y asignarles un contribuyente por medio de su NIF. Los cubos tendrán 3 tipos de ubicación en el que podrán ser recogidos - Poste, Punto de Recogida y Centro de Emergencia."
+msgstr ""
+
+#: application/configs/klear/TiposIncidenciasList.yaml:60
+#: application/configs/klear/TiposIncidenciasList.yaml:94
+msgid "Sms"
+msgstr ""
+
+#: application/configs/klear/PuertasList.yaml:14
+#: application/configs/klear/PuertasList.yaml:33
+#: application/configs/klear/PuertasList.yaml:39
+#: application/configs/klear/PuertasList.yaml:46
+#: application/configs/klear/PuertasList.yaml:47
+msgid "Puerta"
+msgid_plural "Puertas"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/model/PuntosDescarga.yaml:5
+#: application/configs/klear/model/Compostadores.yaml:68
+#, fuzzy
+msgid "Identificación"
+msgstr "Identifikatzailea"
+
+#: application/configs/klear/model/PuntosDescarga.yaml:10
+msgid "Tipos de residuos"
+msgstr ""
+
+#: application/configs/klear/model/PuntosDescarga.yaml:27
+#, fuzzy
+msgid "Descripción"
+msgstr "Deskribapena"
+
+#: application/configs/klear/model/PuntosDescarga.yaml:31
+#: application/configs/klear/model/PuntosRecogida.yaml:43
+msgid "Posición"
+msgstr ""
+
+#: application/configs/klear/model/Paradas.yaml:5
+#: application/configs/klear/model/Posicionamiento.yaml:5
+msgid "Turnos camiones"
+msgstr ""
+
+#: application/configs/klear/model/Paradas.yaml:45
+msgid "Puntos recogidas"
+msgstr ""
+
+#: application/configs/klear/model/Importadores.yaml:59
+msgid "Perfil"
+msgstr ""
+
+#: application/configs/klear/model/Importadores.yaml:74
+msgid "Pendiente"
+msgstr ""
+
+#: application/configs/klear/model/Importadores.yaml:75
+msgid "Importando"
+msgstr ""
+
+#: application/configs/klear/model/Importadores.yaml:76
+msgid "Importado"
+msgstr ""
+
+#: application/configs/klear/model/TurnosCamionesRelOperarios.yaml:5
+msgid "Turnos rel camiones"
+msgstr ""
+
+#: application/configs/klear/model/PuntosRecogida.yaml:5
+msgid "Tipo de Punto de Recogida"
+msgstr ""
+
+#: application/configs/klear/model/TurnosRelCamiones.yaml:19
+msgid "Camiones"
+msgstr ""
+
+#: application/configs/klear/model/TurnosRelCamiones.yaml:52
+msgid "Ascendente"
+msgstr ""
+
+#: application/configs/klear/model/TurnosRelCamiones.yaml:53
+msgid "Descendente"
+msgstr ""
+
+#: application/configs/klear/model/TurnosRelCamiones.yaml:55
+msgid "Origen punto recogida"
+msgstr ""
+
+#: application/configs/klear/model/Compostadores.yaml:26
+msgid "Marca compostador"
+msgstr ""
+
+#: application/configs/klear/model/PlantillasTelefono.yaml:40
+#: application/configs/klear/model/PlantillasTelefono.yaml:80
+#: application/configs/klear/model/Municipios.yaml:69
+#: application/configs/klear/model/Municipios.yaml:80
+msgid "Fichero codificado"
+msgstr ""
+
+#: application/configs/klear/model/PlantillasTelefono.yaml:98
+#: application/configs/klear/model/Municipios.yaml:108
+msgid "Codificando"
+msgstr ""
+
+#: application/configs/klear/model/PlantillasTelefono.yaml:99
+#: application/configs/klear/model/Municipios.yaml:109
+msgid "Codificado"
+msgstr ""
+
+#: application/configs/klear/model/KlearRolesSections.yaml:5
+msgid "Rol Klear"
+msgstr ""
+
+#: application/configs/klear/model/KlearRolesSections.yaml:19
+msgid "Sección Klear"
+msgstr ""
+
+#: application/configs/klear/model/Rutas.yaml:10
+msgid "Tipos de ruta"
+msgstr ""
+
+#: application/configs/klear/model/Rutas.yaml:59
+msgid "Puntos de Recogida"
+msgstr ""
+
+#: application/configs/klear/model/Recogidas.yaml:5
+msgid "Tipo de Recogida"
+msgstr ""
+
+#: application/configs/klear/model/Recogidas.yaml:44
+msgid "Punto de Recogida"
+msgstr ""
+
+#: application/configs/klear/model/Recogidas.yaml:59
+msgid "Punto recogida"
+msgstr ""
+
+#: application/configs/klear/model/Recogidas.yaml:85
+#: application/configs/klear/model/CodigoApertura.yaml:5
+msgid "Centro emergencia"
+msgstr ""
+
+#: application/configs/klear/model/Descargas.yaml:5
+msgid "Camion"
+msgstr ""
+
+#: application/configs/klear/model/Descargas.yaml:19
+msgid "Punto descarga"
+msgstr ""
+
+#: application/configs/klear/model/CodigoApertura.yaml:19
+msgid "Fecha vencimiento"
+msgstr ""
+
+#: application/configs/klear/model/CodigoApertura.yaml:27
+msgid "Codigo"
+msgstr ""
+
+#: application/configs/klear/model/CodigoApertura.yaml:31
+msgid "Contribuyente NIF"
+msgstr ""
+
+#: application/configs/klear/model/CodigoApertura.yaml:52
+msgid "Grabado"
+msgstr ""
+
+#: application/configs/klear/model/Postes.yaml:19
+msgid "Tipos de poste"
+msgstr ""
+
+#: application/configs/klear/model/CubosTipos.yaml:10
+msgid "Litro (l)"
+msgstr ""
+
+#: application/configs/klear/model/CubosTipos.yaml:18
+msgid "Altura (m)"
+msgstr ""
+
+#: application/configs/klear/model/CubosTipos.yaml:22
+msgid "Anchura (m)"
+msgstr ""
+
+#: application/configs/klear/model/CubosTipos.yaml:26
+msgid "Longitud (m)"
+msgstr ""
+
+#: application/configs/klear/model/Municipios.yaml:114
+msgid "Municipios Cercanos"
+msgstr ""
+
+#: application/configs/klear/model/LogSms.yaml:34
+msgid "Plantillas sms"
+msgstr ""
+
+#: application/configs/klear/model/CompostadoresRelContribuyentes.yaml:5
+msgid "Compostadores"
+msgstr ""
+
+#: application/configs/klear/model/TiposIncidencias.yaml:11
+msgid "Leve"
+msgstr ""
+
+#: application/configs/klear/model/TiposIncidencias.yaml:12
+msgid "Moderada"
+msgstr ""
+
+#: application/configs/klear/model/TiposIncidencias.yaml:13
+msgid "Grave"
+msgstr ""
+
+#: application/configs/klear/model/TiposIncidencias.yaml:14
+msgid "Muy grave"
+msgstr ""
+
+#: application/configs/klear/model/TiposIncidencias.yaml:86
+msgid "Prioridad email"
+msgstr ""
+
+#: application/configs/klear/model/TiposIncidencias.yaml:105
+msgid "Prioridad sms"
+msgstr ""
+
+#: application/configs/klear/model/TiposIncidencias.yaml:124
+msgid "Prioridad teléfono"
+msgstr ""
+
+#: application/configs/klear/model/PostesTipos.yaml:20
+msgid "Marca poste"
+msgstr ""
+
+#: application/configs/klear/model/Telefonos.yaml:29
+msgid "Móvil"
+msgstr ""
+
+#: application/configs/klear/model/Telefonos.yaml:30
+msgid "Teléfono fijo"
+msgstr ""
+
+#: application/configs/klear/model/Cubos.yaml:5
+msgid "Ubicación"
+msgstr ""
+
+#: application/configs/klear/model/Cubos.yaml:17
+msgid "Punto Recogida"
+msgstr ""
+
+#: application/configs/klear/model/Cubos.yaml:22
+msgid "Centro Emergencia"
+msgstr ""
+
+#: application/configs/klear/model/Cubos.yaml:66
+msgid "NIF"
+msgstr ""
+
+#: application/configs/klear/model/Cubos.yaml:153
+msgid "RFID"
+msgstr ""
+
+#: application/configs/klear/model/Cubos.yaml:158
+msgid "Buscar Contribuyente por"
+msgstr ""
+
+#: application/configs/klear/model/KlearRoles.yaml:19
+msgid "Sección"
+msgid_plural "Secciones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: application/configs/klear/model/Revision.yaml:19
+msgid "Fecha de la revisión"
+msgstr ""
+
+#: application/configs/klear/model/Revision.yaml:44
+msgid "Operador"
+msgstr ""
+
+#: application/configs/klear/model/Revision.yaml:57
+msgid "Observaciones"
+msgstr ""
+
+#: application/configs/klear/model/Incidencias.yaml:71
+#: application/configs/klear/model/Incidencias.yaml:87
+msgid "IDEN"
+msgstr ""
+
+#: application/configs/klear/model/Incidencias.yaml:103
+msgid "Matrícula"
+msgstr ""
+
+#: application/configs/klear/model/Incidencias.yaml:177
+msgid "Solucionado"
+msgstr ""
+
+#: application/configs/klear/model/Incidencias.yaml:268
+msgid "Tipo de Incidencia Cubo"
+msgstr ""
+
+#: application/configs/klear/model/Incidencias.yaml:284
+msgid "Tipo de Incidencia Camión"
+msgstr ""
+
+#: application/configs/klear/model/Incidencias.yaml:300
+msgid "Tipo de Incidencia Compostador"
+msgstr ""
+
+#: application/configs/klear/model/Incidencias.yaml:316
+msgid "Tipo de Incidencia Contribuyente"
+msgstr ""
+
+#: application/configs/klear/model/Incidencias.yaml:332
+msgid "Tipo de Incidencia Poste"
+msgstr ""
+
+#: application/configs/klear/model/Incidencias.yaml:348
+msgid "Tipo de Incidencia Punto de Recogida"
+msgstr ""
+
+#: application/configs/klear/model/MunicipiosRelCercania.yaml:19
+msgid "Municipio cercano"
+msgstr ""
+
+#: application/configs/klear/model/Contribuyentes.yaml:30
+msgid "Apellido"
+msgstr ""
+
+#: application/configs/klear/model/Contribuyentes.yaml:73
+msgid "Bis"
+msgstr ""
+
+#: application/configs/klear/model/Contribuyentes.yaml:89
+msgid "Otro domicilio"
+msgstr ""
+
+#: application/configs/klear/model/Dispositivos.yaml:5
+msgid "Marca dispositivo"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Postes"
+#~ msgstr "Posta kodea"
+
+#~ msgid "notes"
+#~ msgstr "Oharrak"
+
+#~ msgid "tags"
+#~ msgstr "etiketa"
+
+#~ msgid "Users"
+#~ msgstr "Erabiltzaileak"
+
+#~ msgid "Sections"
+#~ msgstr "Atalak"

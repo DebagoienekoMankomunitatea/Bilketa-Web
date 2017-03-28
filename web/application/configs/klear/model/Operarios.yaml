@@ -1,0 +1,28 @@
+production: 
+  class: \Atezate\Model\Operarios
+  fields: 
+    nombre: 
+      title: _('Nombre')
+      type: text
+      defaultValue: 
+      default: true
+    rolId: 
+      title: _('Rol')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Roles
+          fieldName: 
+            fields: 
+              - rol
+            template: '%rol%'
+          order: rol
+      options:
+        screens:
+          rolesNew_screen: true
+testing: 
+  _extends: production
+development: 
+  _extends: production

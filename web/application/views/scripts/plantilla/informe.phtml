@@ -1,0 +1,90 @@
+<?php
+$turnos = $this->datos->getTurnosRelCamiones();
+if ($turnos): ?>
+    <?php foreach ($turnos as $turno): ?>
+        <table class="kMatrix">
+            <tr>
+                <td class="ui-widget-content">
+                <h2>Datos:</h2>
+                Matrícula del camión: <?php echo $turno->getCamiones()->getMatricula();?>
+                </td>
+                <td class="ui-widget-content">
+                <h3>Operarios:</h3>
+                
+                <ul>
+                <?php foreach ($turno->getTurnosCamionesRelOperarios() as $operarios): ?>
+                    <li><?php echo $operarios->getOperario()->getNombre();?></li>
+                <?php endforeach;?>
+                </ul>
+                </td>
+            </tr>
+        </table>
+        <?php $count = 0;?>
+        <table class="kMatrix">
+        <?php $paradas = $turno->getParadas(); 
+        if ($paradas): ?>
+                <?php foreach ($paradas as $parada):?>
+                <tr>
+                    <th class="ui-widget-content" align="center" colspan="2"><h4>Parada: <?php echo $parada->getHoraInicio();?> - <?php echo $parada->getHoraFinal();?></h4></th>
+                </tr>
+                    <?php $recogidas = $parada->getRecogidas();
+                    
+                    if (count($recogidas)): ?>
+                                <tr>
+                                    <th class="ui-widget-content">Datos Recogida</th>
+                                    <th class="ui-widget-content">Datos Cubo</th>
+                                </tr>
+                            <?php foreach ($recogidas as $recogida):?>
+                                <?php if ($recogida->getTipos() == 'puntoRecogida'): ?>
+                                <tr>
+                                    <td class="ui-widget-content">
+                                        Punto de Recogida: <?php echo $recogida->getPuntoRecogida()->getNombreDescriptivo();?>
+                                    </td>
+                                    <td class="ui-widget-content">
+                                        <?php $cubo = $recogida->getCubo();
+                                        if ($cubo):?>
+                                            <p>Rfid: <?php echo $cubo->getRfid();?></p>
+                                            <?php $contribuyente = $cubo->getContribuyente();
+                                            if ($contribuyente):?>
+                                                <p>Contribuyente DNI: <?php echo $contribuyente->getNif();?></p>
+                                            <?php endif;?>
+                                        <?php endif;?>
+                                    </td>
+                                </tr>
+                                <?php $count++;?>
+                                <?php elseif ($recogida->getTipos() == 'poste'):?>
+                                <tr>
+                                    <td class="ui-widget-content">
+                                        Poste: <?php echo $recogida->getPoste()->getPostesIden();?>
+                                    </td>
+                                    <td class="ui-widget-content">
+                                        <?php $cubo = $recogida->getCubo();
+                                        if ($cubo):?>
+                                            <p>Rfid: <?php echo $cubo->getRfid();?></p>
+                                            <?php $contribuyente = $cubo->getContribuyente();
+                                            if ($contribuyente):?>
+                                                <p>Contribuyente DNI: <?php echo $contribuyente->getNif();?></p>
+                                            <?php endif;?>
+                                        <?php endif;?>
+                                    </td>
+                                </tr>
+                                <?php $count++;?>
+                                <?php elseif ($recogida->getTipos() == 'centroEmergencia'): ?>
+                                <tr>
+                                    <td colspan=2 class="ui-widget-content">
+                                        Centro de Emergencia: <?php echo $recogida->getCentroEmergencia()->getIp();?>
+                                    </td>
+                                </tr>
+                                <?php $count++;?>
+                                <?php endif;?>
+                            <?php endforeach;?>
+                    <?php endif;?>
+                <?php endforeach;?>
+        <?php endif;?>
+        <?php if ($count == 0):?>
+            <tr><td colspan="2" class="ui-widget-content">No hay informes de Recogida.</td></tr>
+        <?php endif;?>
+        </table>
+        <hr>
+    <?php endforeach;?>
+<?php endif;?>

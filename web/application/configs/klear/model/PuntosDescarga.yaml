@@ -1,0 +1,39 @@
+production: 
+  class: \Atezate\Model\PuntosDescarga
+  fields: 
+    puntosDescargaIden: 
+      title: _('Identificación')
+      type: text
+      required: true
+      default: true
+      maxLength: 7
+    residuosTiposId: 
+      title: _('Tipos de residuos')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\ResiduosTipos
+          fieldName: 
+            fields: 
+              - nombre
+            template: '%nombre%'
+          order: nombre
+    nombre: 
+      title: _('Nombre')
+      type: text
+      defaultValue: 
+    descripcion: 
+      title: _('Descripción')
+      type: textarea
+      required: true
+    posicionAddr: 
+      title: _('Posición')
+      type: map
+
+
+testing: 
+  _extends: production
+development: 
+  _extends: production

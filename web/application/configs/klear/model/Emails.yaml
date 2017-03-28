@@ -1,0 +1,35 @@
+production: 
+  class: \Atezate\Model\Emails
+  fields: 
+    contribuyenteId: 
+      title: _('Contribuyente')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Contribuyentes
+          fieldName: 
+            fields: 
+              - contribuyenteIden
+            template: '%contribuyenteIden%'
+          order: contribuyenteIden
+      default: true
+    email: 
+      title: ngettext('Email', 'Emails', 1)
+      type: html5
+      source:
+        control: email
+      defaultValue: 
+    createdOn: 
+      title: _('Created on')
+      type: picker
+      defaultValue: CURRENT_TIMESTAMP
+      source: 
+        control: datetime
+        settings: 
+          disabled: 'false'
+testing: 
+  _extends: production
+development: 
+  _extends: production

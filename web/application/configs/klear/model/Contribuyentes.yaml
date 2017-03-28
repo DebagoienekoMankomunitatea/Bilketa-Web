@@ -1,0 +1,213 @@
+production: 
+  class: \Atezate\Model\Contribuyentes
+  fields: 
+    contribuyenteIden: 
+      title: _('Contribuyente iden')
+      type: text
+      required: true
+      default: true
+    coeficienteEntornoContribuyente: 
+      title: _('Coeficiente entorno contribuyente')
+      type: text
+      required: true
+    coeficienteEntornoZona: 
+      title: _('Coeficiente entorno zona')
+      type: text
+      required: true
+    coeficienteEntornoPueblo: 
+      title: _('Coeficiente entorno pueblo')
+      type: text
+      required: true
+    idContribuyenteUsoa: 
+      title: _('Id contribuyente usoa')
+      type: text
+      required: true
+    nombre: 
+      title: _('Nombre')
+      type: text
+      defaultValue: 
+    apellido: 
+      title: _('Apellido')
+      type: text
+      defaultValue: 
+    municipioId: 
+      title: _('Municipio')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Municipios
+          fieldName: 
+            fields: 
+              - municipio
+            template: '%municipio%'
+          order: municipio
+    nif: 
+      title: _('NIF')
+      type: text
+      defaultValue: 
+    cuenta: 
+      title: _('Cuenta')
+      type: text
+      defaultValue: 
+    intuitivo: 
+      title: _('Intuitivo')
+      type: text
+      defaultValue: 
+    codigoCalle: 
+      title: _('Codigo calle')
+      type: text
+      required: true
+      defaultValue: 
+    direccion: 
+      title: _('Dirección')
+      type: textarea
+      defaultValue: 
+    portal: 
+      title: _('Portal')
+      type: text
+      required: true
+      defaultValue:
+    bis: 
+      title: _('Bis')
+      type: text
+      defaultValue: 
+    escalera: 
+      title: _('Escalera')
+      type: text
+      defaultValue: 
+    piso: 
+      title: _('Piso')
+      type: text
+      defaultValue: 
+    mano: 
+      title: _('Mano')
+      type: text
+      defaultValue: 
+    otrosDomicilio: 
+      title: _('Otro domicilio')
+      type: text
+      defaultValue: 
+    tarifa: 
+      title: _('Tarifa')
+      type: text
+      defaultValue: 
+    cantidad: 
+      title: _('Cantidad')
+      type: number
+      source: 
+        control: Spinner
+    direccionFiscal: 
+      title: _('Direccion fiscal')
+      type: textarea
+      required: true
+    portalFiscal: 
+      title: _('Portal fiscal')
+      type: text
+      required: true
+      defaultValue: 
+    bisFiscal: 
+      title: _('Bis fiscal')
+      type: text
+      defaultValue: 
+    escaleraFiscal: 
+      title: _('Escalera fiscal')
+      type: text
+      defaultValue: 
+    pisoFiscal: 
+      title: _('Piso fiscal')
+      type: text
+      defaultValue: 
+    manoFiscal: 
+      title: _('Mano fiscal')
+      type: text
+      defaultValue: 
+    localidadFiscal: 
+      title: _('Localidad fiscal')
+      type: text
+      defaultValue: 
+    pkFiscal: 
+      title: _('Pk fiscal')
+      type: text
+      defaultValue: 
+    provinciaFiscal: 
+      title: _('Provincia fiscal')
+      type: text
+      defaultValue: 
+    excluido: 
+      title: _('Excluido')
+      type: select
+      defaultValue: 0
+      source: 
+        data: inline
+        values: 
+          '0': 
+            title: _("No")
+          '1': 
+            title: _("Yes")
+            
+    posteId: 
+      title: _('Poste')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Postes
+          fieldName: 
+            fields: 
+              - postesIden
+            template: '%postesIden%'
+          order: postesIden
+            
+    CompostadoresRelContribuyentes:
+      type: multiselect
+      title: _('Compostadores')
+      source:
+        data: mapper
+        config:
+          relationMapper: \Atezate\Mapper\Sql\CompostadoresRelContribuyentes
+          relatedMapperName: \Atezate\Mapper\Sql\Compostadores
+          relatedFieldName: compostadoresIden
+          relationProperty: Compostadores
+          
+    getPhones:
+      type: ghost
+      dirty: true
+      title:
+        i18n:
+          es: "Teléfonos registrados"
+      source:
+        class: Atezatelib_Ghost_Contribuyentes
+        method: getPhones
+      options:
+        dialogs:
+          telefonosAddDel_dialog: true
+        
+    getEmails:
+      type: ghost
+      dirty: true
+      title:
+        i18n:
+          es: "Emails registrados"
+      source:
+        class: Atezatelib_Ghost_Contribuyentes
+        method: getEmails
+      options:
+        dialogs:
+          emailsAddDel_dialog: true
+    ivr: 
+      title: _('Idioma')
+      type: select
+      source: 
+        data: inline
+        'null': _("Unasigned")
+        values: 
+          'es': _('es')
+          'eu': _('eu')
+testing: 
+  _extends: production
+development: 
+  _extends: production
+  

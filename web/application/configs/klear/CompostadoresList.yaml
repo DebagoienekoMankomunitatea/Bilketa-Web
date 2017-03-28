@@ -1,0 +1,140 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+#include MarcasCompostadorList.yaml
+#include RevisionTiposList.yaml
+
+fixedPositions:
+  - &fixedPositionsForCompostador
+    group0:
+      fields:
+        altaFecha: true
+        emplazamiento: true
+    group1:
+      fields:
+        marcaCompostadorId: 2
+        ventajasComunidad: 1
+        privado: 1
+    group2:
+      fields:
+        posicionLat: 1
+        posicionLng: 1
+
+production:
+  main:
+    module: klearMatrix
+    defaultScreen: compostadoresList_screen
+  screens:
+    compostadoresList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *Compostadores
+      title: _("List of %s", ngettext('Compostador', 'Compostadores', 0))
+      fields:
+        options:
+          title: _("Options")
+          screens:
+            compostadoresEdit_screen: true
+            revisionList_screen: true
+          dialogs:
+            compostadoresDel_dialog: true
+          default: compostadoresEdit_screen
+        blacklist:
+          posicion: true
+          posicionLat: true
+          posicionLng: true
+      options:
+        title: _("Options")
+        screens:
+          compostadoresNew_screen: true
+    compostadoresNew_screen:
+      <<: *Compostadores
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Compostador', 'Compostadores', 1))
+      fields:
+        blacklist:
+          posicion: true
+          posicionLat: true
+          posicionLng: true
+      fixedPositions:
+        <<: *fixedPositionsForCompostador
+    compostadoresEdit_screen:
+      <<: *Compostadores
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Compostador', 'Compostadores', 1))
+      fields:
+        blacklist:
+          posicion: true
+          posicionLat: true
+          posicionLng: true
+      fixedPositions:
+        <<: *fixedPositionsForCompostador
+    compostadorMarcasNew_screen:
+        <<: *marcasCompostadorNew_screenLink
+    revisionList_screen:
+      controller: list
+      pagination:
+        items: 25
+      <<: *Revision
+      title: _("List of %s", ngettext('Revisión', 'Revisiones', 0))
+      filterField: compostadoresId
+      class: ui-silk-book
+      parentOptionCustomizer:
+        - recordCount
+      fields:
+        options:
+          title: _("Options")
+          screens:
+            revisionEdit_screen: true
+          dialogs:
+            revisionDel_dialog: true
+          default: revisionEdit_screen
+      options:
+        title: _("Options")
+        screens:
+          revisionNew_screen: true
+    revisionNew_screen:
+      <<: *Revision
+      controller: new
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Revisión', 'Revisiones', 1))
+      filterField: compostadoresId
+    revisionEdit_screen:
+      <<: *Revision
+      controller: edit
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s", ngettext('Revisión', 'Revisiones', 1))
+      filterField: compostadoresId
+
+
+    revisionTiposNew_screen:
+      <<: *revisionTiposNew_screenLink
+
+  dialogs:
+    compostadoresDel_dialog:
+      <<: *Compostadores
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Compostador', 'Compostadores', 1))
+      description: _("Do you want to delete this %s?", ngettext('Compostador', 'Compostadores', 1))
+
+    revisionDel_dialog:
+      <<: *Revision
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Revisión', 'Revisiones', 1))
+      description: _("Do you want to delete this %s?", ngettext('Revisión', 'Revisiones', 1))
+testing:
+  _extends: production
+development:
+  _extends: production

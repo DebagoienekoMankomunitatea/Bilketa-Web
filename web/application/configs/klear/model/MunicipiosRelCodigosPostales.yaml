@@ -1,0 +1,20 @@
+production: 
+  class: \Atezate\Model\MunicipiosRelCodigosPostales
+  fields: 
+    municipioId: 
+      title: _('Municipio')
+      type: number
+      required: true
+      source: 
+        control: Spinner
+      default: true
+    codigoPostalId: 
+      title: _('Codigo postal')
+      type: number
+      required: true
+      source: 
+        control: Spinner
+testing: 
+  _extends: production
+development: 
+  _extends: production

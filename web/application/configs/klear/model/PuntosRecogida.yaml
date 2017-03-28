@@ -1,0 +1,65 @@
+production: 
+  class: \Atezate\Model\PuntosRecogida
+  fields: 
+    puntosRecogidaTiposId: 
+      title: _('Tipo de Punto de Recogida')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\PuntosRecogidaTipos
+          fieldName: 
+            fields: 
+              - nombre
+            template: '%nombre%'
+          order: nombre
+      default: true
+      options:
+        screens:
+          puntosRecogidaTiposNew_screen: true
+
+    nombreDescriptivo: 
+      title: _('Nombre descriptivo')
+      type: text
+      defaultValue: 
+
+    municipioId: 
+      title: _('Municipio')
+      type: select
+      source: 
+        data: mapper
+        'null': _("Unasigned")
+        config: 
+          mapperName: \Atezate\Mapper\Sql\Municipios
+          fieldName: 
+            fields: 
+              - municipio
+            template: '%municipio%'
+          order: municipio
+
+    barrio: 
+      title: _('Barrio')
+      type: text
+      defaultValue: 
+
+    calle: 
+      title: _('Calle')
+      type: text
+
+    numero: 
+      title: _('Número')
+      type: text
+
+    posicionAddr: 
+      title: _('Posición')
+      type: map
+
+    rfid: 
+      title: _('Rfid')
+      type: text
+
+testing: 
+  _extends: production
+development: 
+  _extends: production

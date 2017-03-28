@@ -1,0 +1,109 @@
+#include conf.d/mapperList.yaml
+#include conf.d/actions.yaml
+
+production: 
+  main: 
+    module: klearMatrix
+    defaultScreen: cubosImportadoresList_screen
+
+  #########################
+  ### Screens
+  #########################
+  screens: &cubosImportadores_screensLink 
+    cubosImportadoresList_screen: &cubosImportadoresList_screenLink 
+      controller: list
+      pagination: 
+        items: 25
+      <<: *CubosImportadores
+      class: ui-silk-text-list-bullets
+      title: _("List of %s %2s", ngettext('Cubos importador', 'Cubos importadores', 0), "[format| (%parent%)]")
+      fields: &cubosImportadores_fieldsLink 
+        options: 
+          title: _("Options")
+          screens: 
+            cubosImportadoresEdit_screen: true
+          dialogs: 
+            cubosImportadoresDel_dialog: true
+          default: cubosImportadoresEdit_screen
+      options: 
+        title: _("Options")
+        screens: 
+          cubosImportadoresNew_screen: true
+        dialogs: 
+          cubosImportadoresDel_dialog: true
+
+    cubosImportadoresNew_screen: &cubosImportadoresNew_screenLink 
+      <<: *CubosImportadores
+      controller: new
+      fields:
+        readOnly:
+          estado: true        
+      class: ui-silk-add
+      label: true
+      multiInstance: true
+      title: _("Add %s", ngettext('Cubos importador', 'Cubos importadores', 1), "[format| (%parent%)]")
+      shortcutOption: N
+
+    cubosImportadoresEdit_screen: &cubosImportadoresEdit_screenLink 
+      <<: *CubosImportadores
+      controller: edit
+      fields:
+        readOnly:
+          estado: true
+      class: ui-silk-pencil
+      label: false
+      title: _("Edit %s %2s", ngettext('Cubos importador', 'Cubos importadores', 1), "[format| (%item%)]")
+
+  #########################
+  ### Dialogs
+  #########################
+  dialogs: &cubosImportadores_dialogsLink 
+    cubosImportadoresDel_dialog: &cubosImportadoresDel_dialogLink 
+      <<: *CubosImportadores
+      controller: delete
+      class: ui-silk-bin
+      labelOption: false
+      title: _("Delete %s", ngettext('Cubos importador', 'Cubos importadores', 1))
+      description: _("Do you want to delete this %s?", ngettext('Cubos importador', 'Cubos importadores', 1))
+      message: _("%s successfully deleted.", ngettext('Cubos importador', 'Cubos importadores', 1))
+      multiItem: 1
+      labelOnList: 1
+
+    scanFile_dialog:
+      module: default
+      title: _("Scan %s", ngettext('File', 'Files', 1))
+      label: false
+      labelOnEdit: true   
+      labelOnList: true
+      labelOnOption: true
+      labelOnEntityPostSave: true
+      controller: import-file
+      action: scan-file
+      class:  ui-silk-page-gear
+
+  #########################
+  ### Commands
+  #########################
+  commands: &cubosImportadores_commandsLink 
+    cubosImportadoresCsvDownload_command: &cubosImportadoresCsvDownload_commandLink 
+      <<: *CubosImportadores
+      controller: File
+      action: force-download
+      mainColumn: csv
+    cubosImportadoresCsvUpload_command: &cubosImportadoresCsvUpload_commandLink 
+      <<: *CubosImportadores
+      controller: File
+      action: upload
+      mainColumn: csv
+    cubosImportadoresCsvPreview_command: &cubosImportadoresCsvPreview_commandLink 
+      <<: *CubosImportadores
+      controller: File
+      action: preview
+      mainColumn: csv
+
+staging: 
+  _extends: production
+testing: 
+  _extends: production
+development: 
+  _extends: production
