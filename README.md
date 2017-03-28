@@ -79,8 +79,8 @@ Si se trata de una instalación nueva: Crear base de datos bilketa-web_db y carg
 ````bash
 
 su - postgres
-createuser bilketa-web_user -W
-createdb -O bilketa-web_user -E UTF-8 -T template0 bilketa-web_db
+createuser bilketa_web_user -W
+createdb -O bilketa_web_user -E UTF-8 -T template0 bilketa-web_db
 
 psql -d bilketa-web_db < ./dump/bilketa-web.sql
 ````
